@@ -3,6 +3,11 @@ title: "Reporting using quarto"
 subtitle: "Reproducibility has never been easier"
 institute: "ARCA initiative: Unlocking Psychological Expertise for Academic and Business Success"
 author: "Ottavia M. Epifania"
+format: 
+  html:
+    self-contained: true
+    toc: true
+    toc-location: left
 ---
 
 Reproducible reports integrate the code used for data analysis with the document that presents the findings, this enabling a continous flow between the analytical process and its interpretation.
