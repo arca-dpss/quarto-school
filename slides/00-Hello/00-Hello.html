@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="00-Hello_files/libs/clipboard/clipboard.min.js"></script>
+<script src="00-Hello_files/libs/quarto-html/tabby.min.js"></script>
+<script src="00-Hello_files/libs/quarto-html/popper.min.js"></script>
+<script src="00-Hello_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="00-Hello_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="00-Hello_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="00-Hello_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
+
+  <meta name="author" content="Ottavia M. Epifania">
+  <title>00-Hello</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="00-Hello_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="00-Hello_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="00-Hello_files/libs/revealjs/dist/theme/quarto-cb1b8f81dc9df1dbb5989812ee395723.css">
+  <link href="00-Hello_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="00-Hello_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="00-Hello_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="00-Hello_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link href="00-Hello_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+  <script src="00-Hello_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+  <script src="00-Hello_files/libs/plotly-binding-4.10.4/plotly.js"></script>
+
+  <script src="00-Hello_files/libs/typedarray-0.1/typedarray.min.js"></script>
+
+  <script src="00-Hello_files/libs/jquery-3.5.1/jquery.min.js"></script>
+
+  <link href="00-Hello_files/libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+  <script src="00-Hello_files/libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
+  <link href="00-Hello_files/libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+  <script src="00-Hello_files/libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">00-Hello</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Ottavia M. Epifania 
+</div>
+</div>
+</div>
+
+</section>
+<section>
+<section id="quarto" class="title-slide slide level1 center">
+<h1>Quarto</h1>
+
+</section>
+<section id="what-is-it" class="slide level2">
+<h2>What is it?</h2>
+<p><br></p>
+<p><a href="https://rmarkdown.rstudio.com/">R Markdown</a>, next generation</p>
+<p><br></p>
+<p>All based on <a href="https://cran.r-project.org/web/packages/knitr/index.html">knitr</a> to execute R code</p>
+<div class="fragment">
+<blockquote>
+<p>Analyze. Share. Reproduce. You have a story to tell with data—tell it with Quarto.</p>
+</blockquote>
+</div>
+<div class="fragment">
+<p>In this course: RStudio!</p>
+<p>Download R: <a href="https://cran.r-project.org/bin/windows/base/">https://cran.r-project.org/bin/windows/base/</a></p>
+<p>Download RStudio: <a href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a></p>
+</div>
+</section>
+<section id="r-markdown" class="slide level2">
+<h2>R Markdown</h2>
+<p><code>markdown</code> is a markup languange: Programming language where formatting is handled by chunk codes, <code>tags</code></p>
+<p><br></p>
+<p><code>markdown</code>: <code>.md</code></p>
+<p><code>R Markdown</code>: <code>.Rmd</code></p>
+<p><code>quarto</code>: <code>.qmd</code></p>
+</section>
+<section id="markup-languages" class="slide level2">
+<h2>markup languages</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/html-example.png" style="width:90.0%"></p>
+<figcaption>HTML editor</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/latex.png" style="width:90.0%"></p>
+<figcaption>LaTex Editor</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="wysiwyg-languages" class="slide level2">
+<h2>WYSIWYG languages</h2>
+<p>What You See Is What You Get</p>
+<p>The text is modified with built-in command, you can see immediately the changes:</p>
+
+<img data-src="img/word.png" style="width:80.0%" class="r-stretch"></section>
+<section id="why" class="slide level2">
+<h2>Why?</h2>
+<p>Using knitr, it allows for integrating analyses, text, and graphs in a single document:</p>
+<ul>
+<li><p>Replicability</p></li>
+<li><p>Tydiness</p></li>
+<li><p>Convenience</p></li>
+</ul>
+<p>Create dynamic content with Python, R, Julia, and Observable</p>
+</section>
+<section id="an-example" class="slide level2">
+<h2>An example</h2>
+<div class="r-stack">
+<div class="fragment fade-out">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="00-Hello_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment fade-in-then-out">
+<p>But you are asked to change the ggplot theme!</p>
+<p>Using a WYSIWYG:</p>
+<ol type="1">
+<li><p>Re-open R</p></li>
+<li><p>Find the data again</p></li>
+<li><p>Re-run the analysis</p></li>
+<li><p>Plot the results with the requested changes</p></li>
+<li><p>Save the plot</p></li>
+<li><p>Import the plot in the document</p></li>
+</ol>
+</div>
+<div class="fragment fade-in-then-out">
+<p>Plus, can be interactive:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-e6a36ce16a3921123c93" style="width:300%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-e6a36ce16a3921123c93">{"x":{"data":[{"x":[2791.9000000000001,3892.5999999999999,3930.6599999999999,3869.3200000000002,3948.54,4010.1500000000001,4345.75,4344.75,3682.04,3098.6500000000001,4480.0500000000002,3986.2399999999998,4036.54,3518.04,3999.3699999999999,3629.0700000000002,4608.6599999999999,4787.6199999999999,4864.2200000000003,4479.4099999999999,3428.7399999999998,4353.1400000000003,4697.6499999999996,3518.4400000000001,1977.3900000000001,1379.3499999999999,1916.24,1585.4200000000001,1851.21,1239.6600000000001,1728.1400000000001,1461.0599999999999,1426.76,990.38800000000003,1350.76,1461.0599999999999,1376.7,476.322,1189.46,1644.96,941.54300000000001,308.642,1145.6900000000001,2280.4899999999998,1174.1099999999999,597.80799999999999,1455.8800000000001,1485.5799999999999],"y":[6.2999999999999998,6.2999999999999998,6.2999999999999998,6.2999999999999998,17.100000000000001,17.100000000000001,17.100000000000001,17.100000000000001,119,119,119,119,82.400000000000006,82.400000000000006,82.400000000000006,82.400000000000006,58.600000000000001,58.600000000000001,58.600000000000001,58.600000000000001,142,142,142,142,740,740,740,740,890,890,890,890,950,950,950,950,100,100,100,100,1300,1300,1300,1300,580,580,580,580],"text":["peri: 2791.900<br />perm:    6.3<br />area:  4990","peri: 3892.600<br />perm:    6.3<br />area:  7002","peri: 3930.660<br />perm:    6.3<br />area:  7558","peri: 3869.320<br />perm:    6.3<br />area:  7352","peri: 3948.540<br />perm:   17.1<br />area:  7943","peri: 4010.150<br />perm:   17.1<br />area:  7979","peri: 4345.750<br />perm:   17.1<br />area:  9333","peri: 4344.750<br />perm:   17.1<br />area:  8209","peri: 3682.040<br />perm:  119.0<br />area:  8393","peri: 3098.650<br />perm:  119.0<br />area:  6425","peri: 4480.050<br />perm:  119.0<br />area:  9364","peri: 3986.240<br />perm:  119.0<br />area:  8624","peri: 4036.540<br />perm:   82.4<br />area: 10651","peri: 3518.040<br />perm:   82.4<br />area:  8868","peri: 3999.370<br />perm:   82.4<br />area:  9417","peri: 3629.070<br />perm:   82.4<br />area:  8874","peri: 4608.660<br />perm:   58.6<br />area: 10962","peri: 4787.620<br />perm:   58.6<br />area: 10743","peri: 4864.220<br />perm:   58.6<br />area: 11878","peri: 4479.410<br />perm:   58.6<br />area:  9867","peri: 3428.740<br />perm:  142.0<br />area:  7838","peri: 4353.140<br />perm:  142.0<br />area: 11876","peri: 4697.650<br />perm:  142.0<br />area: 12212","peri: 3518.440<br />perm:  142.0<br />area:  8233","peri: 1977.390<br />perm:  740.0<br />area:  6360","peri: 1379.350<br />perm:  740.0<br />area:  4193","peri: 1916.240<br />perm:  740.0<br />area:  7416","peri: 1585.420<br />perm:  740.0<br />area:  5246","peri: 1851.210<br />perm:  890.0<br />area:  6509","peri: 1239.660<br />perm:  890.0<br />area:  4895","peri: 1728.140<br />perm:  890.0<br />area:  6775","peri: 1461.060<br />perm:  890.0<br />area:  7894","peri: 1426.760<br />perm:  950.0<br />area:  5980","peri:  990.388<br />perm:  950.0<br />area:  5318","peri: 1350.760<br />perm:  950.0<br />area:  7392","peri: 1461.060<br />perm:  950.0<br />area:  7894","peri: 1376.700<br />perm:  100.0<br />area:  3469","peri:  476.322<br />perm:  100.0<br />area:  1468","peri: 1189.460<br />perm:  100.0<br />area:  3524","peri: 1644.960<br />perm:  100.0<br />area:  5267","peri:  941.543<br />perm: 1300.0<br />area:  5048","peri:  308.642<br />perm: 1300.0<br />area:  1016","peri: 1145.690<br />perm: 1300.0<br />area:  5605","peri: 2280.490<br />perm: 1300.0<br />area:  8793","peri: 1174.110<br />perm:  580.0<br />area:  3475","peri:  597.808<br />perm:  580.0<br />area:  1651","peri: 1455.880<br />perm:  580.0<br />area:  5514","peri: 1485.580<br />perm:  580.0<br />area:  9718"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":1,"size":[15.038273190659158,17.597503497785656,18.224986551754988,17.995731993066986,18.643971575656767,18.682547187278669,20.067214997386511,18.926683830681132,19.119195820765785,16.914663340954053,20.097541358405572,19.357514227013212,21.310335641451324,19.605347540451792,20.149259516563951,19.611392929345385,21.591019688066876,21.393833439587148,22.393153199794874,20.581963418695679,18.530883194480619,22.391439474648241,22.677165354330711,18.951932615431222,16.835502281962004,13.846170931299033,18.067350604692727,15.395250898240722,17.016262590052357,14.902886856331948,17.332969980639543,18.591304447646333,16.362752559101448,15.493690991650933,18.040535773966337,18.591304447646333,12.625077727003362,7.5765686170970765,12.723693373617747,15.424048556523331,15.120135525631493,3.7795275590551185,15.87812717586684,19.52958439516842,12.635889159233331,8.2800500719225951,15.757568727237969,20.439934892061391],"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":30.611872146118724,"r":7.3059360730593621,"b":44.56621004566211,"l":48.949771689497723},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[80.863099999999974,5091.9989000000005],"tickmode":"array","ticktext":["1000","2000","3000","4000","5000"],"tickvals":[999.99999999999977,2000,3000.0000000000005,4000,5000],"categoryorder":"array","categoryarray":["1000","2000","3000","4000","5000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(179,179,179,1)","ticklen":3.6529680365296811,"tickwidth":0.33208800332088001,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(222,222,222,1)","gridwidth":0.33208800332088001,"zeroline":false,"anchor":"y","title":{"text":"peri","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-58.385000000000005,1364.6849999999999],"tickmode":"array","ticktext":["0","500","1000"],"tickvals":[0,500,1000],"categoryorder":"array","categoryarray":["0","500","1000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(179,179,179,1)","ticklen":3.6529680365296811,"tickwidth":0.33208800332088001,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(222,222,222,1)","gridwidth":0.33208800332088001,"zeroline":false,"anchor":"x","title":{"text":"perm","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(179,179,179,1)","width":0.66417600664176002,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"area","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"235061295df9":{"x":{},"y":{},"size":{},"type":"scatter"}},"cur_data":"235061295df9","visdat":{"235061295df9":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="lets-get-started" class="title-slide slide level1 center">
+<h1>Let’s get started 🥳</h1>
+
+</section>
+<section id="be-tidy-rstudio-project" class="slide level2">
+<h2>Be tidy: <code>Rstudio</code> Project</h2>
+<p>Create a directory that can be re-organized in subdirectories, allowing for a conveninet managment of all the files (data, images, bibliography)</p>
+<p>File <span class="math inline">\(\rightarrow\)</span> New project:</p>
+
+<img data-src="img/project1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:79.0%"></section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>What?</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/project2.png" class="quarto-figure quarto-figure-center" style="width:79.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Where?</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/project3.png" class="quarto-figure quarto-figure-center" style="width:79.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="github-also-know-as-nerdstagram" class="title-slide slide level1 center">
+<h1>GitHub (also know as “Nerdstagram”)</h1>
+
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+
+<img data-src="img/gh.png" class="quarto-figure quarto-figure-center r-stretch" style="width:5.0%"><p><a href="https://github.com/">https://github.com/</a></p>
+<p>It is needed to create sharable html documents</p>
+<p>It allows to share your code (and your projects) with others</p>
+</section>
+<section id="create-an-account" class="slide level2">
+<h2>Create an account</h2>
+<div class="r-stack">
+<div class="fragment fade-out">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/ghMail.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment fade-in-then-out">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/ghMail1.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="username-and-password" class="slide level2">
+<h2>Username and password</h2>
+<p>Please, choose something that you can remember</p>
+<p><br></p>
+
+<img data-src="img/ghMailpwd.png" width="454" class="r-stretch"><p>Solve the CAPTCHA and submit</p>
+</section>
+<section id="github-desktop" class="slide level2">
+<h2>GitHub Desktop</h2>
+<p><a href="https://desktop.github.com/">https://desktop.github.com/</a></p>
+<p><br></p>
+
+<img data-src="img/ghDesk.png" width="640" class="r-stretch"></section>
+<section id="installare-git" class="slide level2 build">
+<h2>Installare Git</h2>
+<p>GitHub desktop allows for an “inderect” connection between RStudio and GitHub</p>
+<p><a href="https://gitforwindows.org/">Git</a> allows for a direct connection between RStudio and GitHub</p>
+<p>Just follow the default installation</p>
+<div class="fragment">
+<p>If it worked:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/check.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="clone-an-existing-repository-i" class="slide level2">
+<h2>“Clone” an existing repository I</h2>
+<p>From GitHub desktop:</p>
+<p><strong>Add Local Repository</strong> <span class="math inline">\(\rightarrow\)</span> search for the directory of the R project to publish on GitHub</p>
+
+<img data-src="img/banner-git.png" style="width:80.0%" class="r-stretch"></section>
+<section id="clone-an-existing-repository-ii" class="slide level2">
+<h2>“Clone” an existing repository II</h2>
+<p>Option: <strong>create a repository</strong></p>
+
+<img data-src="img/clone-repo.png" width="688" class="r-stretch"></section>
+<section id="did-it-work" class="slide level2">
+<h2>Did it work?</h2>
+<p>Navigate to you GitHub profile on <a href="https://github.com/">https://github.com/</a> and to your repositories:</p>
+
+<img data-src="img/myGit.png" class="quarto-figure quarto-figure-center r-stretch" width="321"></section>
+<section id="the-repository-must-be-public" class="slide level2">
+<h2>The repository must be public</h2>
+
+<img data-src="img/public.png" style="width:90.0%" class="r-stretch"></section>
+<section id="your-turn" class="slide level2">
+<h2>Your turn!</h2>
+<ol type="1">
+<li><p>Create a default R project for this course</p></li>
+<li><p>Create a GitHub account (and install Git and GitHub desktop)</p></li>
+<li><p>Add the project you have created for this course to your GitHub account</p></li>
+<li><p>Check whether the repository is available online and make it public</p></li>
+</ol>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>The ARCA initiative summer school</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="00-Hello_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="00-Hello_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="00-Hello_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="00-Hello_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="00-Hello_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="00-Hello_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="00-Hello_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="00-Hello_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="00-Hello_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="00-Hello_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'print',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'slow',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
