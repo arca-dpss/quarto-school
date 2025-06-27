@@ -5,6 +5,7 @@ institute: "ARCA initiative: Unlocking Psychological Expertise for Academic and 
 author: "Ottavia M. Epifania"
 format: 
   html:
+    theme: minty
     self-contained: true
     toc: true
     toc-location: left
