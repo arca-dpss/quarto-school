@@ -14,6 +14,9 @@ format:
 stand-alone: true
 editor_options: 
   chunk_output_type: console
+execute: 
+  fig-align: center
+  out-width: 80%
 ---
 
 ```{r setup}
@@ -357,3 +360,14 @@ knitr::include_graphics("img/public.png")
 3. Add the project you have created for this course to your GitHub account
 
 4. Check whether the repository is available online and make it public 
+
+
+<br>
+
+Final check: Download [this file](my-first-quarto-document.qmd), open it in your newly created project and: 
+
+```{r}
+#| out-width: 50%
+knitr::include_graphics("img/render.png")
+```
+
