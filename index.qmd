@@ -10,6 +10,8 @@ format:
     toc-location: left
 ---
 
+# The course
+
 Reproducible reports integrate the code used for data analysis with the document that presents the findings, this enabling a continous flow between the analytical process and its interpretation.
 
 While `R`Markdown undoubtely opened the way to this process, `quarto` represents the next generation, as it is even easier to use than `R`Markdown and includes new features, making the reporting process more accessible. 
@@ -22,3 +24,12 @@ Some of the topics covered within this seminar are:
 - Tables, charts, and references seamlessly.
 - Reports and papers
 - Presentation, posters & so much more
+
+
+## Course materials
+
+All course materials are freely available on this website: 
+
+- [00-Hello](slides/00-Hello/00-Hello.html) Let's get all set
+
+- 00-Baby steps

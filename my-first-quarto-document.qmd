@@ -4,12 +4,15 @@ author: "Jane Doe"
 date: today
 format: 
   html:
+    self-contained: true
     toc: true
-    toc-title: I miei contenuti
-    toc-location: body
-    toc-depth: 3
+    toc-title: My contents
+    toc-location: left
 editor: source
 lang: en
+execute: 
+  echo: fenced
+code-fold: true
 ---
 
 # Hello!
@@ -20,4 +23,22 @@ This is your very first quarto document
 
 You can organize it in sections
 
-### An subsections 
+### A subsections 
+
+And subsections too!!
+
+
+```{r}
+3 + 2
+```
+
+Here's another code chunk but I don't want you to see my code to obtain @fig-myplot
+
+```{r}
+#| echo: false
+#| fig-cap: "A plot"
+#| fig-cap-location: margin
+#| label: fig-myplot
+plot(rock$area, rock$peri)
+```
+
