@@ -1,0 +1,398 @@
+---
+title: "01-Baby Steps"
+author: "Ottavia M. Epifania"
+format: 
+  revealjs: 
+    theme: mytheme.scss
+    # logo: "www/psicostat.jpg"
+    footer: "The ARCA initiative summer school"
+    transition: none
+    transition-speed: slow
+    background-transition: fade
+    slide-number: true
+    show-slide-number: print
+stand-alone: true
+editor_options: 
+  chunk_output_type: console
+execute: 
+  fig-align: center
+  out-width: 80%
+---
+
+```{r}
+#| include: false
+#| label: setup
+
+library(emoji)
+```
+
+# R datasets 
+
+## 
+
+Throughout this course, we are going to work with the internal dataset in R. Choose one!
+
+
+QUi metto il link al drive con i nomi dei dataset come su rmarkdown
+
+# YAML 
+
+## 
+
+The overall appearance and behavior of the document is specified in the YAML: 
+
+::: {.callout-note collapse="true"}
+
+## HTML default YAML
+
+````
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+````
+:::
+
+
+. . . 
+
+::: {.callout-note collapse="true"}
+
+## PDF default YAML
+
+````
+---
+title: "Untitled"
+format: pdf
+editor: visual
+---
+````
+:::
+
+## Source vs. Visual
+
+
+
+
+:::{.panel-tabset}
+
+## Editor
+```{r}
+knitr::include_graphics("img/q_source.png")
+```
+
+
+
+
+## Visual
+```{r}
+knitr::include_graphics("img/q_visual.png")
+```
+
+:::
+
+
+## YAML: Table of Contents (toc)
+
+````
+---
+title: "My quarto file"
+author: "Jane Doe"
+date: today
+format: 
+  html:
+    self-contained: true
+    toc: true
+    toc-title: My contents
+    toc-location: left
+editor: source
+lang: it
+---
+````
+
+`self-contained: true` is of the uttermost importance!!!
+
+(Further details on the YAML later on)
+
+# Markdown formatting 
+
+## Headings 
+
+```{markdown}
+#| echo: true
+#| eval: true
+
+# First level
+```
+
+<br>
+
+
+```{markdown}
+#| echo: true
+#| eval: true
+
+## Second level
+```
+
+<br>
+
+```{markdown}
+#| echo: true
+#| eval: true
+
+### Third level
+```
+
+<br>
+
+```{markdown}
+#| echo: true
+#| eval: true
+
+#### Fourth level
+```
+
+<br>
+
+```{markdown}
+#| echo: true
+#| eval: true
+
+##### Fifth level
+```
+
+<br>
+
+```{markdown}
+#| echo: true
+#| eval: true
+
+##### Sixth level
+```
+
+
+
+## Text Formatting
+
+
+
+
+**Markdown syntax: Font**
+
+
+```{markdown}
+#| eval: true
+#| echo: true
+*italics*, **bold**, **bold italics** 
+```
+
+
+Output
+
+*italics*, **bold**, **bold italics** 
+
+
+. . . 
+
+**Markdown syntax: Scripts**
+
+
+```{markdown}
+#| eval: false
+#| echo: true
+textsuperscirpt^2^, textunderscript~2~
+```
+
+
+Output
+
+
+textsuperscirpt^2^, textunderscript~2~
+
+. . . 
+
+
+**Markdown syntax: In line code**
+
+```{markdown}
+#| eval: false
+#| echo: true
+`this is myinline code`
+```
+
+Output
+
+
+`this is myinline code`
+
+
+
+
+## Links and images 
+
+
+```{markdown}
+#| echo: true
+#| eval: false
+
+<https://github.com/>
+```
+
+<br>
+
+<https://github.com/>
+
+<br>
+
+```{markdown}
+#| echo: true
+#| eval: false
+
+My link is [here](https://github.com/)
+```
+
+<br>
+
+My link is [here](https://github.com/)
+
+<br> 
+
+```{markdown}
+#| echo: true
+#| eval: false
+
+![This is an image](img/picture.jpg)
+```
+
+
+![This is an image](img/picture.jpg)
+
+## Lists 
+
+
+:::: {.columns}
+
+:::{.column width=50%}
+
+```{markdown}
+#| echo: true
+#| eval: false
+
+* unordered list
+  + sub-item 1
+  + sub-item 2
+    - sub-sub-item 1
+```
+
+<br>
+
+<br>
+
+```{markdown}
+#| echo: true
+#| eval: false
+
+1. ordered list
+2. item 2
+   i) sub-item 1
+      A.  sub-sub-item 1
+```
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+```{markdown}
+#| echo: true
+#| eval: false
+
+- [ ] First things first 1
+- [ ] Second things second 2
+```
+
+
+
+
+:::
+
+:::{.column width=50%}
+
+* unordered list
+  + sub-item 1
+  + sub-item 2
+    - sub-sub-item 1
+    
+
+1. ordered list
+2. item 2
+   i) sub-item 1
+      A.  sub-sub-item 1
+
+<br>      
+      
+
+- [ ] First things first 1
+- [ ] Second things second 2
+:::
+
+
+:::: 
+
+## Math 
+
+In-line math: 
+
+```{markdown}
+#| echo: true
+#| eval: false
+
+This is an in-line equation $y = \beta_0 + \beta_1 X + \varepsilon$
+
+```
+
+
+This is an in-line equation $y = \beta_0 + \beta_1 X + \varepsilon$
+
+. . . 
+
+Math math: 
+
+```{markdown}
+#| echo: true
+#| eval: false
+
+This is an  equation $$z = \dfrac{\bar{x} -\mu}{\sigma}$$
+
+```
+
+This is an  equation $$z = \dfrac{\bar{x} -\mu}{\sigma}$$
+
+
+
+
+
+# Publish your HTML document (with GitHub)
+
+## GitHub pages 
+
+Navigate to your GitHub repository online: 
+
+```{r out.width="70%"}
+knitr::include_graphics("img/pages-git.png")
+```
+
+## It worked! 
+
+
+```{r out.width="70%"}
+knitr::include_graphics("img/pages.png")
+```
+
+(take some time, be patient)
