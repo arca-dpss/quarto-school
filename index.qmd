@@ -32,4 +32,10 @@ All course materials are freely available on this website:
 
 - [00-Hello](slides/00-Hello/00-Hello.html) Let's get all set
 
-- 00-Baby steps
+- [01-Baby steps](slides/01-Baby-steps/01-Baby-steps.html) Formatting with markdwon & integration with github pages
+
+- Layout 
+
+- Code chunks
+
+- Presentations
