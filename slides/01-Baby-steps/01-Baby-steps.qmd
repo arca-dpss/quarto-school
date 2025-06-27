@@ -384,15 +384,91 @@ This is an  equation $$z = \dfrac{\bar{x} -\mu}{\sigma}$$
 
 Navigate to your GitHub repository online: 
 
-```{r out.width="70%"}
+```{r}
 knitr::include_graphics("img/pages-git.png")
 ```
 
 ## It worked! 
 
 
-```{r out.width="70%"}
+```{r}
 knitr::include_graphics("img/pages.png")
 ```
 
 (take some time, be patient)
+
+## `README.md` 
+
+
+This file handles the generation of the website
+
+It works with basic markdown syntax 
+
+::: {.panel-tabset}
+## `README.md` 
+
+```{r}
+knitr::include_graphics(path = "img/readme.png")
+```
+
+## Site appearance
+```{r, out.height="80%"}
+knitr::include_graphics(path = "img/site.png")
+```
+
+:::
+
+
+## Links
+
+They create the index to the pages we want to display in our website 
+
+::: {.callout-warning}
+
+The links **must** link to the directory of the html file in the subfolder of the project!
+:::
+
+. . . 
+
+Let's say we want to create a link to `my_file.html` that is inside the
+`files` subfolder: 
+
+```{markdown}
+#| eval: false
+#| echo: true
+
+[My presentation](files/my_file.html)
+```
+
+
+## `commit` + `push`
+
+
+```{r out.width="70%"}
+knitr::include_graphics("img/commit1.png")
+```
+
+## 
+
+```{r out.width="70%"}
+knitr::include_graphics("img/commit2.png")
+```
+
+
+
+## Check
+
+<br>
+
+```{r out.width="80%"}
+knitr::include_graphics("img/check-commit.png")
+```
+
+
+## Your turn!
+
+    
+
+
+
+        
