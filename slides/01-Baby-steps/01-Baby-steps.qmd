@@ -408,11 +408,15 @@ It works with basic markdown syntax
 ## `README.md` 
 
 ```{r}
+#| fig-align: center
+#| out-width: 110%
 knitr::include_graphics(path = "img/readme.png")
 ```
 
 ## Site appearance
-```{r, out.height="80%"}
+```{r}
+#| fig-align: center
+#| out-width: 110%
 knitr::include_graphics(path = "img/site.png")
 ```
 
@@ -440,6 +444,7 @@ Let's say we want to create a link to `my_file.html` that is inside the
 [My presentation](files/my_file.html)
 ```
 
+Don't forget to save the changes in the `README.md` file 
 
 ## `commit` + `push`
 
@@ -454,7 +459,7 @@ knitr::include_graphics("img/commit1.png")
 knitr::include_graphics("img/commit2.png")
 ```
 
-
+Don't forget to push!
 
 ## Check
 
@@ -470,5 +475,172 @@ knitr::include_graphics("img/check-commit.png")
     
 
 
+# Layout
 
-        
+## 
+
+By default, the HTML document is set to take all the space in the page
+
+```{markdown}
+#| echo: true
+#| eval: false
+format: 
+  html:
+    page-layout: full
+```
+
+
+
+```{r}
+#| eval: true
+#| fig-align: center
+knitr::include_graphics("img/basic-layout.png")
+```
+
+## Custum layout with grid 
+
+The page layout is based on a 12-unit (or 12-column) grid system, which can be used to divide the space accordingly: 
+
+```{markdown}
+#| echo: true
+#| eval: false
+::: {.grid}
+
+::: {.g-col-4}
+
+First column, 4/12 of the toal width
+
+:::
+
+::: {.g-col-8}
+
+Second column, 8/12 of the total width 
+
+:::
+
+:::
+```
+
+(Best for hmtl pages)
+
+## Columns
+
+::: {.panel-tabset}
+
+## Code
+
+```{markdown}
+#| echo: true
+#| eval: false
+:::: {.columns}
+
+
+::: {.column width="50%"}
+
+This is my first column!
+
+:::
+
+::: {.column width="50%"}
+
+And this is the second column
+:::
+
+::::
+```
+
+## Output
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+This is my first column!
+
+:::
+
+::: {.column width="50%"}
+
+And this is the second column
+:::
+
+::::
+
+:::
+
+(Best for HMTL presentation)
+
+## tabset: code
+
+
+
+```{markdown}
+#| echo: true
+#| eval: false
+::: {.panel-tabset}
+
+## Aim
+
+Here I present the aim of the study 
+
+## Methods
+
+Here I present the methods used to pursue the aim
+
+## Results
+
+And here I present the results
+
+:::
+```
+
+
+## tabset: output
+
+::: {.panel-tabset}
+
+
+## Aim
+
+Here I present the aim of the study 
+
+## Methods
+
+Here I present the methods used to pursue the aim
+
+## Results
+
+And here I present the results
+
+## Document layout 
+
+::: {.panel-tabset}
+
+##
+
+```{r}
+knitr::include_graphics("img/adavanced-layout.png")
+```
+
+
+##
+
+```{markdown}
+#| eval: false
+#| echo: true
+format: 
+  html: 
+   toc: true
+   toc-location: left
+   grid:
+    sidebar-width: 300px
+    body-width: 900px
+    margin-width: 300px
+    gutter-width: 1.5rem
+```
+
+
+:::
+
+

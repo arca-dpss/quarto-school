@@ -472,22 +472,22 @@ lang: it
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1"><code>README.md</code></a></li><li><a href="#tabset-2-2">Site appearance</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/readme.png" width="635"></p>
+<p><img data-src="img/readme.png" class="quarto-figure quarto-figure-center" style="width:110.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-2-2">
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/site.png" style="height:80.0%" width="640"></p>
+<p><img data-src="img/site.png" class="quarto-figure quarto-figure-center" style="width:110.0%"></p>
 </figure>
 </div>
 </div>
@@ -517,6 +517,7 @@ lang: it
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href=""></a><span class="co">[</span><span class="ot">My presentation</span><span class="co">](files/my_file.html)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Don’t forget to save the changes in the <code>README.md</code> file</p>
 </div>
 </section>
 <section id="commit-push" class="slide level2">
@@ -526,7 +527,8 @@ lang: it
 <section id="section-2" class="slide level2">
 <h2></h2>
 
-<img data-src="img/commit2.png" style="width:70.0%" class="r-stretch"></section>
+<img data-src="img/commit2.png" style="width:70.0%" class="r-stretch"><p>Don’t forget to push!</p>
+</section>
 <section id="check" class="slide level2">
 <h2>Check</h2>
 <p><br></p>
@@ -534,7 +536,148 @@ lang: it
 <img data-src="img/check-commit.png" style="width:80.0%" class="r-stretch"></section>
 <section id="your-turn" class="slide level2">
 <h2>Your turn!</h2>
+</section></section>
+<section>
+<section id="layout" class="title-slide slide level1 center">
+<h1>Layout</h1>
 
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p>By default, the HTML document is set to take all the space in the page</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href=""></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb22-2"><a href=""></a>  html:</span>
+<span id="cb22-3"><a href=""></a>    page-layout: full</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="img/basic-layout.png" class="quarto-figure quarto-figure-center r-stretch" width="321"></section>
+<section id="custum-layout-with-grid" class="slide level2">
+<h2>Custum layout with grid</h2>
+<p>The page layout is based on a 12-unit (or 12-column) grid system, which can be used to divide the space accordingly:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href=""></a>::: {.grid}</span>
+<span id="cb23-2"><a href=""></a></span>
+<span id="cb23-3"><a href=""></a>::: {.g-col-4}</span>
+<span id="cb23-4"><a href=""></a></span>
+<span id="cb23-5"><a href=""></a>First column, 4/12 of the toal width</span>
+<span id="cb23-6"><a href=""></a></span>
+<span id="cb23-7"><a href=""></a>:::</span>
+<span id="cb23-8"><a href=""></a></span>
+<span id="cb23-9"><a href=""></a>::: {.g-col-8}</span>
+<span id="cb23-10"><a href=""></a></span>
+<span id="cb23-11"><a href=""></a>Second column, 8/12 of the total width </span>
+<span id="cb23-12"><a href=""></a></span>
+<span id="cb23-13"><a href=""></a>:::</span>
+<span id="cb23-14"><a href=""></a></span>
+<span id="cb23-15"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>(Best for hmtl pages)</p>
+</section>
+<section id="columns" class="slide level2">
+<h2>Columns</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Code</a></li><li><a href="#tabset-3-2">Output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href=""></a>:::: {.columns}</span>
+<span id="cb24-2"><a href=""></a></span>
+<span id="cb24-3"><a href=""></a></span>
+<span id="cb24-4"><a href=""></a>::: {.column width="50%"}</span>
+<span id="cb24-5"><a href=""></a></span>
+<span id="cb24-6"><a href=""></a>This is my first column!</span>
+<span id="cb24-7"><a href=""></a></span>
+<span id="cb24-8"><a href=""></a>:::</span>
+<span id="cb24-9"><a href=""></a></span>
+<span id="cb24-10"><a href=""></a>::: {.column width="50%"}</span>
+<span id="cb24-11"><a href=""></a></span>
+<span id="cb24-12"><a href=""></a>And this is the second column</span>
+<span id="cb24-13"><a href=""></a>:::</span>
+<span id="cb24-14"><a href=""></a></span>
+<span id="cb24-15"><a href=""></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-2">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>This is my first column!</p>
+</div><div class="column" style="width:50%;">
+<p>And this is the second column</p>
+</div></div>
+</div>
+</div>
+</div>
+<p>(Best for HMTL presentation)</p>
+</section>
+<section id="tabset-code" class="slide level2">
+<h2>tabset: code</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href=""></a>::: {.panel-tabset}</span>
+<span id="cb25-2"><a href=""></a></span>
+<span id="cb25-3"><a href=""></a><span class="fu">## Aim</span></span>
+<span id="cb25-4"><a href=""></a></span>
+<span id="cb25-5"><a href=""></a>Here I present the aim of the study </span>
+<span id="cb25-6"><a href=""></a></span>
+<span id="cb25-7"><a href=""></a><span class="fu">## Methods</span></span>
+<span id="cb25-8"><a href=""></a></span>
+<span id="cb25-9"><a href=""></a>Here I present the methods used to pursue the aim</span>
+<span id="cb25-10"><a href=""></a></span>
+<span id="cb25-11"><a href=""></a><span class="fu">## Results</span></span>
+<span id="cb25-12"><a href=""></a></span>
+<span id="cb25-13"><a href=""></a>And here I present the results</span>
+<span id="cb25-14"><a href=""></a></span>
+<span id="cb25-15"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="tabset-output" class="slide level2">
+<h2>tabset: output</h2>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Aim</a></li><li><a href="#tabset-5-2">Methods</a></li><li><a href="#tabset-5-3">Results</a></li><li><a href="#tabset-5-4">Document layout</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<p>Here I present the aim of the study</p>
+</div>
+<div id="tabset-5-2">
+<p>Here I present the methods used to pursue the aim</p>
+</div>
+<div id="tabset-5-3">
+<p>And here I present the results</p>
+</div>
+<div id="tabset-5-4">
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1"></a></li><li><a href="#tabset-4-2"></a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="img/adavanced-layout.png" width="2041"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-4-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href=""></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb26-2"><a href=""></a>  html: </span>
+<span id="cb26-3"><a href=""></a>   toc: true</span>
+<span id="cb26-4"><a href=""></a>   toc-location: left</span>
+<span id="cb26-5"><a href=""></a>   grid:</span>
+<span id="cb26-6"><a href=""></a>    sidebar-width: 300px</span>
+<span id="cb26-7"><a href=""></a>    body-width: 900px</span>
+<span id="cb26-8"><a href=""></a>    margin-width: 300px</span>
+<span id="cb26-9"><a href=""></a>    gutter-width: 1.5rem</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
