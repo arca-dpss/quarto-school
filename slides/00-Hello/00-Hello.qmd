@@ -5,7 +5,7 @@ format:
   revealjs: 
     theme: mytheme.scss
     # logo: "www/psicostat.jpg"
-    footer: "The ARCA initiative summer school"
+    footer: "Hello, my name is quarto"
     transition: none
     transition-speed: slow
     background-transition: fade
@@ -337,9 +337,12 @@ knitr::include_graphics("img/banner-git.png")
 Option: **create a repository** 
 
 ```{r}
+#| fig-align: center
 knitr::include_graphics("img/clone-repo.png")
 ```
 
+
+Flag the option "Initialize the repository with a `README`
 
 ## Did it work? 
 
@@ -368,6 +371,26 @@ knitr::include_graphics("img/public.png")
 To explore the potentials of integrating code chunks, analyses, and results in one unique document, we need to work with a real dataset: 
 
 > [Download dataset from the course website](https://ottaviae.github.io/quarto-school/)
+
+
+```{r}
+#| echo: false
+#| eval: true
+
+data = read.csv("C:/Users/Ottavia/Documents/GitHub/quarto-school/data/dataset.csv")
+```
+
+
+Dataset details: 
+
+- ``r colnames(data)[1]``: Anxiety score — higher scores indicate higher levels of anxiety
+
+- ``r colnames(data)[2]``: Cognitive flexibility score — higher scores indicate greater flexibility
+
+- ``r colnames(data)[3]``: Whether the person practices mindfulness daily, `no` vs. `yes`
+
+- ``r colnames(data)[4]``: Type of sport activity practiced, `r unique(data[,4])`
+
 
 ## Your turn!
 
