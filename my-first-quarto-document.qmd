@@ -8,25 +8,27 @@ format:
     toc: true
     toc-title: My contents
     toc-location: left
+    code-tools: 
+     source: true
+     toggle: false
+     caption: This is my code
 editor: source
 lang: en
 execute: 
   echo: fenced
-code-fold: true
 ---
 
 # Hello!
 
-This is your very first quarto document 
+This is your very first quarto document
 
 ## A section
 
 You can organize it in sections
 
-### A subsections 
+### A subsection
 
 And subsections too!!
-
 
 ```{r}
 3 + 2
@@ -41,4 +43,3 @@ Here's another code chunk but I don't want you to see my code to obtain @fig-myp
 #| label: fig-myplot
 plot(rock$area, rock$peri)
 ```
-
