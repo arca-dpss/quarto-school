@@ -128,7 +128,7 @@ Create dynamic content with Python, R, Julia, and Observable
 
 ::: {.r-stack}
 
-:::{.fragment .fade-out}
+:::{.fragment .fade-in-then-out}
 
 ```{r}
 #| echo: false
@@ -163,6 +163,30 @@ Using a WYSIWYG:
 
 6. Import the plot in the document
 :::
+
+::: {.fragment .fade-in-then-out}
+Here.. just add `+ theme_light()` to the code
+
+```{r}
+#| echo: false
+#| out-width: 300%
+#| warning: false
+#| message: false
+
+
+library(ggplot2)
+library(plotly)
+
+ggplot(rock, 
+         aes(x = peri, y = perm, size = area)) + geom_point() + theme_light()
+
+```
+
+
+:::
+
+
+
 
 ::: {.fragment .fade-in-then-out}
 Plus, can be interactive:
