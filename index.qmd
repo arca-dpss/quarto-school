@@ -35,7 +35,7 @@ All course materials are freely available on this website:
 
 - [01-Baby steps](slides/01-Baby-steps/01-Baby-steps.html) Formatting with markdwon, integration with github pages & layout
 
-- Code chunks
+- [02-Code chunks](slides/02-Code-chunk/02-Code-chunk.html) How to control the excutable code
 
 - Presentations
 
