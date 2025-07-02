@@ -1,4 +1,0 @@
-[1,"==> quarto preview index.qmd --to html --no-watch-inputs --no-browse\n\n"]
-[1,"pandoc \n  to: html\n  output-file: index.html\n  standalone: true\n  self-contained: true\n  section-divs: true\n  html-math-method: mathjax\n  wrap: none\n  default-image-extension: png\n  toc: true\n  \nmetadata\n  document-css: false\n  link-citations: true\n  date-format: long\n  lang: en\n  title: Reporting using quarto\n  subtitle: Reproducibility has never been easier\n  institute: 'ARCA initiative: Unlocking Psychological Expertise for Academic and Business Success'\n  author: Ottavia M. Epifania\n  toc-location: left\n  \n"]
-[1,"Output created: index.html\n\nWatching files for changes\n"]
-[1,"Browse at http://localhost:4056/\n"]

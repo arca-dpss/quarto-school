@@ -1,0 +1,349 @@
+---
+title: "02-Code chunks"
+author: "Ottavia M. Epifania"
+format: 
+  revealjs: 
+    theme: mytheme.scss
+    # logo: "www/psicostat.jpg"
+    footer: "Code chunks"
+    transition: none
+    transition-speed: slow
+    background-transition: fade
+    slide-number: true
+    show-slide-number: print
+stand-alone: true
+editor_options: 
+  chunk_output_type: console
+execute: 
+  fig-align: center
+  out-width: 80%
+  echo: false
+code-annotations: hover
+---
+
+```{r}
+#| include: false
+#| label: setup
+
+library(emoji)
+library(ggplot2)
+library(knitr)
+library(kableExtra)
+```
+
+
+
+## Code chunk
+
+Open a new chunk code: `shift + ctrl + i` or <img width="10%" height="10%" src="img/new-chunk.png">
+
+. . . 
+
+```{r}
+knitr::include_graphics("img/code.png")
+```
+
+
+# Chunk options 
+
+## `echo`: Control the code display 
+
+
+::::{.columns}
+
+::: {.column width=50%}
+
+Code executed & Shown
+
+ 
+````
+```{r}`r ''`
+#| echo: true
+head(rock)
+```
+````
+```{r}
+head(rock)
+```
+
+
+:::
+
+::: {.column width=50%}
+
+Code executed & Not Shown
+
+````
+```{r}`r ''`
+#| echo: false
+head(rock)
+```
+````
+
+```{r}
+#| echo: true
+head(rock)
+```
+
+:::
+::::
+
+. . . 
+
+Code executed & entire chunk shown 
+
+````
+```{r}`r ''`
+#| echo: fenced
+head(rock)
+```
+````
+
+```{r}
+#| echo: fenced
+
+head(rock)
+```
+
+## `eval` & `include`: Control the execution of the code
+
+
+The code is not executed (but it is shown)
+
+````
+```{r}`r ''`
+#| eval: false
+#| echo: true
+head(rock)
+```
+````
+
+```{r}
+#| eval: false
+#| echo: true
+head(rock)
+```
+
+. . . 
+
+The code is executed, neither the code nor the results are show
+
+````
+```{r}`r ''`
+#| include: false
+head(rock)
+```
+````
+:::
+
+```{r}
+#| include: false
+
+head(rock)
+```
+
+
+## Other options 
+
+`warning: true`: (default) the warnings obtained from the code executed in the chunk are displayed 
+`message: true`: (default) the messages associated to the code (e.g., when you upload a package with `library(package)`)
+
+`error: false`: (default) If there is an error in the code,  knitting stops and the document will not be generated until the error is fixed
+
+`error: true`: If there is an error in the code,  the error message is shown in the document and the knitting goes on 
+
+
+## YAML: Overall chunk options
+
+Defined in the YAML, they are applied to all code chunks unless otherwise specified: 
+
+
+```{markdown}
+#| echo: true
+[...]
+execute: 
+  echo: fenced
+  message: true
+  error: true
+```
+
+
+. . . 
+
+If in one specific code we don't want to display the code: 
+
+````
+```{r}`r ''`
+#| echo: false
+head(rock)
+```
+````
+
+
+## YAML: Show all code
+
+```{markdown}
+#| echo: true
+[...]
+format: 
+  html:
+    code-tools: 
+     source: true
+     toggle: false
+     caption: This is my code
+```
+
+::: {.r-stack}
+
+::: {.fragment .fade-in-then-out}
+```{r}
+include_graphics("img/show1.png")
+```
+:::
+
+::: {.fragment .fade-in-then-out}
+```{r}
+include_graphics("img/show2.png")
+```
+:::
+:::
+
+## YAML: Code Fold 
+
+```{markdown}
+#| echo: true
+#| code-line-numbers: "|6-7|6|7|"
+[...]
+execute: 
+  echo: fenced
+  message: true
+  error: true
+code-fold: true
+code-summary: See this specific code
+```
+
+::: {.r-stack}
+
+::: {.fragment .fade-in-then-out}
+```{r}
+include_graphics("img/fold1.png")
+```
+:::
+
+::: {.fragment .fade-in-then-out}
+```{r}
+include_graphics("img/fold2.png")
+```
+:::
+:::
+
+# Images & Graphs
+
+## External images: `.png` and `.jpg`
+
+:::{.panel-tabset}
+
+## Code
+
+`@fig-peacock1 illustrates a peacock`
+
+```{markdown}
+#| echo: fenced
+#| eval: false
+#| out-width: 50%
+#| fig-align: center
+#| fig-cap: A peacock living the life
+#| fig-cap-location: bottom
+#| label: fig-peacock1
+#| code-line-numbers: "|3|4|5|6|7"
+knitr::include_graphics("img/peacock.png")
+```
+
+## Output
+
+@fig-peacock illustrates a peacock
+
+```{r}
+#| echo: fenced
+#| out-width: 50%
+#| fig-align: center
+#| fig-cap: A peacock living the life
+#| fig-cap-location: bottom
+#| label: fig-peacock
+#| code-line-numbers: "|3|4|5|6|7"
+knitr::include_graphics("img/peacock.png")
+```
+
+:::
+
+## Graphics 
+
+::: {.panel-tabset}
+
+## Code
+
+`@fig-mtcars1 illustrates a plot`
+
+```{markdown}
+#| echo: fenced
+#| out-width: 50%                                
+#| fig-align: center                             
+#| fig-cap: A graph from `mtcars`
+#| fig-cap-location: bottom
+#| label: fig-mtcars1
+#| code-line-numbers: "|2|3|4|5|6"
+ggplot(mtcars, aes(hp, mpg, color = factor(am))) +
+  geom_point() +
+  geom_smooth(formula = y ~ x, method = "loess") +
+  theme(legend.position = 'bottom')
+```
+
+
+
+## Output
+
+
+@fig-mtcars illustrates a plot
+
+```{r}
+#| out-width: 50%
+#| fig-align: center
+#| fig-cap: A graph from `mtcars`
+#| fig-cap-location: bottom
+#| label: fig-mtcars
+ggplot(mtcars,                                   
+       aes(hp, mpg, color = factor(am))) +       
+  geom_point() +
+  geom_smooth(formula = y ~ x, method = "loess") +
+  theme(legend.position = 'bottom')
+```
+
+:::
+
+# Tables
+
+## `kable` 
+
+
+```{r}
+#| echo: true
+kable(mtcars[1:6, 1:6])  # <1>
+```
+
+1. Basic table
+
+## kableExtra
+
+
+```{r}
+#| echo: true
+#| eval: false
+
+install.packages("kableExtra") # <1>
+library(kableExtra)            # <2>
+```
+
+
+1. Install package
+2. Upload package
+
