@@ -204,21 +204,11 @@ Ottavia M. Epifania
 
 </section>
 <section>
-<section id="r-datasets" class="title-slide slide level1 center">
-<h1>R datasets</h1>
-
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
-<p>Throughout this course, we are going to work with the internal dataset in R. Choose one!</p>
-<p>QUi metto il link al drive con i nomi dei dataset come su rmarkdown</p>
-</section></section>
-<section>
 <section id="yaml" class="title-slide slide level1 center">
 <h1>YAML</h1>
 
 </section>
-<section id="section-1" class="slide level2">
+<section id="section" class="slide level2">
 <h2></h2>
 <p>The overall appearance and behavior of the document is specified in the YAML:</p>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -524,7 +514,7 @@ lang: it
 <h2><code>commit</code> + <code>push</code></h2>
 
 <img data-src="img/commit1.png" style="width:70.0%" class="r-stretch"></section>
-<section id="section-2" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 
 <img data-src="img/commit2.png" style="width:70.0%" class="r-stretch"><p>Don’t forget to push!</p>
@@ -536,13 +526,26 @@ lang: it
 <img data-src="img/check-commit.png" style="width:80.0%" class="r-stretch"></section>
 <section id="your-turn" class="slide level2">
 <h2>Your turn!</h2>
+<p>Inside your R project for this school:</p>
+<ul>
+<li><p>Create a new HMTL quarto document that must contain:</p>
+<ul>
+<li>3 sections (level I heading), each with a subsection (level II heading)</li>
+<li>Place a picture with a caption in one of the subsection</li>
+<li>Place an unordered list</li>
+</ul></li>
+<li><p>Render the document in HTML</p></li>
+<li><p>Create the link to your newly created document in the <code>README.md</code></p></li>
+<li><p>Commit &amp; push the <code>.qmd</code> and <code>.html</code> of your newly created document</p></li>
+<li><p>Commit &amp; push the <code>.md</code> and <code>.html</code>of the <code>README</code> file</p></li>
+</ul>
 </section></section>
 <section>
 <section id="layout" class="title-slide slide level1 center">
 <h1>Layout</h1>
 
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <p>By default, the HTML document is set to take all the space in the page</p>
 <div class="cell">
@@ -552,8 +555,8 @@ lang: it
 </div>
 
 <img data-src="img/basic-layout.png" class="quarto-figure quarto-figure-center r-stretch" width="321"></section>
-<section id="custum-layout-with-grid" class="slide level2">
-<h2>Custum layout with grid</h2>
+<section id="custom-layout-with-grid" class="slide level2">
+<h2>Custom layout with grid</h2>
 <p>The page layout is based on a 12-unit (or 12-column) grid system, which can be used to divide the space accordingly:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href=""></a>::: {.grid}</span>
@@ -572,7 +575,7 @@ lang: it
 <span id="cb23-14"><a href=""></a></span>
 <span id="cb23-15"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>(Best for hmtl pages)</p>
+<p>(Best for HTML pages)</p>
 </section>
 <section id="columns" class="slide level2">
 <h2>Columns</h2>
@@ -633,22 +636,26 @@ lang: it
 <section id="tabset-output" class="slide level2">
 <h2>tabset: output</h2>
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Aim</a></li><li><a href="#tabset-5-2">Methods</a></li><li><a href="#tabset-5-3">Results</a></li><li><a href="#tabset-5-4">Document layout</a></li></ul>
-<div class="tab-content">
-<div id="tabset-5-1">
-<p>Here I present the aim of the study</p>
-</div>
-<div id="tabset-5-2">
-<p>Here I present the methods used to pursue the aim</p>
-</div>
-<div id="tabset-5-3">
-<p>And here I present the results</p>
-</div>
-<div id="tabset-5-4">
-<div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1"></a></li><li><a href="#tabset-4-2"></a></li></ul>
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Aim</a></li><li><a href="#tabset-4-2">Methods</a></li><li><a href="#tabset-4-3">Results</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1">
+<p>Here I present the aim of the study</p>
+</div>
+<div id="tabset-4-2">
+<p>Here I present the methods used to pursue the aim</p>
+</div>
+<div id="tabset-4-3">
+<p>And here I present the results</p>
+</div>
+</div>
+</div>
+</section>
+<section id="document-layout" class="slide level2">
+<h2>Document layout</h2>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">A document</a></li><li><a href="#tabset-5-2">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -659,7 +666,7 @@ lang: it
 </div>
 </div>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-5-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href=""></a><span class="an">format:</span><span class="co"> </span></span>
 <span id="cb26-2"><a href=""></a>  html: </span>
@@ -674,15 +681,36 @@ lang: it
 </div>
 </div>
 </div>
+</section>
+<section id="margins" class="slide level2">
+<h2>Margins</h2>
+<p>You can place anything in the margins of the documents!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href=""></a>:::{.column-margin}</span>
+<span id="cb27-2"><a href=""></a>I want this piscture displayed in the margin </span>
+<span id="cb27-3"><a href=""></a></span>
+<span id="cb27-4"><a href=""></a></span>
+<span id="cb27-5"><a href=""></a><span class="al">![](img/peacock.png)</span></span>
+<span id="cb27-6"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
-</div>
-</div>
-</div>
+<img data-src="img/margins.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
+<section id="your-turn-1" class="slide level2">
+<h2>Your turn</h2>
+<p>From the previous document:</p>
+<ul>
+<li>In one of the sections, create a grid dividing the space in 3 intervals of different width</li>
+<li>Place a picture in each of the three intervals</li>
+<li>In a subsection:</li>
+<li>Create a panel tabset with 3 tabs (like Introduction, Methods, Results)</li>
+<li>Add a picture in the margin of the document</li>
+</ul>
+
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>The ARCA initiative summer school</p>
+<p>Baby steps</p>
 </div>
 </div></div>
 

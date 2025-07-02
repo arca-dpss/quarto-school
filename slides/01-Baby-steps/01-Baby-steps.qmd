@@ -5,7 +5,7 @@ format:
   revealjs: 
     theme: mytheme.scss
     # logo: "www/psicostat.jpg"
-    footer: "The ARCA initiative summer school"
+    footer: "Baby steps"
     transition: none
     transition-speed: slow
     background-transition: fade
@@ -26,14 +26,7 @@ execute:
 library(emoji)
 ```
 
-# R datasets 
 
-## 
-
-Throughout this course, we are going to work with the internal dataset in R. Choose one!
-
-
-QUi metto il link al drive con i nomi dei dataset come su rmarkdown
 
 # YAML 
 
@@ -472,7 +465,22 @@ knitr::include_graphics("img/check-commit.png")
 
 ## Your turn!
 
-    
+Inside your R project for this school: 
+
+* Create a new HMTL quarto document that must contain:
+   + 3 sections (level I heading), each with a subsection (level II heading)
+   + Place a picture with a caption in one of the subsection
+   + Place an unordered list 
+
+* Render the document in HTML 
+
+* Create the link to your newly created document in the `README.md`
+
+* Commit & push the `.qmd` and `.html` of your newly created document
+
+* Commit & push the `.md` and `.html`of the `README` file 
+
+
 
 
 # Layout
@@ -497,7 +505,7 @@ format:
 knitr::include_graphics("img/basic-layout.png")
 ```
 
-## Custum layout with grid 
+## Custom layout with grid 
 
 The page layout is based on a 12-unit (or 12-column) grid system, which can be used to divide the space accordingly: 
 
@@ -521,7 +529,7 @@ Second column, 8/12 of the total width
 :::
 ```
 
-(Best for hmtl pages)
+(Best for HTML pages)
 
 ## Columns
 
@@ -611,20 +619,23 @@ Here I present the methods used to pursue the aim
 
 ## Results
 
+
 And here I present the results
+
+::: 
 
 ## Document layout 
 
 ::: {.panel-tabset}
 
-##
+## A document
 
 ```{r}
 knitr::include_graphics("img/adavanced-layout.png")
 ```
 
 
-##
+## Code
 
 ```{markdown}
 #| eval: false
@@ -643,4 +654,38 @@ format:
 
 :::
 
+
+## Margins 
+
+You can place anything in the margins of the documents!
+
+
+```{markdown}
+#| eval: false
+#| echo: true
+
+:::{.column-margin}
+I want this piscture displayed in the margin 
+
+
+![](img/peacock.png)
+:::
+```
+
+```{r}
+#| fig-align: center
+#| out-width: 90%
+knitr::include_graphics("img/margins.png")
+```
+
+
+## Your turn
+
+From the previous document:
+
+* In one of the sections, create a grid dividing the space in 3 intervals of different width 
+* Place a picture in each of the three intervals
+* In a subsection: 
+ + Create a panel tabset with 3 tabs (like Introduction, Methods, Results)
+ + Add a picture in the margin of the document
 
