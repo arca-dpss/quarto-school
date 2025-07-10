@@ -37,6 +37,8 @@ All course materials are freely available on this website:
 
 - [02-Code chunks](slides/02-Code-chunk/02-Code-chunk.html) How to control the excutable code
 
-- Presentations
+- [03-Presentations](slides/03-Presentation/03-Presentation.html)
+
+- 04-PDF with LaTeX
 
 Here you can download the [dataset](data/dataset.csv) that we are going to use throughout the course 
