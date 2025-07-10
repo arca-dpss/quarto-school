@@ -186,6 +186,30 @@
       margin-right: 0; 
     }
   </style>
+  <script src="02-Code-chunk_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+  <link href="02-Code-chunk_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+  <link href="02-Code-chunk_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+  <script src="02-Code-chunk_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+  <link href="02-Code-chunk_files/libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+
+  <script src="02-Code-chunk_files/libs/datatables-binding-0.33/datatables.js"></script>
+
+  <script src="02-Code-chunk_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+  <link href="02-Code-chunk_files/libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+
+  <link href="02-Code-chunk_files/libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+
+  <script src="02-Code-chunk_files/libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+
+  <link href="02-Code-chunk_files/libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+  <script src="02-Code-chunk_files/libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -233,6 +257,7 @@ Ottavia M. Epifania
 head(rock)
 ```</code></pre>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">head</span>(rock)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  area    peri     shape perm
 1 4990 2791.90 0.0903296  6.3
@@ -250,7 +275,6 @@ head(rock)
 head(rock)
 ```</code></pre>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">head</span>(rock)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  area    peri     shape perm
 1 4990 2791.90 0.0903296  6.3
@@ -269,9 +293,6 @@ head(rock)
 head(rock)
 ```</code></pre>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb7-2"><a href=""></a><span class="in">head(rock)</span></span>
-<span id="cb7-3"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  area    peri     shape perm
 1 4990 2791.90 0.0903296  6.3
@@ -293,7 +314,7 @@ head(rock)
 head(rock)
 ```</code></pre>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">head</span>(rock)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">head</span>(rock)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>The code is executed, neither the code nor the results are show</p>
@@ -301,24 +322,26 @@ head(rock)
 #| include: false
 head(rock)
 ```</code></pre>
-<p>:::</p>
 </div>
 </section>
 <section id="other-options" class="slide level2">
 <h2>Other options</h2>
-<p><code>warning: true</code>: (default) the warnings obtained from the code executed in the chunk are displayed <code>message: true</code>: (default) the messages associated to the code (e.g., when you upload a package with <code>library(package)</code>)</p>
-<p><code>error: false</code>: (default) If there is an error in the code, knitting stops and the document will not be generated until the error is fixed</p>
-<p><code>error: true</code>: If there is an error in the code, the error message is shown in the document and the knitting goes on</p>
+<ul>
+<li><code>warning: true</code> (default) the warnings obtained from the code executed in the chunk are displayed</li>
+<li><code>message: true</code> (default) the messages associated to the code (e.g., when you upload a package with <code>library(package)</code>)</li>
+<li><code>error: false</code> (default) If there is an error in the code, knitting stops and the document will not be generated until the error is fixed</li>
+<li><code>error: true</code> If there is an error in the code, the error message is shown in the document and the knitting goes on</li>
+</ul>
 </section>
 <section id="yaml-overall-chunk-options" class="slide level2">
 <h2>YAML: Overall chunk options</h2>
 <p>Defined in the YAML, they are applied to all code chunks unless otherwise specified:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href=""></a><span class="co">[</span><span class="ot">...</span><span class="co">]</span></span>
-<span id="cb12-2"><a href=""></a>execute: </span>
-<span id="cb12-3"><a href=""></a>  echo: fenced</span>
-<span id="cb12-4"><a href=""></a>  message: true</span>
-<span id="cb12-5"><a href=""></a>  error: true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href=""></a><span class="co">[</span><span class="ot">...</span><span class="co">]</span></span>
+<span id="cb11-2"><a href=""></a>execute: </span>
+<span id="cb11-3"><a href=""></a>  echo: fenced</span>
+<span id="cb11-4"><a href=""></a>  message: true</span>
+<span id="cb11-5"><a href=""></a>  error: true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>If in one specific code we don’t want to display the code:</p>
@@ -331,13 +354,13 @@ head(rock)
 <section id="yaml-show-all-code" class="slide level2">
 <h2>YAML: Show all code</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href=""></a><span class="co">[</span><span class="ot">...</span><span class="co">]</span></span>
-<span id="cb14-2"><a href=""></a>format: </span>
-<span id="cb14-3"><a href=""></a>  html:</span>
-<span id="cb14-4"><a href=""></a>    code-tools: </span>
-<span id="cb14-5"><a href=""></a>     source: true</span>
-<span id="cb14-6"><a href=""></a>     toggle: false</span>
-<span id="cb14-7"><a href=""></a>     caption: This is my code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href=""></a><span class="co">[</span><span class="ot">...</span><span class="co">]</span></span>
+<span id="cb13-2"><a href=""></a>format: </span>
+<span id="cb13-3"><a href=""></a>  html:</span>
+<span id="cb13-4"><a href=""></a>    code-tools: </span>
+<span id="cb13-5"><a href=""></a>     source: true</span>
+<span id="cb13-6"><a href=""></a>     toggle: false</span>
+<span id="cb13-7"><a href=""></a>     caption: This is my code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="r-stack">
 <div class="fragment fade-in-then-out">
@@ -367,13 +390,13 @@ head(rock)
 <section id="yaml-code-fold" class="slide level2">
 <h2>YAML: Code Fold</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="|6-7|6|7|"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href=""></a><span class="co">[</span><span class="ot">...</span><span class="co">]</span></span>
-<span id="cb15-2"><a href=""></a>execute: </span>
-<span id="cb15-3"><a href=""></a>  echo: fenced</span>
-<span id="cb15-4"><a href=""></a>  message: true</span>
-<span id="cb15-5"><a href=""></a>  error: true</span>
-<span id="cb15-6"><a href=""></a>code-fold: true</span>
-<span id="cb15-7"><a href=""></a>code-summary: See this specific code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14" data-code-line-numbers="|6-7|6|7|"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href=""></a><span class="co">[</span><span class="ot">...</span><span class="co">]</span></span>
+<span id="cb14-2"><a href=""></a>execute: </span>
+<span id="cb14-3"><a href=""></a>  echo: fenced</span>
+<span id="cb14-4"><a href=""></a>  message: true</span>
+<span id="cb14-5"><a href=""></a>  error: true</span>
+<span id="cb14-6"><a href=""></a>code-fold: true</span>
+<span id="cb14-7"><a href=""></a>code-summary: See this specific code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="r-stack">
 <div class="fragment fade-in-then-out">
@@ -381,7 +404,7 @@ head(rock)
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="img/fold1.png" width="510"></p>
+<p><img data-src="img/fold1.png" style="width:110.0%"></p>
 </figure>
 </div>
 </div>
@@ -392,7 +415,7 @@ head(rock)
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="img/fold2.png" width="477"></p>
+<p><img data-src="img/fold2.png" style="width:110.0%"></p>
 </figure>
 </div>
 </div>
@@ -413,32 +436,32 @@ head(rock)
 <div id="tabset-1-1">
 <p><code>@fig-peacock1 illustrates a peacock</code></p>
 <div class="cell fig-cap-location-bottom" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb16" data-cap-location="bottom" data-code-line-numbers="|3|4|5|6|7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href=""></a><span class="in">```{markdown}</span></span>
-<span id="cb16-2"><a href=""></a><span class="in">#| eval: false</span></span>
-<span id="cb16-3"><a href=""></a><span class="in">#| out-width: 50%</span></span>
-<span id="cb16-4"><a href=""></a><span class="in">#| fig-align: center</span></span>
-<span id="cb16-5"><a href=""></a><span class="in">#| fig-cap: A peacock living the life</span></span>
-<span id="cb16-6"><a href=""></a><span class="in">#| fig-cap-location: bottom</span></span>
-<span id="cb16-7"><a href=""></a><span class="in">#| label: fig-peacock1</span></span>
-<span id="cb16-8"><a href=""></a><span class="in">#| code-line-numbers: "|3|4|5|6|7"</span></span>
-<span id="cb16-9"><a href=""></a><span class="in">knitr::include_graphics("img/peacock.png")</span></span>
-<span id="cb16-10"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15" data-cap-location="bottom" data-code-line-numbers="|3|4|5|6|7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href=""></a><span class="in">```{markdown}</span></span>
+<span id="cb15-2"><a href=""></a><span class="in">#| eval: false</span></span>
+<span id="cb15-3"><a href=""></a><span class="in">#| out-width: 50%</span></span>
+<span id="cb15-4"><a href=""></a><span class="in">#| fig-align: center</span></span>
+<span id="cb15-5"><a href=""></a><span class="in">#| fig-cap: A peacock living the life</span></span>
+<span id="cb15-6"><a href=""></a><span class="in">#| fig-cap-location: bottom</span></span>
+<span id="cb15-7"><a href=""></a><span class="in">#| label: fig-peacock1</span></span>
+<span id="cb15-8"><a href=""></a><span class="in">#| code-line-numbers: "|3|4|5|6|7"</span></span>
+<span id="cb15-9"><a href=""></a><span class="in">knitr::include_graphics("img/peacock.png")</span></span>
+<span id="cb15-10"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-2">
 <p><a href="#/fig-peacock" class="quarto-xref">Figure&nbsp;1</a> illustrates a peacock</p>
 <div class="cell fig-cap-location-bottom" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb17" data-cap-location="bottom" data-code-line-numbers="|3|4|5|6|7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb17-2"><a href=""></a><span class="in">#| out-width: 50%</span></span>
-<span id="cb17-3"><a href=""></a><span class="in">#| fig-align: center</span></span>
-<span id="cb17-4"><a href=""></a><span class="in">#| fig-cap: A peacock living the life</span></span>
-<span id="cb17-5"><a href=""></a><span class="in">#| fig-cap-location: bottom</span></span>
-<span id="cb17-6"><a href=""></a><span class="in">#| label: fig-peacock</span></span>
-<span id="cb17-7"><a href=""></a><span class="in">#| code-line-numbers: "|3|4|5|6|7"</span></span>
-<span id="cb17-8"><a href=""></a><span class="in">knitr::include_graphics("img/peacock.png")</span></span>
-<span id="cb17-9"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16" data-cap-location="bottom" data-code-line-numbers="|3|4|5|6|7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb16-2"><a href=""></a><span class="in">#| out-width: 50%</span></span>
+<span id="cb16-3"><a href=""></a><span class="in">#| fig-align: center</span></span>
+<span id="cb16-4"><a href=""></a><span class="in">#| fig-cap: A peacock living the life</span></span>
+<span id="cb16-5"><a href=""></a><span class="in">#| fig-cap-location: bottom</span></span>
+<span id="cb16-6"><a href=""></a><span class="in">#| label: fig-peacock</span></span>
+<span id="cb16-7"><a href=""></a><span class="in">#| code-line-numbers: "|3|4|5|6|7"</span></span>
+<span id="cb16-8"><a href=""></a><span class="in">knitr::include_graphics("img/peacock.png")</span></span>
+<span id="cb16-9"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-peacock" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center" data-cap-location="bottom">
+<div id="fig-peacock" class="quarto-float quarto-figure quarto-figure-center" data-cap-location="bottom" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-peacock-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img data-src="img/peacock.png" class="quarto-figure quarto-figure-center" style="width:50.0%">
@@ -462,25 +485,38 @@ Figure&nbsp;1: A peacock living the life
 <div id="tabset-2-1">
 <p><code>@fig-mtcars1 illustrates a plot</code></p>
 <div class="cell fig-cap-location-bottom" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb18" data-cap-location="bottom" data-code-line-numbers="|2|3|4|5|6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href=""></a><span class="in">```{markdown}</span></span>
-<span id="cb18-2"><a href=""></a><span class="in">#| out-width: 50%</span></span>
-<span id="cb18-3"><a href=""></a><span class="in">#| fig-align: center</span></span>
-<span id="cb18-4"><a href=""></a><span class="in">#| fig-cap: A graph from `mtcars`</span></span>
-<span id="cb18-5"><a href=""></a><span class="in">#| fig-cap-location: bottom</span></span>
-<span id="cb18-6"><a href=""></a><span class="in">#| label: fig-mtcars1</span></span>
-<span id="cb18-7"><a href=""></a><span class="in">#| code-line-numbers: "|2|3|4|5|6"</span></span>
-<span id="cb18-8"><a href=""></a><span class="in">ggplot(mtcars, aes(hp, mpg, color = factor(am))) +</span></span>
-<span id="cb18-9"><a href=""></a><span class="in">  geom_point() +</span></span>
-<span id="cb18-10"><a href=""></a><span class="in">  geom_smooth(formula = y ~ x, method = "loess") +</span></span>
-<span id="cb18-11"><a href=""></a><span class="in">  theme(legend.position = 'bottom')</span></span>
-<span id="cb18-12"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17" data-cap-location="bottom" data-code-line-numbers="|2|3|4|5|6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href=""></a><span class="in">```{markdown}</span></span>
+<span id="cb17-2"><a href=""></a><span class="in">#| out-width: 50%</span></span>
+<span id="cb17-3"><a href=""></a><span class="in">#| fig-align: center</span></span>
+<span id="cb17-4"><a href=""></a><span class="in">#| fig-cap: A graph from `mtcars`</span></span>
+<span id="cb17-5"><a href=""></a><span class="in">#| fig-cap-location: bottom</span></span>
+<span id="cb17-6"><a href=""></a><span class="in">#| label: fig-mtcars1</span></span>
+<span id="cb17-7"><a href=""></a><span class="in">#| code-line-numbers: "|2|3|4|5|6"</span></span>
+<span id="cb17-8"><a href=""></a><span class="in">ggplot(mtcars, aes(hp, mpg, color = factor(am))) +</span></span>
+<span id="cb17-9"><a href=""></a><span class="in">  geom_point() +</span></span>
+<span id="cb17-10"><a href=""></a><span class="in">  geom_smooth(formula = y ~ x, method = "loess") +</span></span>
+<span id="cb17-11"><a href=""></a><span class="in">  theme(legend.position = 'bottom')</span></span>
+<span id="cb17-12"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-2-2">
 <p><a href="#/fig-mtcars" class="quarto-xref">Figure&nbsp;2</a> illustrates a plot</p>
 <div class="cell fig-cap-location-bottom" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb18" data-cap-location="bottom" data-code-line-numbers="|2|3|4|5|6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb18-2"><a href=""></a><span class="in">#| out-width: 50%</span></span>
+<span id="cb18-3"><a href=""></a><span class="in">#| fig-align: center</span></span>
+<span id="cb18-4"><a href=""></a><span class="in">#| fig-cap: A graph from `mtcars`</span></span>
+<span id="cb18-5"><a href=""></a><span class="in">#| fig-cap-location: bottom</span></span>
+<span id="cb18-6"><a href=""></a><span class="in">#| label: fig-mtcars</span></span>
+<span id="cb18-7"><a href=""></a><span class="in">#| code-line-numbers: "|2|3|4|5|6"</span></span>
+<span id="cb18-8"><a href=""></a><span class="in">ggplot(mtcars,                                   </span></span>
+<span id="cb18-9"><a href=""></a><span class="in">       aes(hp, mpg, color = factor(am))) +       </span></span>
+<span id="cb18-10"><a href=""></a><span class="in">  geom_point() +</span></span>
+<span id="cb18-11"><a href=""></a><span class="in">  geom_smooth(formula = y ~ x, method = "loess") +</span></span>
+<span id="cb18-12"><a href=""></a><span class="in">  theme(legend.position = 'bottom')</span></span>
+<span id="cb18-13"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-mtcars" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center" data-cap-location="bottom">
+<div id="fig-mtcars" class="quarto-float quarto-figure quarto-figure-center" data-cap-location="bottom" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-mtcars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img data-src="02-Code-chunk_files/figure-revealjs/fig-mtcars-1.png" class="quarto-figure quarto-figure-center" style="width:50.0%">
@@ -504,17 +540,33 @@ Figure&nbsp;2: A graph from <code>mtcars</code>
 <section id="kable" class="slide level2">
 <h2><code>kable</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1">1</button><span id="annotated-cell-10-1" class="code-annotation-target"><a href="#annotated-cell-10-1"></a><span class="fu">kable</span>(mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>])</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1"></a><span class="do">##</span></span>
+<span id="annotated-cell-9-2"><a href="#annotated-cell-9-2"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1">1</button><span id="annotated-cell-9-3" class="code-annotation-target"><a href="#annotated-cell-9-3"></a><span class="fu">kable</span>(mtcars)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-10" data-code-lines="1" data-code-annotation="1">Basic table</span>
+<span data-code-cell="annotated-cell-9" data-code-lines="3" data-code-annotation="1">Basic table</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<table class="caption-top">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 5%">
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 6%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -524,6 +576,11 @@ Figure&nbsp;2: A graph from <code>mtcars</code>
 <th style="text-align: right;">hp</th>
 <th style="text-align: right;">drat</th>
 <th style="text-align: right;">wt</th>
+<th style="text-align: right;">qsec</th>
+<th style="text-align: right;">vs</th>
+<th style="text-align: right;">am</th>
+<th style="text-align: right;">gear</th>
+<th style="text-align: right;">carb</th>
 </tr>
 </thead>
 <tbody>
@@ -531,80 +588,2389 @@ Figure&nbsp;2: A graph from <code>mtcars</code>
 <td style="text-align: left;">Mazda RX4</td>
 <td style="text-align: right;">21.0</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">160</td>
+<td style="text-align: right;">160.0</td>
 <td style="text-align: right;">110</td>
 <td style="text-align: right;">3.90</td>
 <td style="text-align: right;">2.620</td>
+<td style="text-align: right;">16.46</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Mazda RX4 Wag</td>
 <td style="text-align: right;">21.0</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">160</td>
+<td style="text-align: right;">160.0</td>
 <td style="text-align: right;">110</td>
 <td style="text-align: right;">3.90</td>
 <td style="text-align: right;">2.875</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Datsun 710</td>
 <td style="text-align: right;">22.8</td>
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">108</td>
+<td style="text-align: right;">108.0</td>
 <td style="text-align: right;">93</td>
 <td style="text-align: right;">3.85</td>
 <td style="text-align: right;">2.320</td>
+<td style="text-align: right;">18.61</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Hornet 4 Drive</td>
 <td style="text-align: right;">21.4</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">258</td>
+<td style="text-align: right;">258.0</td>
 <td style="text-align: right;">110</td>
 <td style="text-align: right;">3.08</td>
 <td style="text-align: right;">3.215</td>
+<td style="text-align: right;">19.44</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Hornet Sportabout</td>
 <td style="text-align: right;">18.7</td>
 <td style="text-align: right;">8</td>
-<td style="text-align: right;">360</td>
+<td style="text-align: right;">360.0</td>
 <td style="text-align: right;">175</td>
 <td style="text-align: right;">3.15</td>
 <td style="text-align: right;">3.440</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Valiant</td>
 <td style="text-align: right;">18.1</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">225</td>
+<td style="text-align: right;">225.0</td>
 <td style="text-align: right;">105</td>
 <td style="text-align: right;">2.76</td>
 <td style="text-align: right;">3.460</td>
+<td style="text-align: right;">20.22</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Duster 360</td>
+<td style="text-align: right;">14.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360.0</td>
+<td style="text-align: right;">245</td>
+<td style="text-align: right;">3.21</td>
+<td style="text-align: right;">3.570</td>
+<td style="text-align: right;">15.84</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 240D</td>
+<td style="text-align: right;">24.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">146.7</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">3.69</td>
+<td style="text-align: right;">3.190</td>
+<td style="text-align: right;">20.00</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 230</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">140.8</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.150</td>
+<td style="text-align: right;">22.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 280</td>
+<td style="text-align: right;">19.2</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">167.6</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">18.30</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 280C</td>
+<td style="text-align: right;">17.8</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">167.6</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">18.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 450SE</td>
+<td style="text-align: right;">16.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">4.070</td>
+<td style="text-align: right;">17.40</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 450SL</td>
+<td style="text-align: right;">17.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">3.730</td>
+<td style="text-align: right;">17.60</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 450SLC</td>
+<td style="text-align: right;">15.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">3.780</td>
+<td style="text-align: right;">18.00</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cadillac Fleetwood</td>
+<td style="text-align: right;">10.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">472.0</td>
+<td style="text-align: right;">205</td>
+<td style="text-align: right;">2.93</td>
+<td style="text-align: right;">5.250</td>
+<td style="text-align: right;">17.98</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lincoln Continental</td>
+<td style="text-align: right;">10.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">460.0</td>
+<td style="text-align: right;">215</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">5.424</td>
+<td style="text-align: right;">17.82</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chrysler Imperial</td>
+<td style="text-align: right;">14.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">440.0</td>
+<td style="text-align: right;">230</td>
+<td style="text-align: right;">3.23</td>
+<td style="text-align: right;">5.345</td>
+<td style="text-align: right;">17.42</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fiat 128</td>
+<td style="text-align: right;">32.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">78.7</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">2.200</td>
+<td style="text-align: right;">19.47</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Honda Civic</td>
+<td style="text-align: right;">30.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">75.7</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">4.93</td>
+<td style="text-align: right;">1.615</td>
+<td style="text-align: right;">18.52</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Toyota Corolla</td>
+<td style="text-align: right;">33.9</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">71.1</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">4.22</td>
+<td style="text-align: right;">1.835</td>
+<td style="text-align: right;">19.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Toyota Corona</td>
+<td style="text-align: right;">21.5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">120.1</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: right;">3.70</td>
+<td style="text-align: right;">2.465</td>
+<td style="text-align: right;">20.01</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dodge Challenger</td>
+<td style="text-align: right;">15.5</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">318.0</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">2.76</td>
+<td style="text-align: right;">3.520</td>
+<td style="text-align: right;">16.87</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AMC Javelin</td>
+<td style="text-align: right;">15.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">304.0</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">3.435</td>
+<td style="text-align: right;">17.30</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Camaro Z28</td>
+<td style="text-align: right;">13.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">350.0</td>
+<td style="text-align: right;">245</td>
+<td style="text-align: right;">3.73</td>
+<td style="text-align: right;">3.840</td>
+<td style="text-align: right;">15.41</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pontiac Firebird</td>
+<td style="text-align: right;">19.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">400.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">3.845</td>
+<td style="text-align: right;">17.05</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fiat X1-9</td>
+<td style="text-align: right;">27.3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">79.0</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">1.935</td>
+<td style="text-align: right;">18.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Porsche 914-2</td>
+<td style="text-align: right;">26.0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">120.3</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">4.43</td>
+<td style="text-align: right;">2.140</td>
+<td style="text-align: right;">16.70</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lotus Europa</td>
+<td style="text-align: right;">30.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">95.1</td>
+<td style="text-align: right;">113</td>
+<td style="text-align: right;">3.77</td>
+<td style="text-align: right;">1.513</td>
+<td style="text-align: right;">16.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ford Pantera L</td>
+<td style="text-align: right;">15.8</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">351.0</td>
+<td style="text-align: right;">264</td>
+<td style="text-align: right;">4.22</td>
+<td style="text-align: right;">3.170</td>
+<td style="text-align: right;">14.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ferrari Dino</td>
+<td style="text-align: right;">19.7</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">145.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.62</td>
+<td style="text-align: right;">2.770</td>
+<td style="text-align: right;">15.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Maserati Bora</td>
+<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">301.0</td>
+<td style="text-align: right;">335</td>
+<td style="text-align: right;">3.54</td>
+<td style="text-align: right;">3.570</td>
+<td style="text-align: right;">14.60</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Volvo 142E</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">121.0</td>
+<td style="text-align: right;">109</td>
+<td style="text-align: right;">4.11</td>
+<td style="text-align: right;">2.780</td>
+<td style="text-align: right;">18.60</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-<section id="kableextra" class="slide level2">
-<h2>kableExtra</h2>
+<section id="section" class="slide level2">
+<h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-11"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="1">1</button><span id="annotated-cell-11-1" class="code-annotation-target"><a href="#annotated-cell-11-1"></a><span class="fu">install.packages</span>(<span class="st">"kableExtra"</span>)</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="2">2</button><span id="annotated-cell-11-2" class="code-annotation-target"><a href="#annotated-cell-11-2"></a><span class="fu">library</span>(kableExtra)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1"></a><span class="co"># kableExtra</span></span>
+<span id="annotated-cell-10-2"><a href="#annotated-cell-10-2"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1">1</button><span id="annotated-cell-10-3" class="code-annotation-target"><a href="#annotated-cell-10-3"></a><span class="co"># install.packages("kableExtra")</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="2">2</button><span id="annotated-cell-10-4" class="code-annotation-target"><a href="#annotated-cell-10-4"></a><span class="fu">library</span>(kableExtra)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-11" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-11" data-code-lines="1" data-code-annotation="1">Install package</span>
+<span data-code-cell="annotated-cell-10" data-code-lines="3" data-code-annotation="1">Install package (Uncomment if you need to install the package)</span>
 </dd>
-<dt data-target-cell="annotated-cell-11" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-10" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-11" data-code-lines="2" data-code-annotation="2">Upload package</span>
+<span data-code-cell="annotated-cell-10" data-code-lines="4" data-code-annotation="2">Upload package</span>
 </dd>
 </dl>
 </div>
 </div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:450px; overflow-x: scroll; width:100%; ">
+<table class="caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mpg</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">cyl</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">disp</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">hp</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">drat</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">wt</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">qsec</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">vs</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">am</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">gear</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mazda RX4</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160.0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.620</td>
+<td style="text-align: right;">16.46</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mazda RX4 Wag</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160.0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.875</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Datsun 710</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">108.0</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">3.85</td>
+<td style="text-align: right;">2.320</td>
+<td style="text-align: right;">18.61</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hornet 4 Drive</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">258.0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">3.215</td>
+<td style="text-align: right;">19.44</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hornet Sportabout</td>
+<td style="text-align: right;">18.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Valiant</td>
+<td style="text-align: right;">18.1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">225.0</td>
+<td style="text-align: right;">105</td>
+<td style="text-align: right;">2.76</td>
+<td style="text-align: right;">3.460</td>
+<td style="text-align: right;">20.22</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Duster 360</td>
+<td style="text-align: right;">14.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360.0</td>
+<td style="text-align: right;">245</td>
+<td style="text-align: right;">3.21</td>
+<td style="text-align: right;">3.570</td>
+<td style="text-align: right;">15.84</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 240D</td>
+<td style="text-align: right;">24.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">146.7</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">3.69</td>
+<td style="text-align: right;">3.190</td>
+<td style="text-align: right;">20.00</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 230</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">140.8</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.150</td>
+<td style="text-align: right;">22.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 280</td>
+<td style="text-align: right;">19.2</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">167.6</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">18.30</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 280C</td>
+<td style="text-align: right;">17.8</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">167.6</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">18.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 450SE</td>
+<td style="text-align: right;">16.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">4.070</td>
+<td style="text-align: right;">17.40</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 450SL</td>
+<td style="text-align: right;">17.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">3.730</td>
+<td style="text-align: right;">17.60</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 450SLC</td>
+<td style="text-align: right;">15.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">3.780</td>
+<td style="text-align: right;">18.00</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cadillac Fleetwood</td>
+<td style="text-align: right;">10.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">472.0</td>
+<td style="text-align: right;">205</td>
+<td style="text-align: right;">2.93</td>
+<td style="text-align: right;">5.250</td>
+<td style="text-align: right;">17.98</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lincoln Continental</td>
+<td style="text-align: right;">10.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">460.0</td>
+<td style="text-align: right;">215</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">5.424</td>
+<td style="text-align: right;">17.82</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chrysler Imperial</td>
+<td style="text-align: right;">14.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">440.0</td>
+<td style="text-align: right;">230</td>
+<td style="text-align: right;">3.23</td>
+<td style="text-align: right;">5.345</td>
+<td style="text-align: right;">17.42</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fiat 128</td>
+<td style="text-align: right;">32.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">78.7</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">2.200</td>
+<td style="text-align: right;">19.47</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Honda Civic</td>
+<td style="text-align: right;">30.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">75.7</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">4.93</td>
+<td style="text-align: right;">1.615</td>
+<td style="text-align: right;">18.52</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Toyota Corolla</td>
+<td style="text-align: right;">33.9</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">71.1</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">4.22</td>
+<td style="text-align: right;">1.835</td>
+<td style="text-align: right;">19.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Toyota Corona</td>
+<td style="text-align: right;">21.5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">120.1</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: right;">3.70</td>
+<td style="text-align: right;">2.465</td>
+<td style="text-align: right;">20.01</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dodge Challenger</td>
+<td style="text-align: right;">15.5</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">318.0</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">2.76</td>
+<td style="text-align: right;">3.520</td>
+<td style="text-align: right;">16.87</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AMC Javelin</td>
+<td style="text-align: right;">15.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">304.0</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">3.435</td>
+<td style="text-align: right;">17.30</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Camaro Z28</td>
+<td style="text-align: right;">13.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">350.0</td>
+<td style="text-align: right;">245</td>
+<td style="text-align: right;">3.73</td>
+<td style="text-align: right;">3.840</td>
+<td style="text-align: right;">15.41</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pontiac Firebird</td>
+<td style="text-align: right;">19.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">400.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">3.845</td>
+<td style="text-align: right;">17.05</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fiat X1-9</td>
+<td style="text-align: right;">27.3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">79.0</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">1.935</td>
+<td style="text-align: right;">18.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Porsche 914-2</td>
+<td style="text-align: right;">26.0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">120.3</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">4.43</td>
+<td style="text-align: right;">2.140</td>
+<td style="text-align: right;">16.70</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lotus Europa</td>
+<td style="text-align: right;">30.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">95.1</td>
+<td style="text-align: right;">113</td>
+<td style="text-align: right;">3.77</td>
+<td style="text-align: right;">1.513</td>
+<td style="text-align: right;">16.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ford Pantera L</td>
+<td style="text-align: right;">15.8</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">351.0</td>
+<td style="text-align: right;">264</td>
+<td style="text-align: right;">4.22</td>
+<td style="text-align: right;">3.170</td>
+<td style="text-align: right;">14.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ferrari Dino</td>
+<td style="text-align: right;">19.7</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">145.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.62</td>
+<td style="text-align: right;">2.770</td>
+<td style="text-align: right;">15.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Maserati Bora</td>
+<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">301.0</td>
+<td style="text-align: right;">335</td>
+<td style="text-align: right;">3.54</td>
+<td style="text-align: right;">3.570</td>
+<td style="text-align: right;">14.60</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Volvo 142E</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">121.0</td>
+<td style="text-align: right;">109</td>
+<td style="text-align: right;">4.11</td>
+<td style="text-align: right;">2.780</td>
+<td style="text-align: right;">18.60</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
 
+</div>
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-11"><pre class="sourceCode numberSource markdown code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-11-1"><a href="#annotated-cell-11-1"></a><span class="in">```{r}</span></span>
+<span id="annotated-cell-11-2"><a href="#annotated-cell-11-2"></a><span class="in"># </span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="1">1</button><span id="annotated-cell-11-3" class="code-annotation-target"><a href="#annotated-cell-11-3"></a><span class="in">kable(mtcars) %&gt;%</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="2">2</button><span id="annotated-cell-11-4" class="code-annotation-target"><a href="#annotated-cell-11-4"></a><span class="in">  scroll_box(height = "400px", width = "100%")</span></span>
+<span id="annotated-cell-11-5"><a href="#annotated-cell-11-5"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-11" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="3" data-code-annotation="1">Produce the table with <code>kable</code>. The symbol <code>%&gt;%</code> is called “pipe”, can be obtained with <code>shift + ctrl + m</code></span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="4" data-code-annotation="2">Define the height and with of the scroll box</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
+<table class="caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mpg</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">cyl</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">disp</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">hp</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">drat</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">wt</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">qsec</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">vs</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">am</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">gear</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mazda RX4</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160.0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.620</td>
+<td style="text-align: right;">16.46</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mazda RX4 Wag</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160.0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.875</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Datsun 710</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">108.0</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">3.85</td>
+<td style="text-align: right;">2.320</td>
+<td style="text-align: right;">18.61</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hornet 4 Drive</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">258.0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">3.215</td>
+<td style="text-align: right;">19.44</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hornet Sportabout</td>
+<td style="text-align: right;">18.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Valiant</td>
+<td style="text-align: right;">18.1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">225.0</td>
+<td style="text-align: right;">105</td>
+<td style="text-align: right;">2.76</td>
+<td style="text-align: right;">3.460</td>
+<td style="text-align: right;">20.22</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Duster 360</td>
+<td style="text-align: right;">14.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360.0</td>
+<td style="text-align: right;">245</td>
+<td style="text-align: right;">3.21</td>
+<td style="text-align: right;">3.570</td>
+<td style="text-align: right;">15.84</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 240D</td>
+<td style="text-align: right;">24.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">146.7</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">3.69</td>
+<td style="text-align: right;">3.190</td>
+<td style="text-align: right;">20.00</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 230</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">140.8</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.150</td>
+<td style="text-align: right;">22.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 280</td>
+<td style="text-align: right;">19.2</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">167.6</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">18.30</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 280C</td>
+<td style="text-align: right;">17.8</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">167.6</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">18.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 450SE</td>
+<td style="text-align: right;">16.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">4.070</td>
+<td style="text-align: right;">17.40</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 450SL</td>
+<td style="text-align: right;">17.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">3.730</td>
+<td style="text-align: right;">17.60</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 450SLC</td>
+<td style="text-align: right;">15.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">3.780</td>
+<td style="text-align: right;">18.00</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cadillac Fleetwood</td>
+<td style="text-align: right;">10.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">472.0</td>
+<td style="text-align: right;">205</td>
+<td style="text-align: right;">2.93</td>
+<td style="text-align: right;">5.250</td>
+<td style="text-align: right;">17.98</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lincoln Continental</td>
+<td style="text-align: right;">10.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">460.0</td>
+<td style="text-align: right;">215</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">5.424</td>
+<td style="text-align: right;">17.82</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chrysler Imperial</td>
+<td style="text-align: right;">14.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">440.0</td>
+<td style="text-align: right;">230</td>
+<td style="text-align: right;">3.23</td>
+<td style="text-align: right;">5.345</td>
+<td style="text-align: right;">17.42</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fiat 128</td>
+<td style="text-align: right;">32.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">78.7</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">2.200</td>
+<td style="text-align: right;">19.47</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Honda Civic</td>
+<td style="text-align: right;">30.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">75.7</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">4.93</td>
+<td style="text-align: right;">1.615</td>
+<td style="text-align: right;">18.52</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Toyota Corolla</td>
+<td style="text-align: right;">33.9</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">71.1</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">4.22</td>
+<td style="text-align: right;">1.835</td>
+<td style="text-align: right;">19.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Toyota Corona</td>
+<td style="text-align: right;">21.5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">120.1</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: right;">3.70</td>
+<td style="text-align: right;">2.465</td>
+<td style="text-align: right;">20.01</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dodge Challenger</td>
+<td style="text-align: right;">15.5</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">318.0</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">2.76</td>
+<td style="text-align: right;">3.520</td>
+<td style="text-align: right;">16.87</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AMC Javelin</td>
+<td style="text-align: right;">15.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">304.0</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">3.435</td>
+<td style="text-align: right;">17.30</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Camaro Z28</td>
+<td style="text-align: right;">13.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">350.0</td>
+<td style="text-align: right;">245</td>
+<td style="text-align: right;">3.73</td>
+<td style="text-align: right;">3.840</td>
+<td style="text-align: right;">15.41</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pontiac Firebird</td>
+<td style="text-align: right;">19.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">400.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">3.845</td>
+<td style="text-align: right;">17.05</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fiat X1-9</td>
+<td style="text-align: right;">27.3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">79.0</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">1.935</td>
+<td style="text-align: right;">18.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Porsche 914-2</td>
+<td style="text-align: right;">26.0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">120.3</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">4.43</td>
+<td style="text-align: right;">2.140</td>
+<td style="text-align: right;">16.70</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lotus Europa</td>
+<td style="text-align: right;">30.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">95.1</td>
+<td style="text-align: right;">113</td>
+<td style="text-align: right;">3.77</td>
+<td style="text-align: right;">1.513</td>
+<td style="text-align: right;">16.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ford Pantera L</td>
+<td style="text-align: right;">15.8</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">351.0</td>
+<td style="text-align: right;">264</td>
+<td style="text-align: right;">4.22</td>
+<td style="text-align: right;">3.170</td>
+<td style="text-align: right;">14.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ferrari Dino</td>
+<td style="text-align: right;">19.7</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">145.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.62</td>
+<td style="text-align: right;">2.770</td>
+<td style="text-align: right;">15.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Maserati Bora</td>
+<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">301.0</td>
+<td style="text-align: right;">335</td>
+<td style="text-align: right;">3.54</td>
+<td style="text-align: right;">3.570</td>
+<td style="text-align: right;">14.60</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Volvo 142E</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">121.0</td>
+<td style="text-align: right;">109</td>
+<td style="text-align: right;">4.11</td>
+<td style="text-align: right;">2.780</td>
+<td style="text-align: right;">18.60</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
+</section>
+<section id="another-option-dt" class="slide level2">
+<h2>Another option: DT</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-12"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-12-1"><a href="#annotated-cell-12-1"></a><span class="co"># DT</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="1">1</button><span id="annotated-cell-12-2" class="code-annotation-target"><a href="#annotated-cell-12-2"></a><span class="co"># install.packages("DT")</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="2">2</button><span id="annotated-cell-12-3" class="code-annotation-target"><a href="#annotated-cell-12-3"></a><span class="fu">library</span>(DT)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="3">3</button><span id="annotated-cell-12-4" class="code-annotation-target"><a href="#annotated-cell-12-4"></a><span class="fu">datatable</span>(mtcars)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-12" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="2" data-code-annotation="1">Install package (Uncomment if you need to install the package)</span>
+</dd>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="3" data-code-annotation="2">Upload package</span>
+</dd>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="4" data-code-annotation="3">Print the table</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-bcd25d98d57d39064daf" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-bcd25d98d57d39064daf">{"x":{"filter":"none","vertical":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280","Merc 280C","Merc 450SE","Merc 450SL","Merc 450SLC","Cadillac Fleetwood","Lincoln Continental","Chrysler Imperial","Fiat 128","Honda Civic","Toyota Corolla","Toyota Corona","Dodge Challenger","AMC Javelin","Camaro Z28","Pontiac Firebird","Fiat X1-9","Porsche 914-2","Lotus Europa","Ford Pantera L","Ferrari Dino","Maserati Bora","Volvo 142E"],[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2,17.8,16.4,17.3,15.2,10.4,10.4,14.7,32.4,30.4,33.9,21.5,15.5,15.2,13.3,19.2,27.3,26,30.4,15.8,19.7,15,21.4],[6,6,4,6,8,6,8,4,4,6,6,8,8,8,8,8,8,4,4,4,4,8,8,8,8,4,4,4,8,6,8,4],[160,160,108,258,360,225,360,146.7,140.8,167.6,167.6,275.8,275.8,275.8,472,460,440,78.7,75.7,71.09999999999999,120.1,318,304,350,400,79,120.3,95.09999999999999,351,145,301,121],[110,110,93,110,175,105,245,62,95,123,123,180,180,180,205,215,230,66,52,65,97,150,150,245,175,66,91,113,264,175,335,109],[3.9,3.9,3.85,3.08,3.15,2.76,3.21,3.69,3.92,3.92,3.92,3.07,3.07,3.07,2.93,3,3.23,4.08,4.93,4.22,3.7,2.76,3.15,3.73,3.08,4.08,4.43,3.77,4.22,3.62,3.54,4.11],[2.62,2.875,2.32,3.215,3.44,3.46,3.57,3.19,3.15,3.44,3.44,4.07,3.73,3.78,5.25,5.424,5.345,2.2,1.615,1.835,2.465,3.52,3.435,3.84,3.845,1.935,2.14,1.513,3.17,2.77,3.57,2.78],[16.46,17.02,18.61,19.44,17.02,20.22,15.84,20,22.9,18.3,18.9,17.4,17.6,18,17.98,17.82,17.42,19.47,18.52,19.9,20.01,16.87,17.3,15.41,17.05,18.9,16.7,16.9,14.5,15.5,14.6,18.6],[0,0,1,1,0,1,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,1,0,0,0,1],[1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1],[4,4,4,3,3,3,3,4,4,4,4,3,3,3,3,3,3,4,4,4,3,3,3,3,3,4,5,5,5,5,5,4],[4,4,1,1,2,1,4,2,2,4,4,3,3,3,4,4,4,1,2,1,1,2,2,4,2,1,2,2,4,6,8,2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"mpg","targets":1},{"name":"cyl","targets":2},{"name":"disp","targets":3},{"name":"hp","targets":4},{"name":"drat","targets":5},{"name":"wt","targets":6},{"name":"qsec","targets":7},{"name":"vs","targets":8},{"name":"am","targets":9},{"name":"gear","targets":10},{"name":"carb","targets":11}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section></section>
+<section>
+<section id="cross-referencing" class="title-slide slide level1 center">
+<h1>Cross referencing</h1>
+
+</section>
+<section id="in-general" class="slide level2">
+<h2>In general</h2>
+<p>At this page <a href="https://quarto.org/docs/authoring/cross-references.html">https://quarto.org/docs/authoring/cross-references.html</a> you can find all the details and help for a correct use of cross-referencing.</p>
+<div class="fragment">
+<pre><code>@obj-label</code></pre>
+</div>
+<div class="fragment">
+<p>YAML:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href=""></a><span class="co">[</span><span class="ot">...</span><span class="co">]</span></span>
+<span id="cb20-2"><a href=""></a>lang: en</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="images" class="slide level2">
+<h2>Images</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Code</a></li><li><a href="#tabset-3-2">Output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<p><code>@fig-pea illustrates a peacock</code></p>
+<div class="cell fig-cap-location-bottom" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb21" data-cap-location="bottom" data-code-line-numbers="|4-6|"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href=""></a><span class="in">```{markdown}</span></span>
+<span id="cb21-2"><a href=""></a><span class="in">#| out-width: 50%</span></span>
+<span id="cb21-3"><a href=""></a><span class="in">#| fig-align: center</span></span>
+<span id="cb21-4"><a href=""></a><span class="in">#| fig-cap: A peacock living the life</span></span>
+<span id="cb21-5"><a href=""></a><span class="in">#| fig-cap-location: bottom</span></span>
+<span id="cb21-6"><a href=""></a><span class="in">#| label: fig-pea</span></span>
+<span id="cb21-7"><a href=""></a><span class="in">#| code-line-numbers: "|4-6|"</span></span>
+<span id="cb21-8"><a href=""></a><span class="in">knitr::include_graphics("img/peacock.png")</span></span>
+<span id="cb21-9"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-2">
+<p><a href="#/fig-mypea" class="quarto-xref">Figure&nbsp;3</a> illustrates a peacock</p>
+<div class="cell fig-cap-location-bottom" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-mypea" class="quarto-float quarto-figure quarto-figure-center" data-cap-location="bottom" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-mypea-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="img/peacock.png" class="quarto-figure quarto-figure-center" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mypea-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: A peacock living the life
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="tables-1" class="slide level2">
+<h2>Tables</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Code</a></li><li><a href="#tabset-4-2">Output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<p><code>@tbl-iris illustrates a table</code></p>
+<div id="tbl-iris" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-iris-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Iris Data
+</figcaption>
+<div aria-describedby="tbl-iris-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="sourceCode cell-code" id="tbl-iris" data-code-line-numbers="|2|3|"><pre class="sourceCode numberSource markdown number-lines cell code-with-copy"><code class="sourceCode markdown"><span id="tbl-iris-1"><a href="#tbl-iris-1"></a><span class="in">```{markdown}</span></span>
+<span id="tbl-iris-2"><a href="#tbl-iris-2"></a><span class="in">#| label: tbl-iris</span></span>
+<span id="tbl-iris-3"><a href="#tbl-iris-3"></a><span class="in">#| tbl-cap: "Iris Data"</span></span>
+<span id="tbl-iris-4"><a href="#tbl-iris-4"></a><span class="in">#| code-line-numbers: "|2|3|"</span></span>
+<span id="tbl-iris-5"><a href="#tbl-iris-5"></a></span>
+<span id="tbl-iris-6"><a href="#tbl-iris-6"></a><span class="in">kable(head(iris))</span></span>
+<span id="tbl-iris-7"><a href="#tbl-iris-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</figure>
+</div>
+</div>
+<div id="tabset-4-2">
+<p><a href="#/tbl-iris1" class="quarto-xref">Table&nbsp;2</a> illustrates a table</p>
+<div class="cell">
+<div id="tbl-iris1" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-iris1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Iris Data
+</figcaption>
+<div aria-describedby="tbl-iris1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Sepal.Length</th>
+<th style="text-align: right;">Sepal.Width</th>
+<th style="text-align: right;">Petal.Length</th>
+<th style="text-align: right;">Petal.Width</th>
+<th style="text-align: left;">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="code-4" class="slide level2">
+<h2>Code</h2>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Code</a></li><li><a href="#tabset-5-2">Output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<div class="cell">
+<div id="lst-basicPlot" class="cell-code listing quarto-float quarto-figure quarto-figure-left">
+<figure class="quarto-float quarto-float-lst">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-basicPlot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing&nbsp;1: Basic use of the plot() function
+</figcaption>
+<div aria-describedby="lst-basicPlot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="sourceCode cell-code" id="lst-basicPlot"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="lst-basicPlot-1"><a href="#lst-basicPlot-1"></a><span class="in">```{r}</span></span>
+<span id="lst-basicPlot-2"><a href="#lst-basicPlot-2"></a><span class="in">#| eval: false</span></span>
+<span id="lst-basicPlot-3"><a href="#lst-basicPlot-3"></a><span class="in">#| lst-label: lst-basicPlot</span></span>
+<span id="lst-basicPlot-4"><a href="#lst-basicPlot-4"></a><span class="in">#| lst-cap: Basic use of the plot() function</span></span>
+<span id="lst-basicPlot-5"><a href="#lst-basicPlot-5"></a></span>
+<span id="lst-basicPlot-6"><a href="#lst-basicPlot-6"></a><span class="in">plot(cars)</span></span>
+<span id="lst-basicPlot-7"><a href="#lst-basicPlot-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</figure>
+</div>
+</div>
+<p><code>@lst-basicPlot illustrates a basic use of the function plot()</code></p>
+</div>
+<div id="tabset-5-2">
+<div class="cell">
+<div id="lst-basicPlot1" class="r cell-code listing quarto-float quarto-figure quarto-figure-left">
+<figure class="quarto-float quarto-float-lst">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-basicPlot1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing&nbsp;2: Basic use of the plot() function
+</figcaption>
+<div aria-describedby="lst-basicPlot1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="sourceCode cell-code" id="lst-basicPlot1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="lst-basicPlot1-1"><a href="#lst-basicPlot1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</figure>
+</div>
+</div>
+<p><a href="#/lst-basicPlot1" class="quarto-xref">Listing&nbsp;2</a> illustrates a basic use of the function <code>plot()</code></p>
+</div>
+</div>
+</div>
+</section>
+<section id="equations" class="slide level2">
+<h2>Equations</h2>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Code</a></li><li><a href="#tabset-6-2">Output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<p><code>@eq-standardize illustrates how to standardize a value</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href=""></a>$$</span>
+<span id="cb22-2"><a href=""></a>  z = \frac{x_i - \bar{x}}{s}</span>
+<span id="cb22-3"><a href=""></a>$$ {#eq-standardize}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-6-2">
+<p><a href="#/eq-standardize" class="quarto-xref">Equation&nbsp;1</a> illustrates how to standardize a value</p>
+<p><span id="eq-standardize"><span class="math display">\[
+  z = \frac{x_i - \bar{x}}{s}
+\qquad(1)\]</span></span></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="margins" class="title-slide slide level1 center">
+<h1>Margins</h1>
+
+</section>
+<section id="content" class="slide level2">
+<h2>Content</h2>
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Code</a></li><li><a href="#tabset-7-2">Output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource markdwon number-lines code-with-copy"><code class="sourceCode"><span id="cb23-1"><a href=""></a>::: {.column-margin}</span>
+<span id="cb23-2"><a href=""></a>I want this picture displayed in the margin </span>
+<span id="cb23-3"><a href=""></a></span>
+<span id="cb23-4"><a href=""></a></span>
+<span id="cb23-5"><a href=""></a>![](img/peacock.png)</span>
+<span id="cb23-6"><a href=""></a></span>
+<span id="cb23-7"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-7-2">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/margin-content.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="code-8" class="slide level2">
+<h2>Code</h2>
+<div class="panel-tabset">
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Code</a></li><li><a href="#tabset-8-2">Ouput</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1">
+<div class="cell column-margin">
+<div class="sourceCode cell-code" id="annotated-cell-34"><pre class="sourceCode numberSource markdown code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-34-1"><a href="#annotated-cell-34-1"></a><span class="in">```{r}</span></span>
+<span id="annotated-cell-34-2"><a href="#annotated-cell-34-2"></a><span class="in">#| column: margin</span></span>
+<span id="annotated-cell-34-3"><a href="#annotated-cell-34-3"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-34" data-target-annotation="1">1</button><span id="annotated-cell-34-4" class="code-annotation-target"><a href="#annotated-cell-34-4"></a><span class="in">lm(hp ~ mpg*am, data = mtcars)</span></span>
+<span id="annotated-cell-34-5"><a href="#annotated-cell-34-5"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-34" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-34" data-code-lines="4" data-code-annotation="1">Fit a Linear Model with an interaction effect</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = hp ~ mpg * am, data = mtcars)
+
+Coefficients:
+(Intercept)          mpg           am       mpg:am  
+   360.7425     -11.6916      32.3404       0.7768  </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-8-2">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/margin-code.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="graphs" class="slide level2">
+<h2>Graphs</h2>
+<div class="panel-tabset">
+<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Code</a></li><li><a href="#tabset-9-2">Ouput</a></li></ul>
+<div class="tab-content">
+<div id="tabset-9-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb25-2"><a href=""></a><span class="in">#| column: margin</span></span>
+<span id="cb25-3"><a href=""></a></span>
+<span id="cb25-4"><a href=""></a><span class="in">ggplot(mtcars, </span></span>
+<span id="cb25-5"><a href=""></a><span class="in">       aes(hp, mpg, color = factor(am))) +</span></span>
+<span id="cb25-6"><a href=""></a><span class="in">  geom_point() +</span></span>
+<span id="cb25-7"><a href=""></a><span class="in">  geom_smooth(formula = y ~ x, method = "loess") +</span></span>
+<span id="cb25-8"><a href=""></a><span class="in">  theme(legend.position = 'bottom')</span></span>
+<span id="cb25-9"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display column-margin">
+<div>
+<figure>
+<p><img data-src="02-Code-chunk_files/figure-revealjs/unnamed-chunk-37-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-9-2">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/margin-graph.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="tables-2" class="slide level2">
+<h2>Tables</h2>
+<div class="panel-tabset">
+<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">Code</a></li><li><a href="#tabset-10-2">Ouput</a></li></ul>
+<div class="tab-content">
+<div id="tabset-10-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb26-2"><a href=""></a><span class="in">#| column: margin</span></span>
+<span id="cb26-3"><a href=""></a></span>
+<span id="cb26-4"><a href=""></a><span class="in">datatable(mtcars,</span></span>
+<span id="cb26-5"><a href=""></a><span class="in">  options = list(pageLength = 5))</span></span>
+<span id="cb26-6"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display column-margin">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-5c5499ef128c6a702504" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5c5499ef128c6a702504">{"x":{"filter":"none","vertical":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280","Merc 280C","Merc 450SE","Merc 450SL","Merc 450SLC","Cadillac Fleetwood","Lincoln Continental","Chrysler Imperial","Fiat 128","Honda Civic","Toyota Corolla","Toyota Corona","Dodge Challenger","AMC Javelin","Camaro Z28","Pontiac Firebird","Fiat X1-9","Porsche 914-2","Lotus Europa","Ford Pantera L","Ferrari Dino","Maserati Bora","Volvo 142E"],[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2,17.8,16.4,17.3,15.2,10.4,10.4,14.7,32.4,30.4,33.9,21.5,15.5,15.2,13.3,19.2,27.3,26,30.4,15.8,19.7,15,21.4],[6,6,4,6,8,6,8,4,4,6,6,8,8,8,8,8,8,4,4,4,4,8,8,8,8,4,4,4,8,6,8,4],[160,160,108,258,360,225,360,146.7,140.8,167.6,167.6,275.8,275.8,275.8,472,460,440,78.7,75.7,71.09999999999999,120.1,318,304,350,400,79,120.3,95.09999999999999,351,145,301,121],[110,110,93,110,175,105,245,62,95,123,123,180,180,180,205,215,230,66,52,65,97,150,150,245,175,66,91,113,264,175,335,109],[3.9,3.9,3.85,3.08,3.15,2.76,3.21,3.69,3.92,3.92,3.92,3.07,3.07,3.07,2.93,3,3.23,4.08,4.93,4.22,3.7,2.76,3.15,3.73,3.08,4.08,4.43,3.77,4.22,3.62,3.54,4.11],[2.62,2.875,2.32,3.215,3.44,3.46,3.57,3.19,3.15,3.44,3.44,4.07,3.73,3.78,5.25,5.424,5.345,2.2,1.615,1.835,2.465,3.52,3.435,3.84,3.845,1.935,2.14,1.513,3.17,2.77,3.57,2.78],[16.46,17.02,18.61,19.44,17.02,20.22,15.84,20,22.9,18.3,18.9,17.4,17.6,18,17.98,17.82,17.42,19.47,18.52,19.9,20.01,16.87,17.3,15.41,17.05,18.9,16.7,16.9,14.5,15.5,14.6,18.6],[0,0,1,1,0,1,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,1,0,0,0,1],[1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1],[4,4,4,3,3,3,3,4,4,4,4,3,3,3,3,3,3,4,4,4,3,3,3,3,3,4,5,5,5,5,5,4],[4,4,1,1,2,1,4,2,2,4,4,3,3,3,4,4,4,1,2,1,1,2,2,4,2,1,2,2,4,6,8,2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"mpg","targets":1},{"name":"cyl","targets":2},{"name":"disp","targets":3},{"name":"hp","targets":4},{"name":"drat","targets":5},{"name":"wt","targets":6},{"name":"qsec","targets":7},{"name":"vs","targets":8},{"name":"am","targets":9},{"name":"gear","targets":10},{"name":"carb","targets":11}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<div id="tabset-10-2">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/margin-table.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="multiple-mixed-outputs" class="slide level2">
+<h2>Multiple mixed outputs</h2>
+<div class="panel-tabset">
+<ul id="tabset-11" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-11-1">Code: fig-margin</a></li><li><a href="#tabset-11-2">Ouput: fig-margin</a></li></ul>
+<div class="tab-content">
+<div id="tabset-11-1">
+<div class="cell fig-column-margin">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb27-2"><a href=""></a><span class="in">#| eval: false</span></span>
+<span id="cb27-3"><a href=""></a><span class="in">#| fig-column: margin</span></span>
+<span id="cb27-4"><a href=""></a></span>
+<span id="cb27-5"><a href=""></a><span class="in">ggplot(mtcars, </span></span>
+<span id="cb27-6"><a href=""></a><span class="in">       aes(hp, mpg, color = factor(am))) +</span></span>
+<span id="cb27-7"><a href=""></a><span class="in">  geom_point() +</span></span>
+<span id="cb27-8"><a href=""></a><span class="in">  geom_smooth(formula = y ~ x, method = "loess") +</span></span>
+<span id="cb27-9"><a href=""></a><span class="in">  theme(legend.position = 'bottom')</span></span>
+<span id="cb27-10"><a href=""></a></span>
+<span id="cb27-11"><a href=""></a><span class="in">datatable(mtcars,</span></span>
+<span id="cb27-12"><a href=""></a><span class="in">  options = list(pageLength = 5))</span></span>
+<span id="cb27-13"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-11-2">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/margin-mutliple-fig.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="multiple-plots" class="slide level2">
+<h2>Multiple plots</h2>
+<div class="panel-tabset">
+<ul id="tabset-12" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-12-1">Code</a></li><li><a href="#tabset-12-2">Output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-12-1">
+<p><code>@fig-plotsModels illustrates different things. @fig-plotsModels-1 illustrates this, @fig-plotsModels-2 illustrates that and so on</code></p>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb28-2"><a href=""></a><span class="in">#| label: fig-plotsModels</span></span>
+<span id="cb28-3"><a href=""></a><span class="in">#| column: screen-inset-shaded</span></span>
+<span id="cb28-4"><a href=""></a><span class="in">#| layout-nrow: 2</span></span>
+<span id="cb28-5"><a href=""></a><span class="in">#| layout-ncol: 2</span></span>
+<span id="cb28-6"><a href=""></a><span class="in">#| fig-cap: "One dataset, different models"</span></span>
+<span id="cb28-7"><a href=""></a><span class="in">#| fig-subcap:</span></span>
+<span id="cb28-8"><a href=""></a><span class="in">#|   - "The data"</span></span>
+<span id="cb28-9"><a href=""></a><span class="in">#|   - "Polynomial"</span></span>
+<span id="cb28-10"><a href=""></a><span class="in">#|   - "Linear Model"</span></span>
+<span id="cb28-11"><a href=""></a><span class="in">#|   - "GLM with Poisson"</span></span>
+<span id="cb28-12"><a href=""></a></span>
+<span id="cb28-13"><a href=""></a><span class="in">ggplot(mtcars,</span></span>
+<span id="cb28-14"><a href=""></a><span class="in">       aes(mpg, hp, size = gear)) +</span></span>
+<span id="cb28-15"><a href=""></a><span class="in">  geom_point()</span></span>
+<span id="cb28-16"><a href=""></a></span>
+<span id="cb28-17"><a href=""></a><span class="in">ggplot(mtcars,</span></span>
+<span id="cb28-18"><a href=""></a><span class="in">       aes(mpg, hp, size = gear)) +</span></span>
+<span id="cb28-19"><a href=""></a><span class="in">  geom_point() + </span></span>
+<span id="cb28-20"><a href=""></a><span class="in">  geom_smooth()</span></span>
+<span id="cb28-21"><a href=""></a></span>
+<span id="cb28-22"><a href=""></a><span class="in">ggplot(mtcars,</span></span>
+<span id="cb28-23"><a href=""></a><span class="in">       aes(mpg, hp, size = gear)) +</span></span>
+<span id="cb28-24"><a href=""></a><span class="in">  geom_point() + </span></span>
+<span id="cb28-25"><a href=""></a><span class="in">  geom_smooth(method = "lm")</span></span>
+<span id="cb28-26"><a href=""></a><span class="in">ggplot(mtcars,</span></span>
+<span id="cb28-27"><a href=""></a><span class="in">       aes(mpg, hp, size = gear)) +</span></span>
+<span id="cb28-28"><a href=""></a><span class="in">  geom_point() + </span></span>
+<span id="cb28-29"><a href=""></a><span class="in">  geom_smooth(method = "glm", method.args = list(family = "poisson"))</span></span>
+<span id="cb28-30"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-plotsModels" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-plotsModels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display column-screen-inset-shaded quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-plotsModels" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-plotsModels-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-plotsModels-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="02-Code-chunk_files/figure-revealjs/fig-plotsModels-1.png" data-ref-parent="fig-plotsModels" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-plotsModels-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) The data
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display column-screen-inset-shaded quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-plotsModels" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-plotsModels-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-plotsModels-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="02-Code-chunk_files/figure-revealjs/fig-plotsModels-2.png" data-ref-parent="fig-plotsModels" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-plotsModels-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Polynomial
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display column-screen-inset-shaded quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-plotsModels" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-plotsModels-3" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-plotsModels-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="02-Code-chunk_files/figure-revealjs/fig-plotsModels-3.png" data-ref-parent="fig-plotsModels" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-plotsModels-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Linear Model
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display column-screen-inset-shaded quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-plotsModels" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-plotsModels-4" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-plotsModels-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="02-Code-chunk_files/figure-revealjs/fig-plotsModels-4.png" data-ref-parent="fig-plotsModels" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-plotsModels-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) GLM with Poisson
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plotsModels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: One dataset, different models
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-12-2">
+<p><a href="#/fig-plotsModels1" class="quarto-xref">Figure&nbsp;5</a> illustrates different things. <a href="#/fig-plotsModels1-1" class="quarto-xref">Figure&nbsp;5 (a)</a> illustrates this, <a href="#/fig-plotsModels1-2" class="quarto-xref">Figure&nbsp;5 (b)</a> illustrates that and so on</p>
+<div id="fig-plotsModels1" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-plotsModels1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display column-screen-inset-shaded quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-plotsModels1" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-plotsModels1-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-plotsModels1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="02-Code-chunk_files/figure-revealjs/fig-plotsModels1-1.png" style="width:30.0%" data-ref-parent="fig-plotsModels1">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-plotsModels1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) The data
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display column-screen-inset-shaded quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-plotsModels1" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-plotsModels1-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-plotsModels1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="02-Code-chunk_files/figure-revealjs/fig-plotsModels1-2.png" style="width:30.0%" data-ref-parent="fig-plotsModels1">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-plotsModels1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Polynomial
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display column-screen-inset-shaded quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-plotsModels1" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-plotsModels1-3" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-plotsModels1-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="02-Code-chunk_files/figure-revealjs/fig-plotsModels1-3.png" style="width:30.0%" data-ref-parent="fig-plotsModels1">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-plotsModels1-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Linear Model
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display column-screen-inset-shaded quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-plotsModels1" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-plotsModels1-4" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-plotsModels1-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="02-Code-chunk_files/figure-revealjs/fig-plotsModels1-4.png" style="width:30.0%" data-ref-parent="fig-plotsModels1">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-plotsModels1-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) GLM with Poisson
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plotsModels1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: One dataset, different models
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="multiple-tables" class="slide level2">
+<h2>Multiple Tables</h2>
+<div class="panel-tabset">
+<ul id="tabset-13" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-13-1">Code</a></li><li><a href="#tabset-13-2">Output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-13-1">
+<p><code>@tbl-tables presents two datasets: @tbl-tables-1 is cars and @tbl-tables-2 is pressure</code></p>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb29-2"><a href=""></a><span class="in">#| label: tbl-tables</span></span>
+<span id="cb29-3"><a href=""></a><span class="in">#| tbl-cap: "Datasets"</span></span>
+<span id="cb29-4"><a href=""></a><span class="in">#| tbl-subcap:</span></span>
+<span id="cb29-5"><a href=""></a><span class="in">#|   - "Cars"</span></span>
+<span id="cb29-6"><a href=""></a><span class="in">#|   - "Pressure"</span></span>
+<span id="cb29-7"><a href=""></a><span class="in">#| layout-ncol: 2</span></span>
+<span id="cb29-8"><a href=""></a></span>
+<span id="cb29-9"><a href=""></a><span class="in">kable(head(cars))</span></span>
+<span id="cb29-10"><a href=""></a><span class="in">kable(head(pressure))</span></span>
+<span id="cb29-11"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-tables" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Datasets
+</figcaption>
+<div aria-describedby="tbl-tables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-tables" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-tables-1" class="do-not-create-environment quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-tbl">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-tables-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Cars
+</figcaption>
+<div aria-describedby="tbl-tables-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="tbl-tables-1" class="do-not-create-environment caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;">speed</th>
+<th style="text-align: right;">dist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div id="tbl-tables-2" class="do-not-create-environment quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-tbl">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-tables-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Pressure
+</figcaption>
+<div aria-describedby="tbl-tables-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="tbl-tables-2" class="do-not-create-environment caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;">temperature</th>
+<th style="text-align: right;">pressure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0002</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">0.0012</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">0.0060</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">0.0300</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">0.0900</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">0.2700</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div id="tabset-13-2">
+<p><a href="#/tbl-tables1" class="quarto-xref">Table&nbsp;4</a> presents two datasets: <a href="#/tbl-tables1-1" class="quarto-xref">Table&nbsp;4 (a)</a> is cars and <a href="#/tbl-tables1-2" class="quarto-xref">Table&nbsp;4 (b)</a> is pressure</p>
+<div id="tbl-tables1" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tables1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Datasets
+</figcaption>
+<div aria-describedby="tbl-tables1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-tables1" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-tables1-1" class="do-not-create-environment quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-tbl">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-tables1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Cars
+</figcaption>
+<div aria-describedby="tbl-tables1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="tbl-tables1-1" class="do-not-create-environment caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;">speed</th>
+<th style="text-align: right;">dist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-tables1" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-tables1-2" class="do-not-create-environment quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-tbl">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-tables1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Pressure
+</figcaption>
+<div aria-describedby="tbl-tables1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="tbl-tables1-2" class="do-not-create-environment caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;">temperature</th>
+<th style="text-align: right;">pressure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0002</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">0.0012</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">0.0060</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">0.0300</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">0.0900</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">0.2700</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="code-annotation" class="title-slide slide level1 center">
+<h1>Code annotation</h1>
+
+</section>
+<section id="in-general-1" class="slide level2">
+<h2>In general</h2>
+<p>YAML:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href=""></a><span class="co">[</span><span class="ot">...</span><span class="co">]</span></span>
+<span id="cb30-2"><a href=""></a>code-annotations: hover</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>Options:</p>
+<ul>
+<li><p><code>below</code>: The annotation appears below the code</p></li>
+<li><p><code>hover</code>: The annotation appears when the mouse hovers over the annotation marker</p></li>
+<li><p><code>select</code>: The annotation appears when the annotation marker is clicked</p></li>
+</ul>
+</div>
+</section>
+<section id="an-example" class="slide level2">
+<h2>An example</h2>
+<div class="panel-tabset">
+<ul id="tabset-14" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-14-1">Code</a></li><li><a href="#tabset-14-2">Output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-14-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-41"><pre class="sourceCode numberSource markdown code-annotation-code number-lines code-with-copy"><code class="sourceCode markdown"><span id="annotated-cell-41-1"><a href="#annotated-cell-41-1"></a><span class="in">```{r}</span></span>
+<span id="annotated-cell-41-2"><a href="#annotated-cell-41-2"></a><span class="in">#| eval: false</span></span>
+<span id="annotated-cell-41-3"><a href="#annotated-cell-41-3"></a><span class="in">#| warning: false</span></span>
+<span id="annotated-cell-41-4"><a href="#annotated-cell-41-4"></a></span>
+<span id="annotated-cell-41-5"><a href="#annotated-cell-41-5"></a><span class="in">## GGplot</span></span>
+<span id="annotated-cell-41-6"><a href="#annotated-cell-41-6"></a></span>
+<span id="annotated-cell-41-7"><a href="#annotated-cell-41-7"></a><span class="in">mtcars %&gt;%</span></span>
+<span id="annotated-cell-41-8"><a href="#annotated-cell-41-8"></a><span class="in">  ggplot( aes(mpg, hp, size = gear)) +</span></span>
+<span id="annotated-cell-41-9"><a href="#annotated-cell-41-9"></a><span class="in">  geom_point() +</span></span>
+<span id="annotated-cell-41-10"><a href="#annotated-cell-41-10"></a><span class="in">  geom_smooth(method = "lm")</span></span>
+<span id="annotated-cell-41-11"><a href="#annotated-cell-41-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>1. This does that</code></p>
+<p><code>2. This other thing is this</code></p>
+<p><code>3. And look at this!</code></p>
+<p><code>4. Please have mercy</code></p>
+</div>
+<div id="tabset-14-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-42"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-42-1"><a href="#annotated-cell-42-1"></a><span class="do">## GGplot</span></span>
+<span id="annotated-cell-42-2"><a href="#annotated-cell-42-2"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="1">1</button><span id="annotated-cell-42-3" class="code-annotation-target"><a href="#annotated-cell-42-3"></a>mtcars <span class="sc">%&gt;%</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="2">2</button><span id="annotated-cell-42-4" class="code-annotation-target"><a href="#annotated-cell-42-4"></a>  <span class="fu">ggplot</span>( <span class="fu">aes</span>(mpg, hp, <span class="at">size =</span> gear)) <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="3">3</button><span id="annotated-cell-42-5" class="code-annotation-target"><a href="#annotated-cell-42-5"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="4">4</button><span id="annotated-cell-42-6" class="code-annotation-target"><a href="#annotated-cell-42-6"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-42" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-42" data-code-lines="3" data-code-annotation="1">This does that</span>
+</dd>
+<dt data-target-cell="annotated-cell-42" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-42" data-code-lines="4" data-code-annotation="2">This other thing is this</span>
+</dd>
+<dt data-target-cell="annotated-cell-42" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-42" data-code-lines="5" data-code-annotation="3">And look at this!</span>
+</dd>
+<dt data-target-cell="annotated-cell-42" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-42" data-code-lines="6" data-code-annotation="4">Please have mercy</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="02-Code-chunk_files/figure-revealjs/unnamed-chunk-49-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="inline-code" class="title-slide slide level1 center">
+<h1>Inline code</h1>
+
+</section>
+<section id="in-general-2" class="slide level2">
+<h2>In general</h2>
+<p>This allows for showing and executing code chunks directly in the text:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href=""></a>The mean of the gear variable in mtcars is <span class="in">`r mean(mtcars$gear)`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>The mean of the gear variable in mtcars is 3.6875</p>
+</div>
+<div class="fragment">
+<p>If you want the display of the code but not its execution:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href=""></a>This is the code to compute the mean <span class="in">`mean(mtcars$gear)`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>This is the code to compute the mean <code>mean(mtcars$gear)</code></p>
+
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

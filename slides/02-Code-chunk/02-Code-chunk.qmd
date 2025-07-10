@@ -3,6 +3,7 @@ title: "02-Code chunks"
 author: "Ottavia M. Epifania"
 format: 
   revealjs: 
+    df_print: kable
     theme: mytheme.scss
     # logo: "www/psicostat.jpg"
     footer: "Code chunks"
@@ -29,6 +30,7 @@ library(emoji)
 library(ggplot2)
 library(knitr)
 library(kableExtra)
+library(DT)
 ```
 
 
@@ -63,6 +65,7 @@ head(rock)
 ```
 ````
 ```{r}
+#| echo: true
 head(rock)
 ```
 
@@ -81,7 +84,7 @@ head(rock)
 ````
 
 ```{r}
-#| echo: true
+#| echo: false
 head(rock)
 ```
 
@@ -100,8 +103,6 @@ head(rock)
 ````
 
 ```{r}
-#| echo: fenced
-
 head(rock)
 ```
 
@@ -134,7 +135,6 @@ The code is executed, neither the code nor the results are show
 head(rock)
 ```
 ````
-:::
 
 ```{r}
 #| include: false
@@ -145,12 +145,14 @@ head(rock)
 
 ## Other options 
 
-`warning: true`: (default) the warnings obtained from the code executed in the chunk are displayed 
-`message: true`: (default) the messages associated to the code (e.g., when you upload a package with `library(package)`)
-
-`error: false`: (default) If there is an error in the code,  knitting stops and the document will not be generated until the error is fixed
-
-`error: true`: If there is an error in the code,  the error message is shown in the document and the knitting goes on 
+* `warning: true` 
+    (default) the warnings obtained from the code executed in the chunk are displayed 
+* `message: true` 
+    (default) the messages associated to the code (e.g., when you upload a package with `library(package)`)
+* `error: false` 
+    (default) If there is an error in the code,  knitting stops and the document will not be generated until the error is fixed
+* `error: true` 
+    If there is an error in the code,  the error message is shown in the document and the knitting goes on 
 
 
 ## YAML: Overall chunk options
@@ -226,12 +228,14 @@ code-summary: See this specific code
 
 ::: {.fragment .fade-in-then-out}
 ```{r}
+#| out-width: 110%
 include_graphics("img/fold1.png")
 ```
 :::
 
 ::: {.fragment .fade-in-then-out}
 ```{r}
+#| out-width: 110%
 include_graphics("img/fold2.png")
 ```
 :::
@@ -306,11 +310,13 @@ ggplot(mtcars, aes(hp, mpg, color = factor(am))) +
 @fig-mtcars illustrates a plot
 
 ```{r}
+#| echo: fenced
 #| out-width: 50%
 #| fig-align: center
 #| fig-cap: A graph from `mtcars`
 #| fig-cap-location: bottom
 #| label: fig-mtcars
+#| code-line-numbers: "|2|3|4|5|6"
 ggplot(mtcars,                                   
        aes(hp, mpg, color = factor(am))) +       
   geom_point() +
@@ -327,23 +333,609 @@ ggplot(mtcars,
 
 ```{r}
 #| echo: true
-kable(mtcars[1:6, 1:6])  # <1>
+
+##
+
+kable(mtcars)  # <1>
 ```
 
 1. Basic table
 
-## kableExtra
+## 
 
 
 ```{r}
 #| echo: true
 #| eval: false
 
-install.packages("kableExtra") # <1>
+# kableExtra
+
+# install.packages("kableExtra") # <1>
 library(kableExtra)            # <2>
 ```
 
 
-1. Install package
+1. Install package (Uncomment if you need to install the package)
 2. Upload package
+
+. . . 
+
+```{r}
+kable(mtcars) %>%
+  scroll_box(height = "450px", width = "100%")
+```
+
+## 
+
+```{r}
+#| echo: fenced
+
+# 
+kable(mtcars) %>%                              # <1>
+  scroll_box(height = "400px", width = "100%") # <2>
+```
+
+
+1. Produce the table with `kable`. The symbol ` %>% ` is called "pipe", can be obtained with `shift + ctrl + m`
+2. Define the height and with of the scroll box 
+
+## Another option: DT
+
+
+```{r}
+#| echo: true
+#| eval: false
+
+# DT
+# install.packages("DT")       # <1>
+library(DT)                    # <2>
+datatable(mtcars)              # <3>
+```
+
+
+1. Install package (Uncomment if you need to install the package)
+2. Upload package
+3. Print the table
+
+```{r}
+datatable(mtcars)
+```
+
+
+# Cross referencing 
+
+## In general 
+
+At this page [https://quarto.org/docs/authoring/cross-references.html](https://quarto.org/docs/authoring/cross-references.html) you can find all the details and help for a correct use of cross-referencing.
+
+. . . 
+
+    @obj-label
+    
+. . . 
+
+YAML: 
+
+```{markdown}
+#| echo: true
+[...]
+lang: en
+```
+
+
+## Images 
+
+:::{.panel-tabset}
+
+## Code
+
+`@fig-pea illustrates a peacock`
+
+```{markdown}
+#| echo: fenced
+#| out-width: 50%
+#| fig-align: center
+#| fig-cap: A peacock living the life
+#| fig-cap-location: bottom
+#| label: fig-pea
+#| code-line-numbers: "|4-6|"
+knitr::include_graphics("img/peacock.png")
+```
+
+## Output
+
+@fig-mypea illustrates a peacock
+
+```{r}
+#| out-width: 50%
+#| fig-align: center
+#| fig-cap: A peacock living the life
+#| fig-cap-location: bottom
+#| label: fig-mypea
+#| code-line-numbers: "|4-6|"
+knitr::include_graphics("img/peacock.png")
+```
+:::
+
+
+## Tables 
+
+
+:::{.panel-tabset}
+
+## Code
+
+`@tbl-iris illustrates a table`
+
+```{markdown}
+#| echo: fenced
+#| label: tbl-iris
+#| tbl-cap: "Iris Data"
+#| code-line-numbers: "|2|3|"
+
+kable(head(iris))
+```
+
+## Output
+
+@tbl-iris1 illustrates a table
+
+```{r}
+#| label: tbl-iris1
+#| tbl-cap: "Iris Data"
+
+kable(head(iris))
+```
+:::
+
+## Code
+
+:::{.panel-tabset}
+
+## Code 
+
+```{r}
+#| eval: false
+#| echo: fenced
+#| lst-label: lst-basicPlot
+#| lst-cap: Basic use of the plot() function
+
+plot(cars)
+```
+
+
+`@lst-basicPlot illustrates a basic use of the function plot()`
+
+## Output
+
+```{r}
+#| eval: false
+#| echo: true
+#| lst-label: lst-basicPlot1
+#| lst-cap: Basic use of the plot() function
+
+plot(cars)
+```
+
+@lst-basicPlot1 illustrates a basic use of the function `plot()`
+
+
+:::
+
+## Equations
+
+:::{.panel-tabset}
+
+## Code
+
+`@eq-standardize illustrates how to standardize a value`
+
+```{markdown}
+#| echo: true
+
+$$
+  z = \frac{x_i - \bar{x}}{s}
+$$ {#eq-standardize}
+```
+
+
+## Output
+
+@eq-standardize illustrates how to standardize a value
+
+$$
+  z = \frac{x_i - \bar{x}}{s}
+$$ {#eq-standardize}
+
+
+:::
+
+# Margins 
+
+## Content 
+
+:::{.panel-tabset}
+
+## Code
+
+```{markdwon}
+#| echo: true
+
+::: {.column-margin}
+I want this picture displayed in the margin 
+
+
+![](img/peacock.png)
+
+:::
+```
+
+
+## Output 
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+include_graphics("img/margin-content.png")
+```
+
+
+:::
+
+## Code 
+
+:::{.panel-tabset}
+
+## Code
+
+```{r}
+#| echo: fenced
+#| column: margin
+
+lm(hp ~ mpg*am, data = mtcars) # <1>
+
+```
+
+1. Fit a Linear Model with an interaction effect
+
+## Ouput 
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+include_graphics("img/margin-code.png")
+```
+:::
+
+## Graphs 
+
+:::{.panel-tabset}
+
+## Code
+
+```{r}
+#| echo: fenced
+#| column: margin
+
+ggplot(mtcars, 
+       aes(hp, mpg, color = factor(am))) +
+  geom_point() +
+  geom_smooth(formula = y ~ x, method = "loess") +
+  theme(legend.position = 'bottom')
+
+```
+
+
+## Ouput 
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+include_graphics("img/margin-graph.png")
+```
+:::
+
+
+## Tables 
+
+:::{.panel-tabset}
+
+## Code
+
+```{r}
+#| echo: fenced
+#| column: margin
+
+datatable(mtcars,
+  options = list(pageLength = 5))
+
+```
+
+
+## Ouput 
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+include_graphics("img/margin-table.png")
+```
+:::
+
+
+## Multiple mixed outputs
+
+:::{.panel-tabset}
+
+## Code: fig-margin
+
+```{r}
+#| echo: fenced
+#| eval: false
+#| fig-column: margin
+
+
+
+ggplot(mtcars, 
+       aes(hp, mpg, color = factor(am))) +
+  geom_point() +
+  geom_smooth(formula = y ~ x, method = "loess") +
+  theme(legend.position = 'bottom')
+
+datatable(mtcars,
+  options = list(pageLength = 5))
+
+```
+
+
+## Ouput: fig-margin
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+include_graphics("img/margin-mutliple-fig.png")
+```
+:::
+
+## Multiple plots
+
+
+:::{.panel-tabset}
+
+## Code 
+
+`@fig-plotsModels illustrates different things. @fig-plotsModels-1 illustrates this, @fig-plotsModels-2 illustrates that and so on`
+
+
+```{r}
+#| echo: fenced
+#| label: fig-plotsModels
+#| column: screen-inset-shaded
+#| layout-nrow: 2
+#| layout-ncol: 2
+#| fig-cap: "One dataset, different models" 
+#| fig-subcap:
+#|   - "The data"
+#|   - "Polynomial"
+#|   - "Linear Model"
+#|   - "GLM with Poisson" 
+
+
+ggplot(mtcars,
+       aes(mpg, hp, size = gear)) +
+  geom_point()
+
+ggplot(mtcars,
+       aes(mpg, hp, size = gear)) +
+  geom_point() + 
+  geom_smooth()
+
+ggplot(mtcars,
+       aes(mpg, hp, size = gear)) +
+  geom_point() + 
+  geom_smooth(method = "lm")
+ggplot(mtcars,
+       aes(mpg, hp, size = gear)) +
+  geom_point() + 
+  geom_smooth(method = "glm", method.args = list(family = "poisson"))
+
+
+```
+
+
+## Output
+
+@fig-plotsModels1 illustrates different things. @fig-plotsModels1-1 illustrates this, @fig-plotsModels1-2 illustrates that and so on
+
+```{r}
+#| label: fig-plotsModels1
+#| echo: false
+#| warning: false
+#| out-width: "30%"
+#| column: screen-inset-shaded
+#| layout-nrow: 2
+#| layout-ncol: 2
+#| fig-cap: "One dataset, different models" 
+#| fig-subcap:
+#|   - "The data"
+#|   - "Polynomial"
+#|   - "Linear Model"
+#|   - "GLM with Poisson" 
+
+
+ggplot(mtcars,
+       aes(mpg, hp, size = gear)) +
+  geom_point()
+
+ggplot(mtcars,
+       aes(mpg, hp, size = gear)) +
+  geom_point() + 
+  geom_smooth()
+
+ggplot(mtcars,
+       aes(mpg, hp, size = gear)) +
+  geom_point() + 
+  geom_smooth(method = "lm")
+ggplot(mtcars,
+       aes(mpg, hp, size = gear)) +
+  geom_point() + 
+  geom_smooth(method = "glm", method.args = list(family = "poisson"))
+
+
+```
+
+:::
+
+
+## Multiple Tables  
+
+
+::: {.panel-tabset}
+
+## Code 
+
+`@tbl-tables presents two datasets: @tbl-tables-1 is cars and @tbl-tables-2 is pressure`
+
+```{r}
+#| echo: fenced
+#| label: tbl-tables
+#| tbl-cap: "Datasets"
+#| tbl-subcap: 
+#|   - "Cars"
+#|   - "Pressure"
+#| layout-ncol: 2
+
+kable(head(cars))
+kable(head(pressure))
+```
+
+
+## Output 
+
+
+@tbl-tables1 presents two datasets: @tbl-tables1-1 is cars and @tbl-tables1-2 is pressure
+
+```{r}
+#| label: tbl-tables1
+#| tbl-cap: "Datasets"
+#| tbl-subcap: 
+#|   - "Cars"
+#|   - "Pressure"
+#| layout-ncol: 2
+
+kable(head(cars))
+kable(head(pressure))
+```
+
+
+:::
+
+
+# Code annotation 
+
+## In general
+
+YAML: 
+
+```{markdown}
+#| echo: true
+[...]
+code-annotations: hover
+```
+
+
+. . . 
+
+Options: 
+
+* `below`: The annotation appears below the code
+
+* `hover`: The annotation appears when the mouse hovers over the annotation marker
+
+* `select`: The annotation appears when the annotation marker is clicked 
+
+## An example
+
+
+:::{.panel-tabset}
+
+## Code
+
+```{r}
+#| echo: fenced
+#| eval: false
+#| warning: false
+
+## GGplot
+
+mtcars %>%                               # <1>
+  ggplot( aes(mpg, hp, size = gear)) +   # <2>
+  geom_point() +                         # <3>    
+  geom_smooth(method = "lm")             # <4>
+
+```
+
+
+`1. This does that`
+
+`2. This other thing is this`
+
+`3. And look at this!`
+
+`4. Please have mercy` 
+
+
+## Output
+
+```{r}
+#| echo: true
+#| eval: true
+#| warning: false
+
+## GGplot
+
+mtcars %>%                               # <1>
+  ggplot( aes(mpg, hp, size = gear)) +   # <2>
+  geom_point() +                         # <3>    
+  geom_smooth(method = "lm")             # <4>
+
+```
+
+1. This does that 
+2. This other thing is this
+3. And look at this!
+4. Please have mercy 
+
+
+:::
+
+
+
+# Inline code
+
+## In general
+
+This allows for showing and executing code chunks directly in the text: 
+```{markdown}
+#| echo: true
+The mean of the gear variable in mtcars is `r mean(mtcars$gear)`
+```
+
+. . . 
+
+The mean of the gear variable in mtcars is `r mean(mtcars$gear)`
+
+. . . 
+
+If you want the display of the code but not its execution: 
+
+```{markdown}
+#| echo: true
+This is the code to compute the mean `mean(mtcars$gear)`
+```
+
+. . . 
+
+This is the code to compute the mean `mean(mtcars$gear)`
+
+
 
