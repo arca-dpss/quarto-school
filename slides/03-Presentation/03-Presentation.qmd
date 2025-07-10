@@ -1,0 +1,208 @@
+---
+title: "03-Presentations"
+author: "Ottavia M. Epifania"
+format: 
+  revealjs: 
+    df_print: kable
+    theme: mytheme.scss
+    # logo: "www/psicostat.jpg"
+    footer: "[Presentations](https://quarto.org/docs/presentations/revealjs/)"
+    transition: none
+    transition-speed: slow
+    background-transition: fade
+    slide-number: true
+    show-slide-number: print
+stand-alone: true
+editor_options: 
+  chunk_output_type: console
+execute: 
+  fig-align: center
+  out-width: 80%
+  echo: false
+code-annotations: hover
+---
+
+```{r}
+#| include: false
+#| label: setup
+
+library(emoji)
+library(ggplot2)
+library(knitr)
+library(kableExtra)
+library(DT)
+```
+
+
+
+# Creating slides show 
+
+## Getting started 
+
+YAML: 
+
+```{markdown}
+#| echo: true
+title: "03-Presentations"
+author: "Ottavia M. Epifania"
+format: revealjs
+```
+
+. . . 
+
+Create a Section (Header 1 `#`):
+
+```{markdown}
+#| echo: true
+# Introduction
+```
+
+
+. . . 
+
+Create a Slide (Header 2 `##`): 
+
+```{markdown}
+#| echo: true
+## This is a slide 
+
+Here I write something concerning my topic
+```
+
+# Incremental contents 
+
+
+## 
+
+::: {.incremental}
+
+- What does *incremental* means?
+
+- It means each element of a list is shown incrementally instead of showing all text from the beginning 
+
+- Here's a new line! Shown incrementally 
+
+:::
+. . . 
+
+YAML: 
+
+```{markdown}
+#| echo: true
+#| codcode-line-numbers: "|3-5|"
+title: "03-Presentations"
+author: "Ottavia M. Epifania"
+format:
+  revealjs:
+    incremental: true   
+```
+
+. . . 
+
+::: {.callout-warning}
+
+All contents in all slides are displayed incrementally! 
+:::
+
+## Control incremental contents
+
+:::{.panel-tabset}
+
+## Prevent incremental contents
+
+When: 
+
+```{markdown}
+#| echo: true
+#| code-code-line-numbers: "|3|"
+format:
+  revealjs:
+    incremental: true    
+```
+
+
+This prevents incremental lists: 
+
+
+```{markdown}
+#| echo: true
+::: {.nonincremental}
+
+- I'm a list
+
+- But I'm not incremental 
+
+- Even though I'm supposed to be 
+
+:::
+```
+
+
+
+
+## Create specific incremental contents
+
+
+When (default): 
+
+```{markdown}
+#| echo: true
+#| code-code-line-numbers: "|3|"
+format:
+  revealjs:
+    incremental: false  
+```
+
+This allows for incremental lists: 
+
+
+```{markdown}
+#| echo: true
+::: {.nonincremental}
+
+- I'm a list
+
+- and I'm incremental! 
+
+- Even though I ain't supposed to be 
+
+:::
+```
+
+
+:::
+
+## Simple pause
+
+
+You can force incremental contents 
+
+. . . 
+
+By pausing the contents
+
+. . . 
+
+This is how you do it: 
+
+```{markdown}
+#| echo: true 
+
+You can force incremental contents 
+
+. . . 
+
+By pausing the contents
+
+. . . 
+
+This is how you do it: 
+```
+
+
+# Slide layout 
+
+## Columns 
+    
+    
+
