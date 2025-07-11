@@ -10,8 +10,8 @@ format:
     transition: none
     transition-speed: slow
     background-transition: fade
-    slide-number: true
-    show-slide-number: print
+    slide-number:  c/t
+    show-slide-number: all
 stand-alone: true
 editor_options: 
   chunk_output_type: console
@@ -203,6 +203,387 @@ This is how you do it:
 # Slide layout 
 
 ## Columns 
+
+:::{.panel-tabset}
+
+## Code 
+
+
+```{markdown}
+#| echo: true
+
+:::: {.columns}
+
+::: {.column width="40%"}
+I want some text in the left column
+:::
+
+::: {.column width="60%"}
+And a pciture in the right one 
+
+
+:::
+
+::::
+```
+
+
+## Output
+
+:::: {.columns}
+
+::: {.column width="40%"}
+I want some text in the left column
+:::
+
+::: {.column width="60%"}
+And a picture in the right one 
+
+
+```{r}
+#| echo: true
+
+knitr::include_graphics("img/peacock.png")
+```
+
+
+:::
+
+::::
+
+:::
     
-    
+## tabset: code
+
+
+
+```{markdown}
+#| echo: true
+#| eval: false
+::: {.panel-tabset}
+
+## Aim
+
+Here I present the aim of the study 
+
+## Methods
+
+Here I present the methods used to pursue the aim
+
+## Results
+
+And here I present the results
+
+:::
+```
+
+
+## tabset: output
+
+::: {.panel-tabset}
+
+
+## Aim
+
+Here I present the aim of the study 
+
+## Methods
+
+Here I present the methods used to pursue the aim
+
+## Results
+
+
+And here I present the results
+
+::: 
+
+## Absolute positions
+
+![](img/punkreas.jpg){.absolute top=200 left=0 width="350" height="300"}
+
+![](img/persiana.jpg){.absolute top=5 right=25 width="450" height="250"}
+
+![](img/posse.jpg){.absolute bottom=0 right=100 width="500" height="400"}
+
+
+## Code
+
+```{markdown}
+#| echo: true
+#| eval: false
+![](img/punkreas.jpg){.absolute top=200 left=0 width="350" height="300"}
+
+![](img/persiana.jpg){.absolute top=5 right=25 width="450" height="250"}
+
+![](img/posse.jpg){.absolute bottom=0 right=100 width="500" height="400"}
+```
+
+
+## Stack content
+
+:::{.r-stack}
+![](img/punkreas.jpg){.fragment width="350" height="300"}
+
+![](img/persiana.jpg){.fragment width="450" height="250"}
+
+![](img/posse.jpg){.fragment width="500" height="400"}
+
+:::
+
+## Stack content: Code
+
+```{markdown}
+#| echo: true
+#| eval: false
+
+:::{.r-stack}
+![](img/punkreas.jpg){.fragment width="350" height="300"}
+
+![](img/persiana.jpg){.fragment width="450" height="250"}
+
+![](img/posse.jpg){.fragment width="500" height="400"}
+
+:::
+
+```
+
+
+## Pro Stacking
+
+
+::: {.fragment}
+![](img/punkreas.jpg){width="350" height="300"}
+:::
+
+::: {.fragment .fade-in-then-out}
+![](img/persiana.jpg){width="450" height="250"}
+:::
+
+
+::: {.fragment .fade-out}
+![](img/peacock.png){width="350" height="300"}
+:::
+
+
+
+## Pro stacking: Code I
+
+```{markdown}
+#| echo: true
+#| eval: false 
+
+::: {.fragment}
+![](img/punkreas.jpg){width="350" height="300"}
+:::
+
+::: {.fragment .fade-in-then-out}
+![](img/persiana.jpg){width="450" height="250"}
+:::
+
+
+::: {.fragment .fade-out}
+![](img/peacock.png){width="350" height="300"}
+:::
+
+```
+
+
+## Other options
+
+::: {.fragment .highlight-red}
+This text will turn red
+:::
+
+
+::: {.fragment .fade-up}
+![](img/posse.jpg){width="500" height="400"}
+:::
+
+
+## Pro stacking: Code II
+
+```{markdown}
+#| echo: true
+#| eval: false 
+
+::: {.fragment .highlight-red}
+This text will turn red
+:::
+
+
+::: {.fragment .fade-up}
+![](img/posse.jpg){width="500" height="400"}
+:::
+```
+
+
+# Notes 
+
+## Speaker notes 
+
+
+Let's say you are presenting something that is really complicated and you need some boost of confidence
+
+::: {.notes}
+You can use the speaker notes to help you "survive" the presentation!
+:::
+
+
+## View the speaker notes
+
+When you are in presentation mode, just press `S`: 
+
+:::{.panel-tabset}
+
+## View 
+
+```{r}
+knitr::include_graphics("img/speaker-notes.png")
+```
+
+
+## Write
+
+
+```{markdown}
+#| echo: true
+
+Let's say you are presenting something that is really complicated and you need some boost of confidence
+
+::: {.notes}
+You can use the speaker notes to help you "survive" the presentation!
+:::
+
+```
+
+:::
+
+## Footnotes
+
+My blood brother is an immigrant, a beautiful immigrant ^[This song is [Danny Nedelko](https://youtu.be/QkF_G-RF66M?si=F11TuQYUtWVz0L9G) by IDLES]
+
+
+::: aside
+Fear leads to panic, panic leads to pain
+
+Pain leads to anger, anger leads to hate
+
+Yeah, yeah, yeah, yeah, ah, ah, ah, ah
+
+Yeah, yeah, yeah, yeah, ah, ah, ah, ah
+
+[Danny Nedelko](https://youtu.be/QkF_G-RF66M?si=F11TuQYUtWVz0L9G)
+:::
+
+
+# Code 
+
+## In general
+
+The syntax and the code seen so far for the code chunk remain the same: 
+
+````
+```{r}`r ''`
+#| eval: false
+#| echo: true
+head(rock)
+```
+````
+
+## Code highlight 
+
+```{r}
+#| echo: fenced
+#| fig-align: center
+#| code-line-numbers: "|3|6-8|6,7|"
+
+mtcars %>%                               
+  ggplot( aes(mpg, hp, size = gear)) +   
+  geom_point() +                             
+  geom_smooth(method = "lm")             
+
+```
+
+## {auto-animate="true"}
+
+```{r}
+#| echo: true
+# Fill in the spot we created for a plot
+ggplot(mtcars,
+       aes(mpg, hp, size = gear)) +
+  geom_point() 
+```
+
+
+
+## {auto-animate="true"}
+
+```{r}
+#| echo: true
+# Fill in the spot we created for a plot
+ggplot(mtcars,
+       aes(mpg, hp, size = gear)) +
+  geom_point() + 
+  geom_smooth()
+```
+
+
+## Output location: Delayed `fragment`
+
+```{r}
+#| echo: fenced
+#| fig-align: center
+#| output-location: fragment
+#| code-line-numbers: "|3|"
+
+mtcars %>%                               
+  ggplot( aes(mpg, hp, size = gear)) +   
+  geom_point() +                             
+  geom_smooth(method = "lm")        
+```
+
+## Output location: Dealyed along the code `column-fragment`
+
+```{r}
+#| echo: fenced
+#| fig-align: center
+#| output-location: column-fragment
+#| code-line-numbers: "|3|"
+
+mtcars %>%                               
+  ggplot( aes(mpg, hp, size = gear)) +   
+  geom_point() +                             
+  geom_smooth(method = "lm")        
+```
+
+## Output location: Next slide `slide`
+
+```{r}
+#| echo: fenced
+#| fig-align: center
+#| output-location: slide
+#| code-line-numbers: "|3|"
+
+mtcars %>%                               
+  ggplot( aes(mpg, hp, size = gear)) +   
+  geom_point() +                             
+  geom_smooth(method = "lm")        
+```
+
+
+## Output location: Along the code `column`
+
+```{r}
+#| echo: fenced
+#| fig-align: center
+#| output-location: column
+#| code-line-numbers: "|3|"
+
+mtcars %>%                               
+  ggplot( aes(mpg, hp, size = gear)) +   
+  geom_point() +                             
+  geom_smooth(method = "lm")        
+```
+
 
