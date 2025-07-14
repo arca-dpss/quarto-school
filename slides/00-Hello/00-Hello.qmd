@@ -5,6 +5,7 @@ author:
   email: ottavia.epifania@unitn.it
 format: 
   revealjs: 
+    self-contained: true
     theme: mytheme.scss
     logo: "img/freepalestine.jpg"
     footer: "Hello, my name is quarto"
@@ -13,7 +14,6 @@ format:
     background-transition: fade
     slide-number: c/t
     show-slide-number: all
-stand-alone: true
 editor_options: 
   chunk_output_type: console
 execute: 
