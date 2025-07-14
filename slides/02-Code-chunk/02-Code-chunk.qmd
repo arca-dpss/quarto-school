@@ -1,18 +1,20 @@
 ---
 title: "02-Code chunks"
-author: "Ottavia M. Epifania"
+author: 
+  name: "Ottavia M. Epifania"
+  email: ottavia.epifania@unitn.it
 format: 
   revealjs: 
+    self-contained: true
     df_print: kable
     theme: mytheme.scss
-    # logo: "www/psicostat.jpg"
+    logo: "img/freepalestine.jpg"
     footer: "Code chunks"
     transition: none
     transition-speed: slow
     background-transition: fade
-    slide-number: true
-    show-slide-number: print
-stand-alone: true
+    slide-number:  c/t
+    show-slide-number: all
 editor_options: 
   chunk_output_type: console
 execute: 
@@ -48,7 +50,7 @@ knitr::include_graphics("img/code.png")
 
 # Chunk options 
 
-## `echo`: Control the code display 
+## `echo`: Control the code display {.smaller}
 
 
 ::::{.columns}
@@ -142,16 +144,32 @@ head(rock)
 head(rock)
 ```
 
+::: {.callout-note}
 
-## Other options 
+## `include: false`
+
+Super convient as first code chunk to load all the packages, data, preprocessing
+
+:::
+
+
+
+
+
+## Other options {footer="false"}
 
 * `warning: true` 
+
     (default) the warnings obtained from the code executed in the chunk are displayed 
 * `message: true` 
+    
     (default) the messages associated to the code (e.g., when you upload a package with `library(package)`)
-* `error: false` 
+* `error` 
+  + `error: false`
+  
     (default) If there is an error in the code,  knitting stops and the document will not be generated until the error is fixed
-* `error: true` 
+  + `error: true` 
+
     If there is an error in the code,  the error message is shown in the document and the knitting goes on 
 
 
@@ -172,7 +190,7 @@ execute:
 
 . . . 
 
-If in one specific code we don't want to display the code: 
+Overruled by spefici code-chunk options:
 
 ````
 ```{r}`r ''`
@@ -186,6 +204,7 @@ head(rock)
 
 ```{markdown}
 #| echo: true
+#| code-line-numbers: "|4-7|"
 [...]
 format: 
   html:
@@ -243,7 +262,7 @@ include_graphics("img/fold2.png")
 
 # Images & Graphs
 
-## External images: `.png` and `.jpg`
+## External images: `.png` and `.jpg` {.smaller footer="false"}
 
 :::{.panel-tabset}
 
@@ -251,7 +270,7 @@ include_graphics("img/fold2.png")
 
 `@fig-peacock1 illustrates a peacock`
 
-```{markdown}
+```{r}
 #| echo: fenced
 #| eval: false
 #| out-width: 50%
@@ -274,13 +293,12 @@ knitr::include_graphics("img/peacock.png")
 #| fig-cap: A peacock living the life
 #| fig-cap-location: bottom
 #| label: fig-peacock
-#| code-line-numbers: "|3|4|5|6|7"
 knitr::include_graphics("img/peacock.png")
 ```
 
 :::
 
-## Graphics 
+## Graphics {.smaller footer="false"}
 
 ::: {.panel-tabset}
 
@@ -293,7 +311,7 @@ knitr::include_graphics("img/peacock.png")
 #| out-width: 50%                                
 #| fig-align: center                             
 #| fig-cap: A graph from `mtcars`
-#| fig-cap-location: bottom
+#| fig-cap-location: margin
 #| label: fig-mtcars1
 #| code-line-numbers: "|2|3|4|5|6"
 ggplot(mtcars, aes(hp, mpg, color = factor(am))) +
@@ -314,7 +332,7 @@ ggplot(mtcars, aes(hp, mpg, color = factor(am))) +
 #| out-width: 50%
 #| fig-align: center
 #| fig-cap: A graph from `mtcars`
-#| fig-cap-location: bottom
+#| fig-cap-location: margin
 #| label: fig-mtcars
 #| code-line-numbers: "|2|3|4|5|6"
 ggplot(mtcars,                                   
@@ -326,20 +344,39 @@ ggplot(mtcars,
 
 :::
 
+
+## Your turn
+
+From the previous document
+
+* Add an external image with `knitr::include_graphics()`, with a caption and a cross reference
+
+* From the dataset of the course, the following plot, with a cross-reference and a caption: 
+
+```{r}
+#| echo: true
+#| eval: false
+
+ggplot(dataset, 
+       aes(x = flexibility, y = anxiety, color = mindfulness)) +
+  geom_point()
+```
+
+* The code used for the plot should be visible only if the person click on "Show code". All other code-chunk should not be visible
+
 # Tables
 
-## `kable` 
+## `kable` {footer="false"}
 
 
 ```{r}
 #| echo: true
 
-##
-
-kable(mtcars)  # <1>
+# knitr default
+kable(head(mtcars))  # <1>
 ```
 
-1. Basic table
+1. Basic table, the `kable()` function is the `knitr` package
 
 ## 
 
@@ -550,6 +587,14 @@ $$ {#eq-standardize}
 
 :::
 
+## Your turn 
+
+<br>
+
+<br>
+
+* Add a table based on the dataset, with a caption and a crossreference
+
 # Margins 
 
 ## Content 
@@ -696,7 +741,7 @@ include_graphics("img/margin-mutliple-fig.png")
 ```
 :::
 
-## Multiple plots
+## Multiple plots {.smaller footer="false"}
 
 
 :::{.panel-tabset}
@@ -750,7 +795,7 @@ ggplot(mtcars,
 #| label: fig-plotsModels1
 #| echo: false
 #| warning: false
-#| out-width: "30%"
+#| out-width: "60%"
 #| column: screen-inset-shaded
 #| layout-nrow: 2
 #| layout-ncol: 2
@@ -786,7 +831,7 @@ ggplot(mtcars,
 :::
 
 
-## Multiple Tables  
+## Multiple Tables  {.smaller footer="false"}
 
 
 ::: {.panel-tabset}
@@ -805,6 +850,7 @@ ggplot(mtcars,
 #| layout-ncol: 2
 
 kable(head(cars))
+
 kable(head(pressure))
 ```
 
@@ -812,7 +858,7 @@ kable(head(pressure))
 ## Output 
 
 
-@tbl-tables1 presents two datasets: @tbl-tables1-1 is cars and @tbl-tables1-2 is pressure
+@tbl-tables1 presents two datasets: @tbl-tables1-1 is `cars` and @tbl-tables1-2 is `pressure`
 
 ```{r}
 #| label: tbl-tables1
@@ -829,6 +875,13 @@ kable(head(pressure))
 
 :::
 
+
+## Your turn 
+
+* Side by side: 
+  + graph & table 
+  + graph & graph (add `+ geom_smooth()` to the previous code)
+  + Table & table
 
 # Code annotation 
 
@@ -861,18 +914,20 @@ Options:
 ## Code
 
 ```{r}
-#| echo: fenced
+#| echo: true
 #| eval: false
+#| results: hold
 #| warning: false
 
 ## GGplot
 
-mtcars %>%                               # <1>
-  ggplot( aes(mpg, hp, size = gear)) +   # <2>
-  geom_point() +                         # <3>    
-  geom_smooth(method = "lm")             # <4>
+mtcars %>%                               # .<1>
+  ggplot( aes(mpg, hp, size = gear)) +   # .<2>
+  geom_point() +                         # .<3>    
+  geom_smooth(method = "lm")             # .<4>
 
 ```
+
 
 
 `1. This does that`
@@ -882,6 +937,11 @@ mtcars %>%                               # <1>
 `3. And look at this!`
 
 `4. Please have mercy` 
+
+::: aside
+Remove the dot between this symbol `#` and this symbol `<`
+:::
+
 
 
 ## Output
@@ -910,7 +970,7 @@ mtcars %>%                               # <1>
 
 
 
-# Inline code
+# Inline executable code
 
 ## In general
 
