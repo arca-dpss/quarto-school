@@ -1,18 +1,21 @@
 ---
 title: "03-Presentations"
-author: "Ottavia M. Epifania"
+author:
+  name: "Ottavia M. Epifania, Ph.D."
+  email: ottavia.epifania@unitn.it
+affiliation: "ARCA summer school"
 format: 
   revealjs: 
-    df_print: kable
-    theme: mytheme.scss
-    # logo: "www/psicostat.jpg"
+    self-contained: true
+    theme: [simple, custom.scss]
+    logo: "www/freepalestine.jpg"
     footer: "[Presentations](https://quarto.org/docs/presentations/revealjs/)"
+    scrollable: true
     transition: none
     transition-speed: slow
     background-transition: fade
     slide-number:  c/t
     show-slide-number: all
-stand-alone: true
 editor_options: 
   chunk_output_type: console
 execute: 
@@ -20,6 +23,7 @@ execute:
   out-width: 80%
   echo: false
 code-annotations: hover
+server: shiny
 ---
 
 ```{r}
@@ -36,6 +40,17 @@ library(DT)
 
 
 # Creating slides show 
+
+## A new slide
+
+```{r}
+#| fig-align: center
+#| out-width: 100%
+
+knitr::include_graphics("www/new-pres.png")
+```
+
+
 
 ## Getting started 
 
@@ -108,7 +123,7 @@ All contents in all slides are displayed incrementally!
 
 :::{.panel-tabset}
 
-## Prevent incremental contents
+## Prevent increment
 
 When: 
 
@@ -140,7 +155,7 @@ This prevents incremental lists:
 
 
 
-## Create specific incremental contents
+## Force increment
 
 
 When (default): 
@@ -158,7 +173,7 @@ This allows for incremental lists:
 
 ```{markdown}
 #| echo: true
-::: {.nonincremental}
+::: {.incremental}
 
 - I'm a list
 
@@ -199,6 +214,259 @@ By pausing the contents
 This is how you do it: 
 ```
 
+# Basics 
+
+## YAML 
+
+These options will be applied to all slides
+
+```{markdown}
+#| echo: true
+---
+title: "03-Presentations"
+author:
+  name: "Ottavia M. Epifania, Ph.D."
+  email: ottavia.epifania@unitn.it
+affiliation: "ARCA summer school"
+format: 
+  revealjs: 
+    self-contained: true
+    scrollable: true
+    logo: "www/freepalestine.jpg"
+    footer: "Presentations"
+    incremental: true
+    slide-number:  c/t
+    show-slide-number: all
+---
+```
+
+
+## Specific slides behavior 
+
+To delete the footer
+
+```{markdown}
+#| echo: true
+
+## My slide with no footer {footer="false"}
+```
+
+To make the content scrollable
+
+
+```{markdown}
+#| echo: true
+
+## My specific scrollable slide {.scrollable}
+```
+
+
+To make the content smaller
+
+
+```{markdown}
+#| echo: true
+
+## The text in this slide is smaller {.smaller}
+```
+
+
+. . . 
+
+To combine them together
+
+
+```{markdown}
+#| echo: true
+
+## Together {.smaller footer="false"}
+```
+
+
+# Themes
+
+## Available themes 
+
+A lot of [predefined themes](https://quarto.org/docs/presentations/revealjs/themes.html)! 
+
+. . . 
+
+
+
+:::: {.columns}
+
+::: {.column width=50%}
+```{markdown}
+#| echo: true
+#| code-line-numbers: "|6|"
+---
+title: "My presentation"
+author: "Ted Bundy"
+format:
+  revealjs: 
+    theme: dark
+---
+```
+
+
+:::
+
+
+
+::: {.column width=25%}
+
+beige
+
+blood
+
+dark
+
+default
+
+dracula
+
+league
+
+moon
+
+beige
+
+blood
+
+dark
+
+:::
+
+::: {.column width=25%}
+
+
+
+**default**
+
+dracula
+
+league
+
+moon
+
+night
+
+serif
+
+simple
+
+sky
+
+solarized
+
+
+:::
+
+
+
+::::
+
+## Customize themes: Easy mode {.scrollable}
+
+Use the pre-defined themes with personalized `.scss` file: 
+
+```{markdown}
+#| echo: true
+#| code-line-numbers: "|6|"
+---
+title: "My presentation"
+author: "Ted Bundy"
+format:
+  revealjs: 
+    theme: [dark, custom.scss]
+---
+```
+
+```{scss}
+#| echo: true
+
+/*-- scss:defaults --*/
+
+// fonts
+$font-family-sans-serif: "Palatino Linotype", "Book Antiqua", Palatino,
+  FreeSerif, serif !default;
+$presentation-font-size-root:	34px;
+
+// headings
+$presentation-heading-font: "Palatino Linotype", "Book Antiqua", Palatino,
+  FreeSerif, serif !default;
+$presentation-h1-font-size: 1.8em;
+$presentation-h2-font-size: 1.4em;
+$presentation-h3-font-size: 1.2em;
+
+
+// code 
+$code-block-font-size: 0.70em;
+
+$callout-style-font-size: .5em;
+$callout-style-font-weight: 400;
+
+$slide-logo-size: 200px;
+
+/*-- scss:rules --*/
+
+.reveal a {
+  line-height: 1.3em;
+}
+```
+
+## Customize themes: Pro mode {.scrollable .smaller}
+
+Define a new theme. [Here](https://quarto.org/docs/presentations/revealjs/themes.html) all the elements that can be modified 
+
+Save the theme in a file `mytheme.scss` and `theme: mytheme.scss`
+
+```{scss}
+#| echo: true
+/*-- scss:defaults --*/
+
+// fonts
+$font-family-sans-serif: "Palatino Linotype", "Book Antiqua", Palatino,
+  FreeSerif, serif !default;
+
+// colors
+$body-bg: #fff !default;
+$body-color: #000 !default;
+$link-color: #51483d !default;
+$selection-bg: #26351c !default;
+$presentation-font-size-root:	32px;
+
+// headings
+$presentation-heading-font: "Palatino Linotype", "Book Antiqua", Palatino,
+  FreeSerif, serif !default;
+$presentation-heading-color: #9B0014 !default;
+$presentation-h1-font-size: 1.8em;
+$presentation-h2-font-size: 1.4em;
+$presentation-h3-font-size: 1.2em;
+
+
+$callout-style-font-size: .5em;
+$callout-style-font-weight: 400;
+
+$slide-logo-size: 200px;
+
+/*-- scss:rules --*/
+
+.reveal a {
+  line-height: 1.3em;
+}
+```
+
+
+## Your turn 
+
+* Create a new quarto presentation
+  + Default incremental
+  + Choose a theme 
+
+* Make two slides with a list: 
+  + One where it is incremental
+  + One where it is not incremental and the slide is scrollable
 
 # Slide layout 
 
@@ -243,7 +511,7 @@ And a picture in the right one
 ```{r}
 #| echo: true
 
-knitr::include_graphics("img/peacock.png")
+knitr::include_graphics("www/peacock.png")
 ```
 
 
@@ -300,11 +568,11 @@ And here I present the results
 
 ## Absolute positions
 
-![](img/punkreas.jpg){.absolute top=200 left=0 width="350" height="300"}
+![](www/punkreas.jpg){.absolute top=200 left=0 width="350" height="300"}
 
-![](img/persiana.jpg){.absolute top=5 right=25 width="450" height="250"}
+![](www/persiana.jpg){.absolute top=5 right=25 width="450" height="250"}
 
-![](img/posse.jpg){.absolute bottom=0 right=100 width="500" height="400"}
+![](www/posse.jpg){.absolute bottom=0 right=100 width="500" height="400"}
 
 
 ## Code
@@ -312,22 +580,22 @@ And here I present the results
 ```{markdown}
 #| echo: true
 #| eval: false
-![](img/punkreas.jpg){.absolute top=200 left=0 width="350" height="300"}
+![](www/punkreas.jpg){.absolute top=200 left=0 width="350" height="300"}
 
-![](img/persiana.jpg){.absolute top=5 right=25 width="450" height="250"}
+![](www/persiana.jpg){.absolute top=5 right=25 width="450" height="250"}
 
-![](img/posse.jpg){.absolute bottom=0 right=100 width="500" height="400"}
+![](www/posse.jpg){.absolute bottom=0 right=100 width="500" height="400"}
 ```
 
 
 ## Stack content
 
 :::{.r-stack}
-![](img/punkreas.jpg){.fragment width="350" height="300"}
+![](www/punkreas.jpg){.fragment width="350" height="300"}
 
-![](img/persiana.jpg){.fragment width="450" height="250"}
+![](www/persiana.jpg){.fragment width="450" height="250"}
 
-![](img/posse.jpg){.fragment width="500" height="400"}
+![](www/posse.jpg){.fragment width="500" height="400"}
 
 :::
 
@@ -338,11 +606,11 @@ And here I present the results
 #| eval: false
 
 :::{.r-stack}
-![](img/punkreas.jpg){.fragment width="350" height="300"}
+![](www/punkreas.jpg){.fragment width="350" height="300"}
 
-![](img/persiana.jpg){.fragment width="450" height="250"}
+![](www/persiana.jpg){.fragment width="450" height="250"}
 
-![](img/posse.jpg){.fragment width="500" height="400"}
+![](www/posse.jpg){.fragment width="500" height="400"}
 
 :::
 
@@ -352,19 +620,20 @@ And here I present the results
 ## Pro Stacking
 
 
+:::{.r-stack}
 ::: {.fragment}
-![](img/punkreas.jpg){width="350" height="300"}
+![](www/punkreas.jpg){width="350" height="300"}
 :::
 
 ::: {.fragment .fade-in-then-out}
-![](img/persiana.jpg){width="450" height="250"}
+![](www/persiana.jpg){width="450" height="250"}
 :::
 
 
 ::: {.fragment .fade-out}
-![](img/peacock.png){width="350" height="300"}
+![](www/peacock.png){width="350" height="300"}
 :::
-
+:::
 
 
 ## Pro stacking: Code I
@@ -373,17 +642,19 @@ And here I present the results
 #| echo: true
 #| eval: false 
 
+:::{.r-stack}
 ::: {.fragment}
-![](img/punkreas.jpg){width="350" height="300"}
+![](www/punkreas.jpg){width="350" height="300"}
 :::
 
 ::: {.fragment .fade-in-then-out}
-![](img/persiana.jpg){width="450" height="250"}
+![](www/persiana.jpg){width="450" height="250"}
 :::
 
 
 ::: {.fragment .fade-out}
-![](img/peacock.png){width="350" height="300"}
+![](www/peacock.png){width="350" height="300"}
+:::
 :::
 
 ```
@@ -397,7 +668,7 @@ This text will turn red
 
 
 ::: {.fragment .fade-up}
-![](img/posse.jpg){width="500" height="400"}
+![](www/posse.jpg){width="500" height="400"}
 :::
 
 
@@ -413,10 +684,16 @@ This text will turn red
 
 
 ::: {.fragment .fade-up}
-![](img/posse.jpg){width="500" height="400"}
+![](www/posse.jpg){width="500" height="400"}
 :::
 ```
 
+
+## Your turn 
+
+* Create a slide with absolute positioning of two pictures
+
+* Create a slide with stacked content (you can decide what and how)
 
 # Notes 
 
@@ -439,7 +716,7 @@ When you are in presentation mode, just press `S`:
 ## View 
 
 ```{r}
-knitr::include_graphics("img/speaker-notes.png")
+knitr::include_graphics("www/speaker-notes.png")
 ```
 
 
@@ -509,7 +786,7 @@ mtcars %>%
 
 ```{r}
 #| echo: true
-# Fill in the spot we created for a plot
+# Create a scatterplot with a smoothing function
 ggplot(mtcars,
        aes(mpg, hp, size = gear)) +
   geom_point() 
@@ -521,12 +798,40 @@ ggplot(mtcars,
 
 ```{r}
 #| echo: true
-# Fill in the spot we created for a plot
+# Create a scatterplot with a smoothing function
 ggplot(mtcars,
        aes(mpg, hp, size = gear)) +
   geom_point() + 
   geom_smooth()
 ```
+
+## Code animation
+
+````
+## {auto-animate="true"}
+
+```{r}`r ''`
+#| echo: true
+# Create a scatterplot with a smoothing function
+ggplot(mtcars,
+       aes(mpg, hp, size = gear)) +
+  geom_point() 
+```
+
+## {auto-animate="true"}
+
+```{r}`r ''`
+#| echo: true
+# Create a scatterplot with a smoothing function
+ggplot(mtcars,
+       aes(mpg, hp, size = gear)) +
+  geom_point() + 
+  geom_smooth()
+```
+
+````
+
+
 
 
 ## Output location: Delayed `fragment`
@@ -587,3 +892,428 @@ mtcars %>%
 ```
 
 
+## Your turn 
+
+* Code highlight of the 2 and 3 lines: 
+
+```{r}
+#| echo: true
+#| eval: false
+mtcars %>%                               
+  ggplot( aes(mpg, hp)) +   
+  geom_point() 
+```
+
+
+* Code animation from the previous code: 
+
+```{r}
+#| echo: true
+#| eval: false
+mtcars %>%                               
+  ggplot( aes(mpg, hp, color = gear)) +   
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+
+
+* Output location in next slide: 
+
+```{r}
+#| echo: true
+#| eval: false
+mtcars %>%                               
+  ggplot( aes(mpg, hp, color = gear)) +   
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+
+
+# Interactivity 
+
+## Basics
+
+Interactive plots with `plotly`
+
+```{r}
+#| echo: true
+#| output-location: fragment
+#| out-width: 100%
+#| fig-align: center
+library(plotly) # you have to first install it :) 
+
+graph = mtcars %>%                                # <1>
+  ggplot( aes(mpg, hp, color = gear)) +   
+  geom_point() +                             
+  geom_smooth()     
+ggplotly(graph)                                    # <2>
+```
+
+1. Basic ggplot saved into object `graph`
+2. Activate with `plotly` 
+
+## Time to shine 
+
+```{r}
+knitr::include_app("https://ottaviae.shinyapps.io/app-tired/", height = "800px")
+```
+
+## Shiny app logic I 
+
+:::: {.columns}
+
+::: {.column}
+`ui` (**U**ser **I**nterface)
+
+The container, whatever sees the user
+
+Used for setting the desired configurations of options that will be elaborated in the server 
+
+Used for displaying the results of the computations that took place in the server
+
+:::
+
+::: {.column}
+
+`server`
+
+It gets the work done, according to the configuration set in the UI
+
+Replaces the results into the allocated spaces
+
+:::
+
+
+::::
+
+## A flow
+
+```{r}
+#| eval: true
+#| out-width: 40%
+#| fig-align: "center"
+knitr::include_graphics("www/flow.png")
+```
+
+>
+>   - Define something in the `ui` and not using in the server: nothing happens, it just doesn't exist
+>
+  - Calling something in the server that has not been defined in the `ui`: errors everywhere
+  
+
+## Basics
+
+```{r}
+#| echo: true
+#| eval: false
+install.packages("shiny") # install
+library(shiny) # use it
+```
+
+. . . 
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|1-3|4-6|7"
+ui = fluidPage(          # <1> 
+   [...]
+  )
+server = function(input, output){ # <2> 
+  [...]
+}
+shinyApp(ui, server)  # <3> 
+```
+
+
+1. Define the ui 
+2. Define the server
+3. Shine
+
+## To each its own: Input in UI
+
+```{r eval=FALSE}
+#| echo: true
+sliderInput()     # Slider input widget
+numericInput()    # Numeric input control
+selectInput()     # Select list input control
+checkboxInput()   # Checkbox input control
+checkboxGroupInput()
+dateInput()       # Date input
+fileInput()       # File upload control
+radioButtons()    # Radio buttons
+textInput()       # Text input control
+passwordInput()   # Password input control
+actionButton()    # Action button
+dateInput()       # Date input
+dateRangeInput()  # Input a data range
+```
+
+[Complete list](https://shiny.rstudio.com/gallery/widget-gallery.html) (with code)
+
+
+
+
+## To each its own: Output in UI
+
+```{r eval=FALSE}
+#| echo: true
+plotOutput()          # Plot output element
+textOutput()          # Text output element
+verbatimTextOutput()  # Verbatim text output element
+tableOutput()         # Table output element
+dataTableOutput()     # Data table output element
+htmlOutput()          # HTML output element
+uiOutput()            # user interface element
+downloadButton()      # Download button
+Progress()            # Reporting progress (object oriented)
+withProgress()        # Reporting progress (functional)
+outputOptions()       # Set options for an output object
+```
+
+
+## To each its own: Output containers in server
+
+```{r, eval =FALSE}
+#| echo: true
+renderPlot()        # Plot output
+renderText()        # Text output
+renderPrint()       # Printable output
+renderTable()       # Table output
+renderDataTable()   # Data table output
+renderImage()       # Image file output
+renderUI()          # UI output
+downloadHandler()   # File downloads
+```
+
+
+
+
+## {auto-animate="true"}
+
+```{r eval=FALSE}
+#| echo: true
+
+ui = fluidPage(
+
+)
+
+```
+
+## {auto-animate="true"}
+
+
+```{r eval = FALSE}
+#| echo: true
+
+ui = fluidPage(
+selectInput(inputId = "mySelection", 
+            label = h3("Select box"),
+    choices = list("Choice 1" = 1, "Choice 2" = 2, "Choice 3" = 3),
+    selected = 1)
+)
+
+```
+
+## {auto-animate="true"}
+
+```{r eval=FALSE}
+#| echo: true
+ui = fluidPage(
+selectInput(inputId = "mySelection", 
+            label = h3("Select box"),
+    choices = list("Choice 1" = 1, "Choice 2" = 2, "Choice 3" = 3),
+    selected = 1), 
+  
+  verbatimTextOutput(
+  outputId = "myOutput"
+)
+  
+)
+
+
+```
+
+## {auto-animate="true"}
+
+```{r eval=FALSE}
+#| echo: true
+ui = fluidPage(
+selectInput(inputId = "mySelection", 
+            label = h3("Select box"),
+    choices = list("Choice 1" = 1, "Choice 2" = 2, "Choice 3" = 3),
+    selected = 1), 
+  
+  verbatimTextOutput(
+  outputId = "myOutput"
+)
+  
+)
+
+server = function(input, output) {
+  output$myOutput = renderText({
+    paste(paste("This is my choice"), input$mySelection)
+  })
+}
+```
+
+
+## {auto-animate="true"}
+
+```{r eval=FALSE}
+#| echo: true
+ui = fluidPage(
+selectInput(inputId = "mySelection", 
+            label = h3("Select box"),
+    choices = list("Choice 1" = 1, "Choice 2" = 2, "Choice 3" = 3),
+    selected = 1), 
+  
+  verbatimTextOutput(
+  outputId = "myOutput"
+)
+  
+)
+
+server = function(input, output) {
+  output$myOutput = renderText({
+    paste(paste("This is my choice"), input$mySelection)
+  })
+}
+
+shinyApp(ui, server)  
+```
+
+
+## 
+
+
+```{r}
+#| panel: sidebar
+selectInput(inputId = "dataset", # name of the input (for the server)
+                  label = "Choose a dataset:", # name of the input (for the users)
+                  choices = c("rock", "pressure", "cars")) # options (for  both 
+                                                          # users & server)
+```
+
+
+```{r}
+#| panel: fill
+#| fig-align: center
+#| out-width: 30%
+ plotOutput("graph" )
+verbatimTextOutput("summary")
+
+```
+
+
+
+
+
+```{r}
+#| context: server
+
+output$graph <- renderPlot({
+    if(input$dataset == "rock"){ # call the input and its options with their label
+      data <- rock
+    } else if (input$dataset == "pressure" ){
+      data <- pressure
+    } else if (input$dataset == "cars") {
+      data <- cars
+    }
+    plot(data[, c(1:2)])
+  })
+
+output$summary <- renderPrint({
+    if(input$dataset == "rock"){
+      data <- rock
+    } else if (input$dataset == "pressure" ){
+      data <- pressure
+    } else if (input$dataset == "cars") {
+      data <- cars
+    }
+    summary(data[, c(1:2)])
+  })
+
+```
+
+
+
+
+
+## Shine in quarto {.smaller}
+
+```{markdown}
+#| echo: true
+#| code-code-line-numbers: "|7|"
+---
+title: "My presentation"
+author: "Ted Bundy"
+format:
+  revealjs: 
+    theme: dark
+server: shiny
+---
+```
+
+
+::: {.panel-tabset}
+
+## UI
+
+```{r}
+#| echo: fenced
+#| panel: sidebar
+#| eval: false
+selectInput(inputId = "dataset", # name of the input (for the server)
+                  label = "Choose a dataset:", # name of the input (for the users)
+                  choices = c("rock", "pressure", "cars")) # options (for  both 
+                                                          # users & server)
+```
+
+
+
+
+```{r}
+#| echo: fenced
+#| panel: fill
+#| eval: false
+#| out-width: 30%
+#| fig-align: center
+plotOutput("graph" )
+verbatimTextOutput("summary")
+
+```
+
+
+## Server
+
+```{r}
+#| echo: fenced
+#| eval: false
+#| context: server
+
+output$graph <- renderPlot({
+    if(input$dataset == "rock"){ # call the input and its options with their label
+      data <- rock
+    } else if (input$dataset == "pressure" ){
+      data <- pressure
+    } else if (input$dataset == "cars") {
+      data <- cars
+    }
+    plot(data[, c(1:2)])
+  })
+
+output$summary <- renderPrint({
+    if(input$dataset == "rock"){
+      data <- rock
+    } else if (input$dataset == "pressure" ){
+      data <- pressure
+    } else if (input$dataset == "cars") {
+      data <- cars
+    }
+    summary(data[, c(1:2)])
+  })
+
+```
+
+:::
