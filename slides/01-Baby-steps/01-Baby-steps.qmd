@@ -1,16 +1,19 @@
 ---
 title: "01-Baby Steps"
-author: "Ottavia M. Epifania"
+author: 
+  name: "Ottavia M. Epifania"
+  email: ottavia.epifania@unitn.it
 format: 
   revealjs: 
+    self-contained: true
     theme: mytheme.scss
-    # logo: "www/psicostat.jpg"
+    logo: "img/freepalestine.jpg"
     footer: "Baby steps"
     transition: none
     transition-speed: slow
     background-transition: fade
-    slide-number: true
-    show-slide-number: print
+    slide-number: c/t
+    show-slide-number: all
 stand-alone: true
 editor_options: 
   chunk_output_type: console
@@ -86,31 +89,40 @@ knitr::include_graphics("img/q_visual.png")
 :::
 
 
-## YAML: Table of Contents (toc)
+## YAML: `T`able `o`f `C`ontents (ToC) {footer="false"}
 
-````
+
+```{markdown}
+#| echo: true
 ---
 title: "My quarto file"
 author: "Jane Doe"
 date: today
 format: 
   html:
-    self-contained: true
-    toc: true
-    toc-title: My contents
-    toc-location: left
+    self-contained: true     # 1
+    toc: true                # 2   
+    toc-title: My contents   # 3
+    toc-location: left       # 4
 editor: source
 lang: it
 ---
-````
+```
 
-`self-contained: true` is of the uttermost importance!!!
+1. Allows for the sharing of the hmtl file without requiring for external files
 
-(Further details on the YAML later on)
+2. Put Table of Contents
+
+3. Define the title of the ToC
+
+4. Location of the ToC (`left`, `right`, `body`)
+
+
+
 
 # Markdown formatting 
 
-## Headings 
+## Headings  {footer="false"}
 
 ```{markdown}
 #| echo: true
@@ -119,8 +131,7 @@ lang: it
 # First level
 ```
 
-<br>
-
+Section 
 
 ```{markdown}
 #| echo: true
@@ -129,7 +140,7 @@ lang: it
 ## Second level
 ```
 
-<br>
+Subsection
 
 ```{markdown}
 #| echo: true
@@ -138,7 +149,7 @@ lang: it
 ### Third level
 ```
 
-<br>
+Sub-subsection
 
 ```{markdown}
 #| echo: true
@@ -147,7 +158,7 @@ lang: it
 #### Fourth level
 ```
 
-<br>
+Paragraph
 
 ```{markdown}
 #| echo: true
@@ -156,7 +167,7 @@ lang: it
 ##### Fifth level
 ```
 
-<br>
+I frankly have never used that
 
 ```{markdown}
 #| echo: true
@@ -165,6 +176,7 @@ lang: it
 ##### Sixth level
 ```
 
+I have no idea
 
 
 ## Text Formatting
@@ -178,13 +190,13 @@ lang: it
 ```{markdown}
 #| eval: true
 #| echo: true
-*italics*, **bold**, **bold italics** 
+*italics*, **bold**, ***bold italics*** 
 ```
 
 
 Output
 
-*italics*, **bold**, **bold italics** 
+*italics*, **bold**, ***bold italics***
 
 
 . . . 
@@ -233,9 +245,9 @@ Output
 <https://github.com/>
 ```
 
-<br>
-
 <https://github.com/>
+
+. . . 
 
 <br>
 
@@ -246,9 +258,10 @@ Output
 My link is [here](https://github.com/)
 ```
 
-<br>
 
 My link is [here](https://github.com/)
+
+. . . 
 
 <br> 
 
@@ -262,7 +275,7 @@ My link is [here](https://github.com/)
 
 ![This is an image](img/picture.jpg)
 
-## Lists 
+## Lists {footer=false}
 
 
 :::: {.columns}
@@ -273,10 +286,10 @@ My link is [here](https://github.com/)
 #| echo: true
 #| eval: false
 
-* unordered list
-  + sub-item 1
-  + sub-item 2
-    - sub-sub-item 1
+* Main Unordered List
+  + First sub-item
+  + Second sub-item 
+    - It's getting weird
 ```
 
 <br>
@@ -287,10 +300,10 @@ My link is [here](https://github.com/)
 #| echo: true
 #| eval: false
 
-1. ordered list
-2. item 2
-   i) sub-item 1
-      A.  sub-sub-item 1
+1. Main ordered list
+2. Second item
+   i) First sub-item 1
+      A.  First sub-sub-item 1
 ```
 
 
@@ -317,17 +330,16 @@ My link is [here](https://github.com/)
 
 :::{.column width=50%}
 
-* unordered list
-  + sub-item 1
-  + sub-item 2
-    - sub-sub-item 1
+* Main Unordered List
+  + First sub-item
+  + Second sub-item 
+    - It's getting weird
     
 
-1. ordered list
-2. item 2
-   i) sub-item 1
-      A.  sub-sub-item 1
-
+1. Main ordered list
+2. Second item
+   i) First sub-item 1
+      A.  First sub-sub-item 1
 <br>      
       
 
@@ -509,6 +521,11 @@ knitr::include_graphics("img/basic-layout.png")
 
 The page layout is based on a 12-unit (or 12-column) grid system, which can be used to divide the space accordingly: 
 
+
+:::{.panel-tabset}
+
+## Code
+
 ```{markdown}
 #| echo: true
 #| eval: false
@@ -516,7 +533,7 @@ The page layout is based on a 12-unit (or 12-column) grid system, which can be u
 
 ::: {.g-col-4}
 
-First column, 4/12 of the toal width
+First column, 4/12 of the total width
 
 :::
 
@@ -529,7 +546,19 @@ Second column, 8/12 of the total width
 :::
 ```
 
-(Best for HTML pages)
+
+
+## Output
+
+```{r}
+#| out-width: 80%
+#| fig-align: center
+knitr::include_graphics("img/grid.png")
+```
+
+
+:::
+
 
 ## Columns
 
@@ -665,7 +694,7 @@ You can place anything in the margins of the documents!
 #| echo: true
 
 :::{.column-margin}
-I want this piscture displayed in the margin 
+I want this picture displayed in the margin 
 
 
 ![](img/peacock.png)
@@ -686,6 +715,6 @@ From the previous document:
 * In one of the sections, create a grid dividing the space in 3 intervals of different width 
 * Place a picture in each of the three intervals
 * In a subsection: 
- + Create a panel tabset with 3 tabs (like Introduction, Methods, Results)
- + Add a picture in the margin of the document
+  + Create a panel tabset with 3 tabs (like Introduction, Methods, Results)
+  + Add a picture in the margin of the document
 
