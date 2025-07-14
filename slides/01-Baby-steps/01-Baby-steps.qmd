@@ -7,6 +7,7 @@ format:
   revealjs: 
     self-contained: true
     theme: mytheme.scss
+    fontsize: 18pt 
     logo: "img/freepalestine.jpg"
     footer: "Baby steps"
     transition: none
@@ -104,8 +105,7 @@ format:
     toc: true                # 2   
     toc-title: My contents   # 3
     toc-location: left       # 4
-editor: source
-lang: it
+lang: it                     # 5
 ---
 ```
 
@@ -117,8 +117,73 @@ lang: it
 
 4. Location of the ToC (`left`, `right`, `body`)
 
+5. Define the language of the documents
 
 
+
+## Themes
+
+The default theme of the document can be modified with the predefined [themes](https://quarto.org/docs/output-formats/html-themes.html)
+
+```{markdown}
+#| echo: true
+---
+title: "My quarto file"
+author: "Jane Doe"
+date: today
+format: 
+  html:
+    self-contained: true     
+    toc: true                   
+    toc-title: My contents   
+    toc-location: left
+    theme: superhero  # 1
+    fontsize: 32px    # 2 customization
+lang: it                     
+---
+```
+
+
+1. Define the theme 
+
+3. Define the fontsize (other options are avilable)
+
+## Day vs night 
+
+```{markdown}
+#| echo: true
+---
+format: 
+  html:
+    theme:
+     light: minty
+     dark: superhero
+---
+```
+
+:::{.panel-tabset}
+
+## Day 
+
+```{r}
+#| fig-align: center
+#| out-width: 100%
+
+knitr::include_graphics("img/light.png")
+```
+
+
+## Night
+
+```{r}
+#| fig-align: center
+#| out-width: 100%
+
+knitr::include_graphics("img/dark.png")
+```
+
+
+:::
 
 # Markdown formatting 
 
