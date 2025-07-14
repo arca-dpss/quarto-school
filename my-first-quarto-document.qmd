@@ -4,6 +4,10 @@ author: "Jane Doe"
 date: today
 format: 
   html:
+    theme:
+     light: minty
+     dark: superhero
+    fontsize: 12pt
     self-contained: true
     toc: true
     toc-title: My contents
@@ -25,6 +29,23 @@ This is your very first quarto document
 ## A section
 
 You can organize it in sections
+
+
+::: {.grid}
+
+::: {.g-col-4}
+
+First column, 4/12 of the total width
+
+:::
+
+::: {.g-col-8}
+
+Second column, 8/12 of the total width
+
+:::
+
+:::
 
 ### A subsection
 
