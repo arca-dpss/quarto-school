@@ -1,16 +1,18 @@
 ---
 title: "00-Hello"
-author: "Ottavia M. Epifania"
+author:
+  name: "Ottavia M. Epifania, Ph.D."
+  email: ottavia.epifania@unitn.it
 format: 
   revealjs: 
     theme: mytheme.scss
-    # logo: "www/psicostat.jpg"
+    logo: "img/freepalestine.jpg"
     footer: "Hello, my name is quarto"
     transition: none
     transition-speed: slow
     background-transition: fade
-    slide-number: true
-    show-slide-number: print
+    slide-number: c/t
+    show-slide-number: all
 stand-alone: true
 editor_options: 
   chunk_output_type: console
@@ -69,35 +71,37 @@ Download RStudio: [https://posit.co/download/rstudio-desktop/](https://posit.co/
 
 <br>
 
-`markdown`: `.md`
+| Format       | Extension |
+|--------------|-----------|
+| Markdown     | `.md`     |
+| R Markdown   | `.Rmd`    |
+| Quarto       | `.qmd`    |
 
-`R Markdown`: `.Rmd`
-
-`quarto`: `.qmd`
 
 ## markup languages 
 
-:::: {.columns}
+:::{.panel-tabset}
 
-:::{.column width="50%"}
+## HTML
+
 ```{r}
 #| out-width: 90%
+#| fig-align: center
 #| fig-cap: HTML editor
 knitr::include_graphics("img/html-example.png")
 ```
 
-:::
 
-:::{.column width="50%"}
+## LaTeX
+
 ```{r}
 #| out-width: 90%
+#| fig-align: center
 #| fig-cap: LaTex Editor
 knitr::include_graphics("img/latex.png")
 ```
 
 :::
-
-::::
 
 ## WYSIWYG languages
 
@@ -107,6 +111,8 @@ The text is modified with built-in command, you can see immediately the changes:
 
 ```{r}
 #| out-width: 80%
+#| fig-align: center
+#| fig-cap: Word
 knitr::include_graphics("img/word.png")
 ```
 
@@ -125,8 +131,7 @@ Create dynamic content with Python, R, Julia, and Observable
 
 ## An example
 
-
-::: {.r-stack}
+:::{.r-stack}
 
 :::{.fragment .fade-in-then-out}
 
@@ -135,7 +140,6 @@ Create dynamic content with Python, R, Julia, and Observable
 #| out-width: 100%
 #| warning: false
 #| message: false
-#| 
 
 library(ggplot2)
 
@@ -144,8 +148,6 @@ ggplot(rock,
 ```
 
 :::
-
-
 ::: {.fragment .fade-in-then-out}
 But you are asked to change the ggplot theme!
 
@@ -165,7 +167,7 @@ Using a WYSIWYG:
 :::
 
 ::: {.fragment .fade-in-then-out}
-Here.. just add `+ theme_light()` to the code
+Here.. just add `+ theme_light()` to the code and render it again
 
 ```{r}
 #| echo: false
@@ -185,30 +187,33 @@ ggplot(rock,
 
 :::
 
+:::
 
-
-
-::: {.fragment .fade-in-then-out}
-Plus, can be interactive:
+## {auto-animate="true"}
 
 ```{r}
-#| echo: false
-#| out-width: 300%
-#| warning: false
-#| message: false
+#| echo: true
 
-
-library(ggplot2)
-library(plotly)
-
-ggplotly(ggplot(rock, 
-         aes(x = peri, y = perm, size = area)) + geom_point() + theme_light())
-
+graph = ggplot(rock, 
+         aes(x = peri, 
+             y = perm, size = area)) + 
+  geom_point() + theme_light()
+graph
 ```
 
+## {auto-animate="true"}
 
-:::
-:::
+```{r}
+#| echo: true
+
+graph = ggplot(rock, 
+         aes(x = peri, 
+             y = perm, size = area)) + 
+  geom_point() + theme_light()
+library(plotly)
+ggplotly(graph)
+```
+
 
 # Let's get started `r emoji("partying face")`
 
@@ -260,6 +265,7 @@ knitr::include_graphics("img/project3.png")
 
 ```{r}
 #| out-width: 5%
+#| out-height: 10%
 #| fig-align: center
 
 knitr::include_graphics("img/gh.png")
@@ -326,7 +332,7 @@ knitr::include_graphics("img/ghDesk.png")
 ```
 
 
-## Installare Git {.build}
+## Install Git 
 
 GitHub desktop allows for an "inderect" connection between RStudio and GitHub 
 
@@ -336,7 +342,7 @@ Just follow the default installation
 
 . . . 
 
-If it worked: 
+If it worked (you might have to close RStudio and restart your PC): 
 
 ```{r}
 #| fig-align: center
@@ -416,6 +422,7 @@ Dataset details:
 - ``r colnames(data)[4]``: Type of sport activity practiced, `r unique(data[,4])`
 
 
+
 ## Your turn!
 
 1. Create a default R project for this course 
@@ -426,13 +433,16 @@ Dataset details:
 
 4. Check whether the repository is available online and make it public 
 
+5. Place the dataset in a subfolder named `data`
+
+. . . 
 
 <br>
 
 Final check: Download [this file](my-first-quarto-document.qmd), open it in your newly created project and: 
 
 ```{r}
-#| out-width: 50%
+#| out-width: 100%
 knitr::include_graphics("img/render.png")
 ```
 
