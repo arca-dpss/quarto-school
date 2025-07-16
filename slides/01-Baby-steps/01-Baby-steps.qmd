@@ -582,6 +582,121 @@ format:
 knitr::include_graphics("img/basic-layout.png")
 ```
 
+## Callout
+
+:::{.panel-tabset}
+
+## Output
+
+::: {.callout-note}
+To say something general
+:::
+
+::: {.callout-tip}
+## I'm a title!
+
+Maybe a tip :)
+:::
+
+::: {.callout-caution}
+## Pay attention!
+
+Please pay attention to whatever it is written here
+:::
+
+
+::: {.callout-warning}
+Just saying you should be careful
+:::
+
+## Code
+
+```{markdown}
+#| echo: true
+#| eval: false
+
+::: {.callout-note}
+To say something general
+:::
+
+::: {.callout-tip}
+## I'm a title!
+
+Maybe a tip :)
+:::
+
+::: {.callout-caution}
+## Pay attention!
+
+Please pay attention to whatever it is written here
+:::
+
+
+::: {.callout-warning}
+Just saying you should be careful
+:::
+```
+
+
+:::
+
+## Collapsing & Other amenities
+
+:::{.panel-tabset}
+
+## Output 
+
+::: {.callout-warning collapse="true"}
+
+## Look at me!!
+
+I collapse (Actually you can't see the callout collapsing, just copy & paste in your file)
+
+:::
+
+
+::: {.callout-tip icon="false"}
+## I'm not an icon
+
+I removed the icon from this specific callout. If you want to remove the icons from **all** the blocks, go in the YAML: 
+
+```{markdown}
+#| echo: true
+callout-icon: false
+```
+
+:::
+
+
+## Code
+
+
+```{markdown}
+#| echo: true
+
+::: {.callout-warning collapse="true"}
+
+## Look at me!!
+
+I collapse (Actually you can't see the callout collapsing, just copy & paste in your file)
+
+:::
+
+
+::: {.callout-tip icon="false"}
+## I'm not an icon
+
+I removed the icon from this specific callout. 
+
+If you want to remove the icons from **all** the blocks, go in the YAML: 
+
+
+:::
+```
+
+
+:::
+
 ## Custom layout with grid 
 
 The page layout is based on a 12-unit (or 12-column) grid system, which can be used to divide the space accordingly: 
