@@ -1,0 +1,402 @@
+---
+title: "04-PDF"
+author: "Ottavia M. Epifania, Ph.D."
+format:
+  beamer:
+    slide-level: 3
+    theme: Montpellier
+    colortheme: dove
+    navigation: horizontal
+    highlight-style: breeze
+    classoption: compress, aspectratio=149
+    innertheme: rounded
+    outertheme: miniframes
+    toc: false
+callout-icon: false
+code-annotations: below
+header-includes: 
+   - \usepackage{graphicx}
+   - \usepackage[english]{babel}
+   - \usepackage{xcolor}
+   - \AtBeginSubsection{}
+   - \AtBeginDocument{\author[Ottavia M. Epifania]{Ottavia M. Epifania \\ University of Trento \\\texttt{ottavia.epifania@unitn.it}}}
+   - \AtBeginDocument{\institute[]{ARCA Summer School} }
+   - \setbeamertemplate{logo}{\includegraphics[width=0.7cm]{img/freepalestine.jpg}}
+   - \AtBeginSection[]
+          {
+             \begin{frame}[plain]
+             \tableofcontents[currentsection,  sectionstyle=show/shaded, subsectionstyle=hide]
+              \end{frame}
+          }
+---
+
+```{r}
+#| include: false
+
+library(knitr)
+library(ggplot2)
+```
+
+
+# Preliminarities
+
+## Install the PDF engine
+
+### 
+
+To compile PDF files (presentations or documents), you need an installation of \LaTeX
+
+::: {.callout-note}
+
+## Easy mode
+
+ [TinyTex](https://yihui.org/tinytex/)
+
+It's convenient because it is easy to use, but it does not offer all the functionalities of \LaTeX
+
+:::
+
+
+::: {.callout-warning}
+
+## Pro mode
+
+[MikTex](https://miktex.org/download)
+
+It's a pain in the neck but it's convenient in the long run
+
+:::
+
+
+. . . 
+
+For this course, we can use TinyTex
+
+### 
+
+Basics commands of \LaTeX might work in quarto as well (when compiled in PDF)
+
+Quarto allows for using \LaTeX without knowing how it works (i.e., by using the same tags used for html files)
+
+PDFs do not offer interactivity, but they do look professional
+
+Importantly, PDFs are stable 
+
+## YAML & Basics
+
+###
+
+```
+---
+title: "I can use LaTeX"
+author: "Jane Doe"
+format: beamer
+---
+
+## New Slide
+
+- First element
+- Second element
+
+## Another slide
+
+Some text in my slide! Yay!
+
+
+```
+
+###
+
+\footnotesize
+
+```
+---
+[...]
+format:
+  beamer:
+    slide-level: 2
+---
+
+# This create a section page
+
+## This create a slide
+
+- First element
+- Second element
+
+# New section
+
+
+```
+
+
+# Beamer 
+
+## Themes 
+
+### 
+
+```
+[...]
+format:
+  beamer:
+    slide-level: 3
+    theme: Montpellier
+    colortheme: dove
+```
+
+[Gallery](https://mpetroff.net/files/beamer-theme-matrix/) of beamer themes & colortheme
+
+## `header-includes:`
+
+### 
+
+Further customization through pure \LaTeX: 
+
+\footnotesize
+
+```
+[...]
+header-includes: 
+   - \usepackage{graphicx}
+   - \usepackage[english]{babel}
+   - \usepackage{xcolor}
+   - \AtBeginDocument{\author[Ottavia M. Epifania]{Ottavia M. Epifania \\ University of Trento \\\texttt{ottavia.epifania@unitn.it}}}
+   - \AtBeginDocument{\institute[]{ARCA Summer School} }
+   - \setbeamertemplate{logo}{\includegraphics[width=0.7cm]{img/freepalestine.jpg}}
+```
+
+
+## Layout & font
+
+### Columns 
+
+The same code seen so far: 
+
+```
+:::: {.columns}
+
+::: {.column width="40%"}
+contents...
+:::
+
+::: {.column width="60%"}
+contents...
+:::
+
+::::
+```
+
+### Text size 
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+`\Large` Large
+
+\vspace{1.5mm}
+`\large` large
+
+\vspace{1.5mm}
+`\normalsize` normal
+
+\vspace{1.5mm}
+`\small` small 
+
+\vspace{1.5mm}
+`\footnotesize` footnotesize
+
+\vspace{1.5mm}
+`\scriptsize` script
+
+\vspace{1.5mm}
+`\tiny` very tiny
+
+:::
+
+::: {.column width="50%"}
+\Large Large
+
+\vspace{1.5mm}
+
+\large large
+
+\vspace{1.5mm}
+\normalsize normal
+
+\vspace{1.5mm}
+\small small 
+
+\vspace{1.5mm}
+\footnotesize footnotesize
+
+\vspace{1.5mm}
+\scriptsize script
+
+\vspace{2.5mm}
+\tiny very tiny
+
+
+:::
+
+::::
+
+# Code 
+
+## Code Chunk
+
+###
+
+same as before! Of course it cannot be interactive. 
+
+
+```{r}
+#| echo: fenced
+#| eval: true
+3*2
+```
+
+## Code annotation
+
+###
+
+\small 
+
+```{r}
+#| echo: true
+#| eval: false
+
+library(tidyverse)
+mtcars %>%                               # <1>
+  ggplot( aes(mpg, hp, size = gear)) +   # <2>
+  geom_point() +                         # <3>     
+  geom_smooth(method = "lm")             # <4>
+
+```
+
+1. Do something
+2. Do something else
+3. And else 
+4. Whatever
+
+In the code: `# <1>`, `# <2>` etc
+
+In the YAML 
+
+```
+[...]
+code-annotations: below
+```
+
+
+# Tables
+
+### 
+
+@tbl-mtcars is a table
+
+```{r}
+#| label: tbl-mtcars
+#| tbl-cap: "This is a table!"
+
+library(kableExtra)
+kable(mtcars[1:3,1:3], booktabs = TRUE)   %>%
+  kable_styling(latex_options = "hold_position")
+```
+
+
+###
+
+`@tbl-mtcars1 is a table`
+
+```{r}
+#| echo: fenced
+#| eval: false
+#| label: tbl-mtcars1
+#| tbl-cap: "This is a table!"
+#| code-line-numbers: "|3|4|"
+
+library(kableExtra)
+kable(mtcars[1:3,1:3], booktabs = TRUE)   %>%
+  kable_styling(latex_options = "hold_position")
+```
+
+
+
+
+# Figures
+
+## External Figures
+
+### 
+
+There's a peacock in @fig-pea
+
+```{r}
+#| echo: fenced
+#| out-width: 70%
+#| fig-align: center
+#| fig-cap: "A peacock"
+#| label: fig-pea
+
+knitr::include_graphics("img/peacock.png")
+```
+
+### 
+
+`There's a peacock in @fig-pea1`
+
+```{r}
+#| echo: fenced
+#| eval: false
+#| out-width: 70%
+#| fig-align: center
+#| fig-cap: "A peacock"
+#| label: fig-pea1
+
+knitr::include_graphics("img/peacock.png")
+```
+
+
+
+
+## Plots
+
+### 
+
+A kickass plot in @fig-plot
+
+```{r}
+#| echo: fenced
+#| out-width: 70%
+#| fig-align: center
+#| fig-cap: "What a plot"
+#| label: fig-plot
+#| 
+ggplot(mtcars, aes(hp, mpg, color = factor(am))) +
+  geom_point() +
+  geom_smooth(formula = y ~ x, method = "loess") +
+  theme(legend.position = 'bottom')
+```
+
+
+### 
+
+`A kickass plot in @fig-plot1`
+
+```{r}
+#| echo: fenced
+#| eval: false
+#| out-width: 70%
+#| fig-align: center
+#| fig-cap: "What a plot"
+#| label: fig-plot1
+#| 
+ggplot(mtcars, aes(hp, mpg, color = factor(am))) +
+  geom_point() +
+  geom_smooth(formula = y ~ x, method = "loess") +
+  theme(legend.position = 'bottom')
+```
+
