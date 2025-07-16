@@ -43,7 +43,7 @@ All course materials are freely available on this website:
 
 - [03-Presentations](slides/03-Presentation/03-Presentation.html)
 
-- [04-PDF Presentation](slides/04-PDF/04-PDF.pdf) with LaTeX
+- [04-PDF](slides/04-PDF/04-PDF.pdf) with LaTeX
 
 Here you can download the [dataset](data/dataset.csv) that we are going to use throughout the course 
 
@@ -54,7 +54,6 @@ Here you can download the [dataset](data/dataset.csv) that we are going to use t
 Lectures will be at the Department of Statistical Sciences in via Cesare Battisti 241 Padova, ([https://maps.app.goo.gl/JMCthS2eZqWJEnmx8](https://maps.app.goo.gl/JMCthS2eZqWJEnmx8)), in **room SC20**.
 
 ```{r}
-#| column: screen
 library(leaflet)
 leaflet() %>%
   addTiles() %>%  # Add default OpenStreetMap tiles
@@ -65,7 +64,6 @@ leaflet() %>%
 Lunch will be served at the University Mensa RistorEsu Nord Piovego in Viale Giuseppe Colombo 1, Padova [https://maps.app.goo.gl/Y8ta2wHzbsdn2cMF8](https://maps.app.goo.gl/Y8ta2wHzbsdn2cMF8)
 
 ```{r}
-#| column: screen
 library(leaflet)
 leaflet() %>%
   addTiles() %>%  # Add default OpenStreetMap tiles
