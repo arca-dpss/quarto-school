@@ -5,10 +5,14 @@ institute: "ARCA initiative: Unlocking Psychological Expertise for Academic and 
 author: "Ottavia M. Epifania"
 format: 
   html:
-    theme: minty
+    theme: 
+     light: minty
+     dark: darkly
     self-contained: true
     toc: true
     toc-location: left
+execute: 
+  echo: false
 ---
 
 # The course
@@ -35,10 +39,100 @@ All course materials are freely available on this website:
 
 - [01-Baby steps](slides/01-Baby-steps/01-Baby-steps.html) Formatting with markdwon, integration with github pages & layout
 
-- [02-Code chunks](slides/02-Code-chunk/02-Code-chunk.html) How to control the excutable code
+- [02-Code chunks](slides/02-Code-chunk/02-Code-chunk.html) How to control the executable code
 
 - [03-Presentations](slides/03-Presentation/03-Presentation.html)
 
-- 04-PDF with LaTeX
+- [04-PDF Presentation](slides/04-PDF/04-PDF.pdf) with LaTeX
 
 Here you can download the [dataset](data/dataset.csv) that we are going to use throughout the course 
+
+# School Information
+
+## Locations
+
+Lectures will be at the Department of Statistical Sciences in via Cesare Battisti 241 Padova, ([https://maps.app.goo.gl/JMCthS2eZqWJEnmx8](https://maps.app.goo.gl/JMCthS2eZqWJEnmx8)), in **room SC20**.
+
+```{r}
+#| column: screen
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap tiles
+  setView(lng = 11.885365425918087, lat = 45.40464995544754, zoom = 13) %>%
+  addMarkers(lng = 11.885365425918087, lat = 45.40464995544754, popup = "Department of Statistics")
+```
+
+Lunch will be served at the University Mensa RistorEsu Nord Piovego in Viale Giuseppe Colombo 1, Padova [https://maps.app.goo.gl/Y8ta2wHzbsdn2cMF8](https://maps.app.goo.gl/Y8ta2wHzbsdn2cMF8)
+
+```{r}
+#| column: screen
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap tiles
+  setView(lng =  11.890467829858775, 
+          lat = 45.41117121174326, zoom = 13) %>%
+  addMarkers(lng =  11.890467829858775, 
+             lat = 45.41117121174326, popup = "RistorEsu Nord Piovego")
+
+```
+
+## Time schedule 
+
+
+**THERE HAS BEEN A CHANGE IN THE PROGRAM ON FRIDAY, 25^TH^**
+
+On Friday 25^th^, the quarto lesson will be in the morning session, while the R lesson will be in the afternoon session
+
+### MONDAY, JULY 21
+
+9:00 am - 9:30 am: check in
+9:30 am - 12:30 pm: Dr. Angela Andreella
+
+*Lunch break* 12:30 pm - 2:30 pm at RistorEsu Nord Piovego
+
+
+2:30 pm - 5:30 pm: Dr. Marina Ottavia Epifania
+
+### TUESDAY, JULY 22
+
+
+9:00 am - 12:30 pm: Dr. Angela Andreella
+
+*Lunch break 12:30 pm - 2:00 pm at RistorEsu Nord Piovego*
+
+2:00 pm - 5:00 pm: Dr. Marina Ottavia Epifania
+
+**6:00 pm - 7:00 pm: Guided tour at Orto Botanico**
+
+### WEDNESDAY, JULY 23
+
+9:00 am - 12:30 pm: Dr. Angela Andreella
+
+*Lunch break 12:30 pm - 2:00 pm at RistorEsu Nord Piovego*
+
+2:00 pm - 5:30 pm: Dr. Marina Ottavia Epifania
+
+**Social Dinner 8:00 pm at Ristorante “Agli Eremitani”**
+
+### THURSDAY, JULY 24
+
+9:00 am - 12:30 pm: Dr. Angela Andreella
+*Lunch break
+12:30 pm - 2:00 pm at RistorEsu Nord Piovego*
+
+2:00 pm - 5:30 pm: Dr. Marina Ottavia Epifania
+
+### FRIDAY, JULY 25 Changed schedule
+
+9:00 am - 12:00 pm:  Dr. Marina Ottavia Epifania 
+
+*Lunch break 12:00 pm -1:30 pm at RistorEsu Nord Piovego*
+
+1:30 pm - 5:00 pm: Dr. Angela Andreella
+
+
+## Further activities
+
+Visit to the [Botanical Garden](https://maps.app.goo.gl/X7nWgS3yWuARsKfo9) on Tuesday night, 6:00pm-7:00pm
+
+Social dinner on Wednesday night at [Ristorante Agli Eremitani](https://maps.app.goo.gl/NzPXL1UWybYPZRre6), 8:00pm
