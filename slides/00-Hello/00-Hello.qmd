@@ -439,7 +439,7 @@ Dataset details:
 
 <br>
 
-Final check: Download [this file](my-first-quarto-document.qmd), open it in your newly created project and: 
+Final check: Download the file from the [course website](https://ottaviae.github.io/quarto-school/), open it in your newly created project and: 
 
 ```{r}
 #| out-width: 100%
