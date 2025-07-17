@@ -38,6 +38,19 @@ All course material is available on GitHub:
 > [https://ottaviae.github.io/quarto-school/](https://ottaviae.github.io/quarto-school/)
 
 
+## Schedule
+
+<br>
+
+
+| Date       | Time                | Room   |
+|--------------------|---------------------|--------|
+| Monday, July 21    | 2:30 pm – 5:30 pm   | SC20   |
+| Tuesday, July 22   | 2:00 pm – 5:00 pm   | SC20   |
+| Wednesday, July 23 | 2:00 pm – 5:30 pm   | SC20   |
+| Thursday, July 24  | 2:00 pm – 5:30 pm   | SC20   |
+| **Friday, July 25**    | **9:00 am – 12:00 pm**  | **SC20**   |
+
 # Quarto 
 
 ## What is it?
