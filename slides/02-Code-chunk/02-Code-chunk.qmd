@@ -22,6 +22,7 @@ execute:
   out-width: 80%
   echo: false
 code-annotations: hover
+background-opacity: "0.45"
 ---
 
 ```{r}
@@ -243,6 +244,7 @@ code-fold: true
 code-summary: See this specific code
 ```
 
+
 ::: {.r-stack}
 
 ::: {.fragment .fade-in-then-out}
@@ -376,7 +378,7 @@ ggplot(dataset,
 kable(head(mtcars))  # <1>
 ```
 
-1. Basic table, the `kable()` function is the `knitr` package
+1. Basic table, the `kable()` function is in the `knitr` package
 
 ## 
 
@@ -603,7 +605,7 @@ $$ {#eq-standardize}
 
 ## Code
 
-```{markdwon}
+```{markdown}
 #| echo: true
 
 ::: {.column-margin}
@@ -633,8 +635,7 @@ include_graphics("img/margin-content.png")
 
 ## Code
 
-```{r}
-#| echo: fenced
+```{{r}}
 #| column: margin
 
 lm(hp ~ mpg*am, data = mtcars) # <1>
@@ -658,8 +659,7 @@ include_graphics("img/margin-code.png")
 
 ## Code
 
-```{r}
-#| echo: fenced
+```{{r}}
 #| column: margin
 
 ggplot(mtcars, 
