@@ -259,13 +259,13 @@ knitr::include_graphics("img/project3.png")
 
 ::::
 
-# GitHub (also know as "Nerdstagram")
+# GitHub (also known as "Nerdstagram")
 
 ##
 
 ```{r}
-#| out-width: 5%
-#| out-height: 10%
+#| out-width: 25%
+#| out-height: 20%
 #| fig-align: center
 
 knitr::include_graphics("img/gh.png")
