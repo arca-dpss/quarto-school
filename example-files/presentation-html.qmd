@@ -1,0 +1,112 @@
+---
+title: "Example"
+subtitle: "Presentation in HTML"
+author:
+  name: "You"
+  email: your.email@world.com
+format: 
+  revealjs: 
+    self-contained: true
+    theme: serif
+    # logo: "img/freepalestine.jpg"
+    footer: "Hello, my name is quarto"
+    transition: none
+    transition-speed: slow
+    background-transition: fade
+    slide-number: c/t
+    show-slide-number: all
+editor_options: 
+  chunk_output_type: console
+execute: 
+  fig-align: center
+  out-width: 80%
+server: shiny
+---
+
+```{r setup}
+#| include: false
+
+library(emoji)
+```
+
+# Introduction
+
+## Course material {footer="false"}
+
+<br> 
+
+All course material is available on GitHub: 
+
+<br>
+
+> [https://ottaviae.github.io/quarto-school/](https://ottaviae.github.io/quarto-school/)
+
+
+# Quarto 
+
+## What is it?
+
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+# Shiny app
+
+## An example
+
+```{r}
+#| panel: sidebar
+selectInput(inputId = "dataset",
+                    label = "Choose a dataset:",
+                    choices = list("rock" = 1, 
+                                   "pressure" = 2,
+                                   "cars" = 3))
+actionButton("load", "Select dataset")
+```
+
+```{r}
+#| panel: fill
+plotOutput("graph") 
+verbatimTextOutput("summary")
+```
+
+```{r}
+#| context: server
+dataInput = eventReactive(input$load, {
+      if(input$dataset == 1){
+        data <- rock
+      } else if (input$dataset == 2 ){
+        data <- pressure
+      } else if (input$dataset == 3) {
+        data <- cars
+      } 
+    })
+
+output$graph <- renderPlot({
+      data = dataInput()
+      plot(data[, c(1:2)])
+    })
+    
+output$summary <- renderPrint({
+      data = dataInput()
+      summary(data[, c(1:2)])
+    })
+```
+

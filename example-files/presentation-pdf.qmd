@@ -1,0 +1,58 @@
+---
+title: "04-PDF"
+author: "Ottavia M. Epifania, Ph.D."
+format:
+  beamer:
+    slide-level: 3
+    theme: metropolis
+    colortheme: dove
+    navigation: horizontal
+    highlight-style: breeze
+    classoption: compress, aspectratio=149
+    innertheme: rounded
+    outertheme: miniframes
+    toc: false
+callout-icon: false
+code-annotations: below
+header-includes: 
+   - \usepackage{graphicx}
+   - \usepackage[english]{babel}
+   - \usepackage{xcolor}
+   - \AtBeginSubsection{\frame{\subsectionpage}}
+   - \setbeamercolor{subsection name}{fg=white}
+   - \setbeamercolor{section name}{fg=white}
+   - \AtBeginDocument{\author[Ottavia M. Epifania]{Ottavia M. Epifania \\ University of Trento \\\texttt{ottavia.epifania@unitn.it}}}
+   - \AtBeginDocument{\institute[]{ARCA Summer School} }
+---
+
+# Introduction
+
+## Quarto
+
+###
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+### Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+### Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+
+## Subsection 2
+
+### 
+
+Aslide
+
+# Other section
