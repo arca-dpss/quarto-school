@@ -18,16 +18,12 @@ header-includes:
    - \usepackage{graphicx}
    - \usepackage[english]{babel}
    - \usepackage{xcolor}
-   - \AtBeginSubsection{}
+   - \AtBeginSubsection{\frame{\subsectionpage}}
+   - \setbeamercolor{subsection name}{fg=white}
+   - \setbeamercolor{section name}{fg=white}
    - \AtBeginDocument{\author[Ottavia M. Epifania]{Ottavia M. Epifania \\ University of Trento \\\texttt{ottavia.epifania@unitn.it}}}
    - \AtBeginDocument{\institute[]{ARCA Summer School} }
    - \setbeamertemplate{logo}{\includegraphics[width=0.7cm]{img/freepalestine.jpg}}
-   - \AtBeginSection[]
-          {
-             \begin{frame}[plain]
-             \tableofcontents[currentsection,  sectionstyle=show/shaded, subsectionstyle=hide]
-              \end{frame}
-          }
 ---
 
 ```{r}
