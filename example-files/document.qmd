@@ -16,13 +16,13 @@ format:
     body-width: 900px
     margin-width: 300px
     gutter-width: 1.5rem
-lang: en
+lang: it
 execute: 
   echo: true
   message: true
   error: true
-# code-fold: true
-# code-summary: See this specific code
+bibliography: references.bib
+citation-location: margin
 ---
 
 ```{r}
@@ -34,7 +34,9 @@ library(DT)
 
 
 
+# Ta-dan
 
+`ggplot2` is an R [@rsoft] package developed by [@ggplot]. @epifania2024 published an interesting paper on Linear Mixed Effects Models. 
 
 ## Quarto
 
