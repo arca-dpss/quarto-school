@@ -90,7 +90,7 @@ knitr::include_graphics("img/q_visual.png")
 :::
 
 
-## YAML: `T`able `o`f `C`ontents (ToC) {footer="false"}
+## YAML: `T`able `o`f `C`ontents (ToC) {footer="false" .smaller}
 
 
 ```{markdown}
@@ -146,7 +146,7 @@ lang: it
 
 1. Define the theme 
 
-3. Define the fontsize (other options are avilable)
+3. Define the font size (other options are available)
 
 ## Day vs night 
 
@@ -445,7 +445,77 @@ This is an  equation $$z = \dfrac{\bar{x} -\mu}{\sigma}$$
 This is an  equation $$z = \dfrac{\bar{x} -\mu}{\sigma}$$
 
 
+## References
 
+::: {.panel-tabset}
+
+## YAML 
+
+Define the path of the bib file in the YAML
+
+```{markdown}
+#| echo: true
+[...]
+bibliography: references.bib
+```
+
+. . . 
+
+To call a reference: 
+
+```{markdown}
+#| echo: true
+
+@citaton-key
+```
+
+
+
+## `.bib` file 
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|1,9,17|"
+@Manual{rsoft,
+    title = {R: A Language and Environment for Statistical Computing},
+    author = {{R Core Team}},
+    organization = {R Foundation for Statistical Computing},
+    address = {Vienna, Austria},
+    year = {2025},
+    url = {https://www.R-project.org/}
+}
+@Book{ggplot,
+    author = {Hadley Wickham},
+    title = {ggplot2: Elegant Graphics for Data Analysis},
+    publisher = {Springer-Verlag New York},
+    year = {2016},
+    isbn = {978-3-319-24277-4},
+    url = {https://ggplot2.tidyverse.org}
+}
+@article{epifania2024,
+  title={A guided tutorial on linear mixed-effects models for the analysis of accuracies and response times in experiments with fully crossed design.},
+  author={Epifania, Ottavia M and Anselmi, Pasquale and Robusto, Egidio},
+  journal={Psychological Methods},
+  year={2024},
+  publisher={American Psychological Association}, 
+  doi={https://doi.org/10.1037/met0000708}
+}
+```
+
+
+## Citation keys
+
+
+
+| Key                                                                 |  Output                                                   |
+|----------------------------------------------------------------------|--------------------------------------------------------------------|
+| `@ggplot` does this|Wickman (2016) does this|
+| `ggplot2 is an interesting package [@ggplot2]`                       | ggplot2 is an interesting package (Wickman, 2016)                  |
+| `bla bla bla [@epifania2024; @ggplot2]`                              | bla bla bla (Epifania et al., 2024; Wickman, 2016)                 |
+
+
+:::
 
 
 # Publish your HTML document (with GitHub)
@@ -455,6 +525,8 @@ This is an  equation $$z = \dfrac{\bar{x} -\mu}{\sigma}$$
 Navigate to your GitHub repository online: 
 
 ```{r}
+#| fig-align: center
+#| out-width: 90%
 knitr::include_graphics("img/pages-git.png")
 ```
 
@@ -462,6 +534,8 @@ knitr::include_graphics("img/pages-git.png")
 
 
 ```{r}
+#| fig-align: center
+#| out-width: 90%
 knitr::include_graphics("img/pages.png")
 ```
 
@@ -886,6 +960,43 @@ I want this picture displayed in the margin
 #| out-width: 90%
 knitr::include_graphics("img/margins.png")
 ```
+
+## Even references 
+
+:::{.panel-tabset}
+
+## Output
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+
+knitr::include_graphics("img/margin-ref.png")
+```
+
+
+## Code
+
+
+YAML:  
+```{markdown}
+#| echo: true
+citation-location: margin
+```
+
+Citation: 
+
+```{markdown}
+#| echo: true
+
+
+`ggplot2` is an R [@rsoft] package developed by [@ggplot]. @epifania2024 published an interesting paper on Linear Mixed Effects Models. 
+
+```
+
+
+:::
+
 
 
 ## Your turn
