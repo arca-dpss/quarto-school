@@ -35,7 +35,7 @@ All course material is available on GitHub:
 
 <br>
 
-> [https://ottaviae.github.io/quarto-school/](https://ottaviae.github.io/quarto-school/)
+> []()
 
 
 ## Schedule
