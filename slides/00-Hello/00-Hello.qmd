@@ -35,7 +35,7 @@ All course material is available on GitHub:
 
 <br>
 
-> []()
+> [https://arca-dpss.github.io/quarto-school/](https://arca-dpss.github.io/quarto-school/)
 
 
 ## Schedule
