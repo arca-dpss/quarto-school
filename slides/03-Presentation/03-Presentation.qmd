@@ -716,6 +716,8 @@ When you are in presentation mode, just press `S`:
 ## View 
 
 ```{r}
+#| fig-align: center
+#| out-width: 100%
 knitr::include_graphics("www/speaker-notes.png")
 ```
 
@@ -1240,7 +1242,7 @@ output$summary <- renderPrint({
 
 
 
-## Shine in quarto {.smaller}
+## Shine in quarto 
 
 ```{markdown}
 #| echo: true
@@ -1256,12 +1258,11 @@ server: shiny
 ```
 
 
-::: {.panel-tabset}
+
 
 ## UI
 
-```{r}
-#| echo: fenced
+```{{r}}
 #| panel: sidebar
 #| eval: false
 selectInput(inputId = "dataset", # name of the input (for the server)
@@ -1273,8 +1274,7 @@ selectInput(inputId = "dataset", # name of the input (for the server)
 
 
 
-```{r}
-#| echo: fenced
+```{{r}}
 #| panel: fill
 #| eval: false
 #| out-width: 30%
@@ -1287,8 +1287,7 @@ verbatimTextOutput("summary")
 
 ## Server
 
-```{r}
-#| echo: fenced
+```{{r}}
 #| eval: false
 #| context: server
 
@@ -1315,5 +1314,3 @@ output$summary <- renderPrint({
   })
 
 ```
-
-:::

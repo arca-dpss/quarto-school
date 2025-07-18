@@ -378,8 +378,6 @@ My link is [here](https://github.com/)
 <br>
 
 
-<br>
-
 ```{markdown}
 #| echo: true
 #| eval: false
@@ -629,7 +627,7 @@ Inside your R project for this school:
 
 * Commit & push the `.qmd` and `.html` of your newly created document
 
-* Commit & push the `.md` and `.html`of the `README` file 
+* Commit & push the `.md` and `.html` of the `README` file 
 
 
 
@@ -656,116 +654,92 @@ format:
 knitr::include_graphics("img/basic-layout.png")
 ```
 
-## Callout
+
+## Document layout 
+
+::: {.panel-tabset}
+
+## A document
+
+```{r}
+knitr::include_graphics("img/adavanced-layout.png")
+```
+
+
+## Code
+
+```{markdown}
+#| eval: false
+#| echo: true
+format: 
+  html: 
+   toc: true
+   toc-location: left
+   grid:
+    sidebar-width: 300px
+    body-width: 900px
+    margin-width: 300px
+    gutter-width: 1.5rem
+```
+
+
+:::
+
+
+## Margins 
+
+You can place anything in the margins of the documents!
+
+
+```{markdown}
+#| eval: false
+#| echo: true
+
+:::{.column-margin}
+I want this picture displayed in the margin 
+
+
+![](img/peacock.png)
+:::
+```
+
+```{r}
+#| fig-align: center
+#| out-width: 90%
+knitr::include_graphics("img/margins.png")
+```
+
+## Even references 
 
 :::{.panel-tabset}
 
 ## Output
 
-::: {.callout-note}
-To say something general
-:::
+```{r}
+#| out-width: 100%
+#| fig-align: center
 
-::: {.callout-tip}
-## I'm a title!
-
-Maybe a tip :)
-:::
-
-::: {.callout-caution}
-## Pay attention!
-
-Please pay attention to whatever it is written here
-:::
-
-
-::: {.callout-warning}
-Just saying you should be careful
-:::
-
-## Code
-
-```{markdown}
-#| echo: true
-#| eval: false
-
-::: {.callout-note}
-To say something general
-:::
-
-::: {.callout-tip}
-## I'm a title!
-
-Maybe a tip :)
-:::
-
-::: {.callout-caution}
-## Pay attention!
-
-Please pay attention to whatever it is written here
-:::
-
-
-::: {.callout-warning}
-Just saying you should be careful
-:::
+knitr::include_graphics("img/margin-ref.png")
 ```
-
-
-:::
-
-## Collapsing & Other amenities
-
-:::{.panel-tabset}
-
-## Output 
-
-::: {.callout-warning collapse="true"}
-
-## Look at me!!
-
-I collapse (Actually you can't see the callout collapsing, just copy & paste in your file)
-
-:::
-
-
-::: {.callout-tip icon="false"}
-## I'm not an icon
-
-I removed the icon from this specific callout. If you want to remove the icons from **all** the blocks, go in the YAML: 
-
-```{markdown}
-#| echo: true
-callout-icon: false
-```
-
-:::
 
 
 ## Code
 
 
+YAML:  
+```{markdown}
+#| echo: true
+citation-location: margin
+```
+
+Citation: 
+
 ```{markdown}
 #| echo: true
 
-::: {.callout-warning collapse="true"}
 
-## Look at me!!
+`ggplot2` is an R [@rsoft] package developed by [@ggplot]. @epifania2024 published an interesting paper on Linear Mixed Effects Models. 
 
-I collapse (Actually you can't see the callout collapsing, just copy & paste in your file)
-
-:::
-
-
-::: {.callout-tip icon="false"}
-## I'm not an icon
-
-I removed the icon from this specific callout. 
-
-If you want to remove the icons from **all** the blocks, go in the YAML: 
-
-
-:::
 ```
 
 
@@ -907,95 +881,123 @@ And here I present the results
 
 ::: 
 
-## Document layout 
-
-::: {.panel-tabset}
-
-## A document
-
-```{r}
-knitr::include_graphics("img/adavanced-layout.png")
-```
-
-
-## Code
-
-```{markdown}
-#| eval: false
-#| echo: true
-format: 
-  html: 
-   toc: true
-   toc-location: left
-   grid:
-    sidebar-width: 300px
-    body-width: 900px
-    margin-width: 300px
-    gutter-width: 1.5rem
-```
-
-
-:::
-
-
-## Margins 
-
-You can place anything in the margins of the documents!
-
-
-```{markdown}
-#| eval: false
-#| echo: true
-
-:::{.column-margin}
-I want this picture displayed in the margin 
-
-
-![](img/peacock.png)
-:::
-```
-
-```{r}
-#| fig-align: center
-#| out-width: 90%
-knitr::include_graphics("img/margins.png")
-```
-
-## Even references 
+## Callout
 
 :::{.panel-tabset}
 
 ## Output
 
-```{r}
-#| out-width: 100%
-#| fig-align: center
+::: {.callout-note}
+To say something general
+:::
 
-knitr::include_graphics("img/margin-ref.png")
+::: {.callout-tip}
+## I'm a title!
+
+Maybe a tip :)
+:::
+
+::: {.callout-caution}
+## Pay attention!
+
+Please pay attention to whatever it is written here
+:::
+
+
+::: {.callout-warning}
+Just saying you should be careful
+:::
+
+## Code
+
+```{markdown}
+#| echo: true
+#| eval: false
+
+::: {.callout-note}
+To say something general
+:::
+
+::: {.callout-tip}
+## I'm a title!
+
+Maybe a tip :)
+:::
+
+::: {.callout-caution}
+## Pay attention!
+
+Please pay attention to whatever it is written here
+:::
+
+
+::: {.callout-warning}
+Just saying you should be careful
+:::
 ```
+
+
+:::
+
+## Collapsing & Other amenities
+
+:::{.panel-tabset}
+
+## Output 
+
+::: {.callout-warning collapse="true"}
+
+## Look at me!!
+
+I collapse (Actually you can't see the callout collapsing, just copy & paste in your file)
+
+:::
+
+
+::: {.callout-tip icon="false"}
+## I'm not an icon
+
+I removed the icon from this specific callout. If you want to remove the icons from **all** the blocks, go in the YAML: 
+
+```{markdown}
+#| echo: true
+callout-icon: false
+```
+
+:::
 
 
 ## Code
 
 
-YAML:  
-```{markdown}
-#| echo: true
-citation-location: margin
-```
-
-Citation: 
-
 ```{markdown}
 #| echo: true
 
+::: {.callout-warning collapse="true"}
 
-`ggplot2` is an R [@rsoft] package developed by [@ggplot]. @epifania2024 published an interesting paper on Linear Mixed Effects Models. 
+## Look at me!!
 
+I collapse (Actually you can't see the callout collapsing, just copy & paste in your file)
+
+:::
+
+
+::: {.callout-tip icon="false"}
+## I'm not an icon
+
+I removed the icon from this specific callout. 
+
+If you want to remove the icons from **all** the blocks, go in the YAML: 
+
+
+:::
 ```
 
 
 :::
+
+
+
 
 
 
@@ -1008,4 +1010,4 @@ From the previous document:
 * In a subsection: 
   + Create a panel tabset with 3 tabs (like Introduction, Methods, Results)
   + Add a picture in the margin of the document
-
+* Go grazy with the callout
