@@ -51,7 +51,7 @@ knitr::include_graphics("img/code.png")
 
 # Chunk options 
 
-## `echo`: Control the code display {.smaller}
+## `echo`: Control the code display {.smaller .scrollable}
 
 
 ::::{.columns}
@@ -580,7 +580,11 @@ $$ {#eq-standardize}
 
 <br>
 
-* Add a table based on the dataset, with a caption and a crossreference
+* Add a table based on the dataset, with a caption and a cross-reference
+* The code used for the previous `ggplot` graph: 
+  + Cross reference to the obtained graph 
+  + Cross reference to the code used to obtain it 
+* Add a collapsing callout block
 
 # Margins 
 
