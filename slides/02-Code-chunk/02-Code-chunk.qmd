@@ -67,7 +67,7 @@ head(rock)
 
 
 ```{r}
-#| echo: false
+#| echo: true
 head(rock)
 ```
 
