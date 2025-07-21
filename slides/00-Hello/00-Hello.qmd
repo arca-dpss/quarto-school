@@ -413,7 +413,7 @@ knitr::include_graphics("img/public.png")
 
 To explore the potentials of integrating code chunks, analyses, and results in one unique document, we need to work with a real dataset: 
 
-> [Download dataset from the course website](https://ottaviae.github.io/quarto-school/)
+> [Download dataset from the course website](https://arca-dpss.github.io/quarto-school/)
 
 
 ```{r}
