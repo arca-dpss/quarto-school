@@ -457,16 +457,6 @@ Define the path of the bib file in the YAML
 bibliography: references.bib
 ```
 
-. . . 
-
-To call a reference: 
-
-```{markdown}
-#| echo: true
-
-@citaton-key
-```
-
 
 
 ## `.bib` file 
@@ -514,6 +504,17 @@ To call a reference:
 
 
 :::
+
+. . . 
+
+To call a reference: 
+
+```{markdown}
+#| echo: true
+
+@citaton-key
+```
+
 
 
 # Publish your HTML document (with GitHub)
@@ -957,7 +958,7 @@ I collapse (Actually you can't see the callout collapsing, just copy & paste in 
 ::: {.callout-tip icon="false"}
 ## I'm not an icon
 
-I removed the icon from this specific callout. If you want to remove the icons from **all** the blocks, go in the YAML: 
+I removed the icon from this specific callout. If you want to remove the icons from **all** the blocks, go in the YAML, and on a new line (not indented): 
 
 ```{markdown}
 #| echo: true
