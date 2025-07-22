@@ -431,7 +431,7 @@ datatable(mtcars)
 
 # Cross referencing 
 
-## In general 
+## In general {footer="false"}
 
 At this page [https://quarto.org/docs/authoring/cross-references.html](https://quarto.org/docs/authoring/cross-references.html) you can find all the details and help for a correct use of cross-referencing.
 
@@ -448,6 +448,36 @@ YAML:
 [...]
 lang: en
 ```
+
+
+:::: [.columns]
+
+::: {.column width="50%"}
+| Language    | Code |
+|-------------|------|
+| English     | `en`   |
+| Chinese     | `zh`   |
+| Spanish     | `es`   |
+| French      | `fr`   |
+| Japanese    | `ja`   |
+| German      | `de`   |
+:::
+
+::: {.column width="50%"}
+| Language    | Code |
+|-------------|------|
+| Portuguese  | `pt`   |
+| Russian     | `ru`   |
+| Czech       | `cs`   |
+| Finnish     | `fi`   |
+| Dutch       | `nl`   |
+| Italian     | `it`   |
+| Polish      | `pl`   |
+| Korean      | `ko`   |
+:::
+
+::::
+
 
 
 ## Images 
