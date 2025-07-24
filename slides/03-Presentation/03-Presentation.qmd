@@ -22,7 +22,7 @@ execute:
   fig-align: center
   out-width: 80%
   echo: false
-code-annotations: hover
+code-annotations: select
 server: shiny
 ---
 
@@ -231,7 +231,7 @@ affiliation: "ARCA summer school"
 format: 
   revealjs: 
     self-contained: true
-    scrollable: true
+    scrollable: true           
     logo: "www/freepalestine.jpg"
     footer: "Presentations"
     incremental: true
@@ -755,6 +755,27 @@ Yeah, yeah, yeah, yeah, ah, ah, ah, ah
 [Danny Nedelko](https://youtu.be/QkF_G-RF66M?si=F11TuQYUtWVz0L9G)
 :::
 
+ 
+## Footnotes: Code
+
+```{markdown}
+#| echo: true
+
+My blood brother is an immigrant, a beautiful immigrant ^[This song is [Danny Nedelko](https://youtu.be/QkF_G-RF66M?si=F11TuQYUtWVz0L9G) by IDLES]
+
+
+::: aside
+Fear leads to panic, panic leads to pain
+
+Pain leads to anger, anger leads to hate
+
+Yeah, yeah, yeah, yeah, ah, ah, ah, ah
+
+Yeah, yeah, yeah, yeah, ah, ah, ah, ah
+
+[Danny Nedelko](https://youtu.be/QkF_G-RF66M?si=F11TuQYUtWVz0L9G)
+:::
+```
 
 # Code 
 
@@ -945,9 +966,9 @@ Interactive plots with `plotly`
 library(plotly) # you have to first install it :) 
 
 graph = mtcars %>%                                # <1>
-  ggplot( aes(mpg, hp, color = gear)) +   
-  geom_point() +                             
-  geom_smooth()     
+  ggplot( aes(mpg, hp, color = gear)) +           # <1>
+  geom_point() +                                  # <1>
+  geom_smooth()                                   # <1>  
 ggplotly(graph)                                    # <2>
 ```
 
@@ -1019,11 +1040,11 @@ library(shiny) # use it
 #| eval: false
 #| code-line-numbers: "|1-3|4-6|7"
 ui = fluidPage(          # <1> 
-   [...]
-  )
+   [...]                 # <1>  
+  )                      # <1>
 server = function(input, output){ # <2> 
-  [...]
-}
+  [...]                           # <2>   
+}                                 # <2>  
 shinyApp(ui, server)  # <3> 
 ```
 
