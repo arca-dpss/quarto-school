@@ -307,12 +307,9 @@ kable(mtcars[1:3,1:3], booktabs = TRUE)   %>%
 
 `@tbl-mtcars1 is a table`
 
-```{r}
-#| echo: fenced
-#| eval: false
+```{{r}}
 #| label: tbl-mtcars1
 #| tbl-cap: "This is a table!"
-#| code-line-numbers: "|3|4|"
 
 library(kableExtra)
 kable(mtcars[1:3,1:3], booktabs = TRUE)   %>%
@@ -331,7 +328,6 @@ kable(mtcars[1:3,1:3], booktabs = TRUE)   %>%
 There's a peacock in @fig-pea
 
 ```{r}
-#| echo: fenced
 #| out-width: 70%
 #| fig-align: center
 #| fig-cap: "A peacock"
@@ -344,9 +340,7 @@ knitr::include_graphics("img/peacock.png")
 
 `There's a peacock in @fig-pea1`
 
-```{r}
-#| echo: fenced
-#| eval: false
+```{{r}}
 #| out-width: 70%
 #| fig-align: center
 #| fig-cap: "A peacock"
@@ -365,12 +359,12 @@ knitr::include_graphics("img/peacock.png")
 A kickass plot in @fig-plot
 
 ```{r}
-#| echo: fenced
+#| echo: false
 #| out-width: 70%
 #| fig-align: center
 #| fig-cap: "What a plot"
 #| label: fig-plot
-#| 
+
 ggplot(mtcars, aes(hp, mpg, color = factor(am))) +
   geom_point() +
   geom_smooth(formula = y ~ x, method = "loess") +
@@ -382,14 +376,12 @@ ggplot(mtcars, aes(hp, mpg, color = factor(am))) +
 
 `A kickass plot in @fig-plot1`
 
-```{r}
-#| echo: fenced
-#| eval: false
+```{{r}}
 #| out-width: 70%
 #| fig-align: center
 #| fig-cap: "What a plot"
 #| label: fig-plot1
-#| 
+
 ggplot(mtcars, aes(hp, mpg, color = factor(am))) +
   geom_point() +
   geom_smooth(formula = y ~ x, method = "loess") +
